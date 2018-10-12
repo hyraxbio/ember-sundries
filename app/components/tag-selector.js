@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/tag-selector';
+export { default } from 'ember-extended-fields/components/tag-selector';
