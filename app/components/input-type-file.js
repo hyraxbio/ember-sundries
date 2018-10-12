@@ -1,0 +1,1 @@
+export { default } from 'ember-extended-fields/input-type-file';
