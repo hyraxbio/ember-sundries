@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/file-select';
+export { default } from 'ember-extended-fields/components/file-select';
