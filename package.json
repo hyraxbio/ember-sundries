@@ -1,6 +1,6 @@
 {
   "name": "ember-extended-fields",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
-    "ember-cli-htmlbars": "^2.0.1"
+    "ember-cli-htmlbars": "^2.0.1",
+    "ember-radio-button": "^1.2.3"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
