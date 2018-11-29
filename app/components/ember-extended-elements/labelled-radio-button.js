@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-elements/components/ember-extended-elements/labelled-radio-button';
+export { default } from 'ember-extended-fields/components/ember-extended-elements/labelled-radio-button';

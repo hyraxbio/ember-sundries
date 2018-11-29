@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-elements/components/ember-extended-elements/file-drop';
+export { default } from 'ember-extended-fields/components/ember-extended-elements/file-drop';
