@@ -1,0 +1,1 @@
+export { default } from 'ember-extended-elements/components/ember-extended-elements/input-type-file';

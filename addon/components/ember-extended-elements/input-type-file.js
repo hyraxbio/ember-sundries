@@ -1,5 +1,5 @@
 import { isEmpty } from '@ember/utils';
-import layout from '../templates/components/input-type-file';
+import layout from '../../templates/components/ember-extended-elements/input-type-file';
 import $ from 'jquery';
 import TextField from '@ember/component/text-field';
 

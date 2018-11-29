@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/labelled-checkbox';
+import layout from '../../templates/components/ember-extended-elements/labelled-checkbox';
 
 export default Component.extend({
   layout,

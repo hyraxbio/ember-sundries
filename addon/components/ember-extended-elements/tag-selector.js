@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/tag-selector';
+import layout from '../../templates/components/ember-extended-elements/tag-selector';
 import { computed } from '@ember/object';
 
 export default Component.extend({

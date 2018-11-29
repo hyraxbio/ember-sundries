@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/power-datetime-picker';
+import layout from '../../templates/components/ember-extended-elements/power-datetime-picker';
 import { computed } from '@ember/object';
 import { observer } from '@ember/object';
 import { once } from '@ember/runloop';

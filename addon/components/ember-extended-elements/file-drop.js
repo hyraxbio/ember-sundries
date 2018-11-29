@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/file-drop';
+import layout from '../../templates/components/ember-extended-elements/file-drop';
 
 export default Component.extend({
   layout,
