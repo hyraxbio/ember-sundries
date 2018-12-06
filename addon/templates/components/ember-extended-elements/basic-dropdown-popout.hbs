@@ -1,0 +1,12 @@
+{{#basic-dropdown verticalPosition=verticalPosition horizontalPosition=horizontalPosition renderInPlace=renderInPlace as |dropdown|}}
+  {{#dropdown.trigger class=triggerClasses}}
+    {{yield "trigger"}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content class=(concat contentClasses " " positionClass)}}
+    <div class="pop-up-box box-arrow">
+      <div class="close-button" {{action 'closePopoutBox' dropdown}} value="Close">{{svg-repo/icons/icon-cross}}</div>
+      {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
+      {{yield "content"}}
+    </div>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

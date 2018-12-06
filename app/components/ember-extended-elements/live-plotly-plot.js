@@ -1,0 +1,1 @@
+export { default } from 'ember-extended-fields/components/ember-extended-elements/live-plotly-plot';
