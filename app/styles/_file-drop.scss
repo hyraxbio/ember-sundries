@@ -1,0 +1,17 @@
+.draggable-dropzone {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px dotted #aaa;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background: #fff;
+  @include box-shadow-bottom-right;
+}
+
+.draggable-dropzone.activated {
+  border-color: $hyrax-blue-one;
+  color: $hyrax-blue-one;
+  background-color: #f0f0f0;
+}

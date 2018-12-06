@@ -1,0 +1,21 @@
+div.input-file-wrapper {
+  position: relative;
+}
+
+div.input-file-wrapper input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+div.input-file-wrapper input:hover {
+  cursor: pointer;
+}
+
+p.file-chosen,
+.body-content p.file-chosen {
+  margin-top: -3px;
+  float: left;
+}
