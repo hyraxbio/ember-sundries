@@ -50,3 +50,7 @@ License
 This project is licensed under the [MIT License](LICENSE.md).
 =======
 # ember-extended-fields
+
+Todo
+
+Fix bug where selecting after keyboard nav closes the calendar.

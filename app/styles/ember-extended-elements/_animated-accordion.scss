@@ -27,16 +27,16 @@ div.accordion-item div.accordion-item-header svg {
   position: absolute;
   right: 20px;
   top: 25px;
-  fill: #bbb;
+  fill: $animated-accordion-header-icon-fill;
 }
 
 div.accordion-item div.accordion-item-header:hover svg {
-  fill: $link-hover-color;
+  fill: $animated-accordion-header-icon-hover-fill;
 }
 
 div.accordion-item div.accordion-item-header h4 {
   margin-bottom: 0;
-  font-size: 2em/$body-content-text-font-size;
+  font-size: $animated-accordion-header-font-size;
   text-transform: none;
 }
 

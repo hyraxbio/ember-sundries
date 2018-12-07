@@ -18,6 +18,7 @@ export default Component.extend({
   },
 
   didInsertElement: function() {
+    console.log(this.get('defaultDate'));
     if (this.get('defaultDate')) {
       this.set('selectedDate', this.get('defaultDate'));
     }
@@ -96,8 +97,8 @@ export default Component.extend({
       var targetDay;
       var startOfVisibleMonth = moment(this.get('center')).startOf('month').toDate();
       var endOfVisibleMonth = moment(this.get('center')).endOf('month').toDate();
-      var currentSelected = moment(this.get('selected'));
-      if (this.get('selected') >= startOfVisibleMonth && this.get('selected') <= endOfVisibleMonth) {
+      var currentSelected = moment(this.get('selectedDate'));
+      if (this.get('selectedDate') >= startOfVisibleMonth && this.get('selectedDate') <= endOfVisibleMonth) {
         targetDay = currentSelected.add(span, units);
       } else {
         targetDay = startOfVisibleMonth;
@@ -108,13 +109,13 @@ export default Component.extend({
       if (targetDay < this.get('minDate')) {
         targetDay = this.get('minDate');
       }
-      this.set('selected', targetDay);
-      this.set('center', this.get('selected'));
+      this.set('selectedDate', targetDay);
+      this.set('center', this.get('selectedDate'));
     },
 
     onTriggerKeydown(datepicker, e) {
       if (e.keyCode === 13) {
-        this.send('setDate', this.get('selected'));
+        this.send('setDate', this.get('selectedDate'));
         e.preventDefault();
       }
       if (e.keyCode === 39) {

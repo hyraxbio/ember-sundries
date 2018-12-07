@@ -9,37 +9,6 @@
   }
 }
 
-.in-page-alert.info {
-  color: $info-background-color;
-  svg {
-    fill: $info-background-color;
-  }
-}
-
-.in-page-alert.success {
-  color: $success-background-color;
-  svg {
-    background: $success-background-color;
-    fill: #fff;
-    box-sizing: border-box;
-    padding: 4px;
-    @include border-radius($radiusSize: 50%);
-  }
-}
-.in-page-alert.error {
-  color: $error-background-color;
-  svg {
-    fill: $error-background-color;
-  }
-}
-
-.in-page-alert.warning {
-  color: $warning-background-color;
-  svg {
-    fill: $warning-background-color;
-  }
-}
-
 .in-page-alert {
   margin-bottom: 20px;
   h1, h2, h3, h4 {
@@ -58,6 +27,5 @@
 
   a:hover, .fake-link:hover {
     color: #222;
-
   }
 }

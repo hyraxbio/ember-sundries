@@ -3,11 +3,8 @@ div.pop-up-box {
   max-width: 340px;
   padding: 15px;
   background: #fff;
-  @include box-shadow-bottom-right;
   border: 1px solid #bbb;
-  border-radius: $button-border-radius;
-  -moz-border-radius: $button-border-radius;
-  -webkit-border-radius: $button-border-radius;
+  border-radius: $pop-up-box-border-radius;
   margin: 10px 0;
 }
 
@@ -18,16 +15,6 @@ div.pop-up-box.closed {
 div.pop-up-box.open {
 	display: block;
 }
-
-div.red.pop-up-box {
-	// border-color: $error-background-color;
-}
-
-div.green.pop-up-box {
-	// border-color: $success-background-color;
-}
-
-
 
 div.pop-up-box div.close-button {
 	float: right;

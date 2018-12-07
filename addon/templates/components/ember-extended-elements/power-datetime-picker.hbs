@@ -1,5 +1,5 @@
 {{#power-datepicker
-  selected=selected onSelect=(action "setDate" value="date") closeOnSelect=false onCenterChange=(action (mut center) value="date") center=center as |dp|}}
+  selected=selectedDate onSelect=(action "setDate" value="date") closeOnSelect=false onCenterChange=(action (mut center) value="date") center=center as |dp|}}
   {{#dp.trigger tabindex="-1" onKeyDown=(action "onTriggerKeydown") }}
     <button type="button" class="date-button" data-test-type="power-datepicker-date-trigger" readonly onfocus={{action "onTriggerFocus" dp}}>
       {{svg/icon-calendar}}
@@ -14,7 +14,7 @@
       {{/if}}
     </button>
   {{/dp.trigger}}
-  {{#dp.content class="demo-datepicker-small ember-power-calendar" }}
+  {{#dp.content class="power-datetime-picker-calendar ember-power-calendar" }}
     <nav class="ember-power-calendar-nav">
       <button type="button" class="{{unless navButtons.previousYear "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp -12 "month"}} data-test-id="power-calendar-nav-previous-year" disabled={{not navButtons.previousYear}}>«</button>
       <button type="button" class="{{unless navButtons.previousMonth "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp -1 "month"}} data-test-id="power-calendar-nav-previous-month" disabled={{not navButtons.previousMonth}}>‹</button>
