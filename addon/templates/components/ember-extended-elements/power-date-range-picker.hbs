@@ -1,0 +1,34 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger class="user-greeting"}}
+      <button class="btn-content">
+        {{#if range}}
+        {{#if range.start}}
+          From {{moment-format range.start dateDisplayFormat}}
+        {{/if}}
+        {{#if range.end}}
+          to {{moment-format range.end dateDisplayFormat}}
+        {{/if}}
+        {{else}}
+          {{#if dateButtonText}}
+            {{dateButtonText}}
+          {{else}}
+            Select range
+          {{/if}}
+        {{/if}}
+    </button>
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    {{#power-calendar-range
+      center=center
+      selected=range
+      minRange=minRange
+      maxRange=maxRange
+      startTime=startTime
+      endTime=endTime
+      onCenterChange=(action (mut center) value="date")
+      onSelect=(action "rangeSelected" value="date") as |calendar|}}
+      {{calendar.nav}}
+      {{calendar.days minDate=minDate maxDate=maxDate}}
+    {{/power-calendar-range}}
+  {{/dropdown.content}}
+{{/basic-dropdown}}

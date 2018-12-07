@@ -14,7 +14,7 @@
       {{/if}}
     </button>
   {{/dp.trigger}}
-  {{#dp.content class="power-datetime-picker-calendar ember-power-calendar" }}
+  {{#dp.content class="ember-power-calendar" }}
     <nav class="ember-power-calendar-nav">
       <button type="button" class="{{unless navButtons.previousYear "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp -12 "month"}} data-test-id="power-calendar-nav-previous-year" disabled={{not navButtons.previousYear}}>«</button>
       <button type="button" class="{{unless navButtons.previousMonth "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp -1 "month"}} data-test-id="power-calendar-nav-previous-month" disabled={{not navButtons.previousMonth}}>‹</button>
@@ -70,3 +70,5 @@
 {{#if value}}
   <div class="clear-date-time-button" data-test-id="datetime-picker-clear-datetime" onclick={{action "clearDateTime"}}>×</div>
 {{/if}}
+
+time

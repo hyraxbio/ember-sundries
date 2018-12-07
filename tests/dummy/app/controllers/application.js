@@ -3,29 +3,33 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   init() {
     this.formField = {
-      fieldLabel: "Birth date",
-      fieldId: "personal_details.birth_date",
-      fieldType: "powerDatePicker",
+      fieldLabel: "Test",
+      fieldId: "test",
+      fieldType: "dateRange",
       validationRules: [{ 'validationMethod': 'required' }, { 'validationMethod': 'isDate' }],
       validationEvents: ['insert'],
-      minDate: moment("2016-11-05").toDate(),
-      maxDate: moment("2019-12-05").toDate(),
-      allowNavigationOutOfRange: false,
+      minDate: moment("2015-11-05").toDate(),
+      maxDate: moment("2020-12-05").toDate(),
       calendarStartMonth: '09/2018',
-      defaultDate: moment("2018-08-28").toDate(),
-      // dateFormat:'YYYY/MM/DD',
-      // defaultTime: '12:07',
-      timeSelect: true,
-      // dateButtonText: 'Test date',
-      // timeButtonText: 'Test time'
-    }
+      dateFormat:'YYYY/MM/DD',
+      start: {
+        defaultDate: moment("2018-08-28").toDate(),
+        time: '12:07',
+      },
+      end: {
+        defaultDate: moment("2019-08-28").toDate(),
+        time: '23:59',
+      }
+    };
   },
+  center: new Date('2016-05-17'),
+  minDate: moment("2018-11-05").toDate(),
 
   actions: {
-    onUserInteraction(value, two) {
+    onUserInteraction(value) {
       console.log(value);
-      console.log(two);
-      this.set('formField.value', value);
-    }
+    },
+
+
   }
 });

@@ -1,4 +1,4 @@
-{{ember-extended-elements/power-datetime-picker
+{{!-- {{ember-extended-elements/power-datetime-picker
   formField=formField
   value=formField.value
   dateButtonComponent=formField.dateButtonComponent
@@ -14,6 +14,24 @@
   defaultTime=formField.defaultTime
   defaultDate=formField.defaultDate
   onSelectDateTime=(action 'onUserInteraction')
+}} --}}
+
+
+{{ember-extended-elements/power-date-range-picker
+  formField=formField
+  value=formField.value
+  dateButtonComponent=formField.dateButtonComponent
+  dateButtonText=formField.dateButtonText
+  minDate=formField.minDate
+  maxDate=formField.maxDate
+  name=formField.name
+  dateFormat=formField.dateFormat
+  defaultStartDate=formField.defaultDate
+  startTime=formField.start.time
+  endTime=formField.end.time
+  start=formField.start
+  end=formField.end
+  onSelectDateRange=(action 'onUserInteraction')
 }}
 
 
@@ -21,3 +39,12 @@
 {{!-- {{#power-calendar as |calendar|}}
   {{calendar.days class="demo-calendar-small"}}
 {{/power-calendar}} --}}
+
+{{!-- {{#power-calendar-range
+  center=center
+  selected=range
+  onSelect=(action "setDate" value="date") as |calendar|}}
+  {{calendar.nav}}
+  {{calendar.days}}
+{{/power-calendar-range}} --}}
+

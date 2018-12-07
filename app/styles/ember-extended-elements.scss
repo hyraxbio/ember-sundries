@@ -17,7 +17,7 @@ $draggable-dropzone-border-color: gray !default;
 $draggable-dropzone-activated-color: blue !default;
 $draggable-dropzone-activated-border-color: blue !default;
 
-.power-datetime-picker-calendar {
+.ember-power-calendar {
   @include ember-power-calendar($cell-size: 30px);
 }
 

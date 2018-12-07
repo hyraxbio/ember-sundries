@@ -172,3 +172,5 @@ export default Component.extend({
     return true;
   },
 });
+// TODO
+// Bundle ember truth helpers or remove or statements
