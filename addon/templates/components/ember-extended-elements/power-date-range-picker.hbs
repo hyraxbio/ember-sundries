@@ -2,12 +2,12 @@
   {{#dropdown.trigger class="user-greeting"}}
       <button class="btn-content">
         {{#if range}}
-        {{#if range.start}}
-          From {{moment-format range.start dateDisplayFormat}}
-        {{/if}}
-        {{#if range.end}}
-          to {{moment-format range.end dateDisplayFormat}}
-        {{/if}}
+          {{#if range.start}}
+            From {{moment-format range.start dateDisplayFormat}}
+          {{/if}}
+          {{#if range.end}}
+            to {{moment-format range.end dateDisplayFormat}}
+          {{/if}}
         {{else}}
           {{#if dateButtonText}}
             {{dateButtonText}}

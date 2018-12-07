@@ -8,16 +8,16 @@ export default Controller.extend({
       fieldType: "dateRange",
       validationRules: [{ 'validationMethod': 'required' }, { 'validationMethod': 'isDate' }],
       validationEvents: ['insert'],
-      minDate: moment("2015-11-05").toDate(),
+      minDate: moment("2013-11-05").toDate(),
       maxDate: moment("2020-12-05").toDate(),
       calendarStartMonth: '09/2018',
       dateFormat:'YYYY/MM/DD',
       start: {
-        defaultDate: moment("2018-08-28").toDate(),
+        defaultDate: moment("2015-08-28").toDate(),
         time: '12:07',
       },
       end: {
-        defaultDate: moment("2019-08-28").toDate(),
+        defaultDate: moment("2023-08-28").toDate(),
         time: '23:59',
       }
     };

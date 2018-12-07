@@ -11,12 +11,31 @@ export default Component.extend({
   attributeBindings: ['dataTestType:data-test-type', 'data-test-id'],
 
   didInsertElement() {
-    this.set('range', {});
-    if (this.get('start.defaultDate')) {
-      this.set('range.start', this.get('start.defaultDate'));
+    var minDate = this.get('minDate');
+    var maxDate = this.get('maxDate');
+    var defaultStartDate = this.get('start.defaultDate');
+    var defaultEndDate = this.get('end.defaultDate');
+
+    if (defaultStartDate < minDate) {
+      defaultStartDate = minDate;
+      console.warn('Your default start date is before the earliest allowed date. It has been changed to the earliest allowed date.');
     }
-    if (this.get('end.defaultDate')) {
-      this.set('range.end', this.get('end.defaultDate'));
+
+    if (defaultEndDate > maxDate) {
+      defaultEndDate = maxDate;
+      console.warn('Your default end date is after the latest allowed date. It has been changed to the latest allowed date.');
+    }
+
+    if (minDate > maxDate) {
+      throw Error('You have added a date range component where the earliest allowed date is after the latest allowed date. As such, users will not be able to select any dates.');
+    }
+
+    this.set('range', {});
+    if (defaultStartDate) {
+      this.set('range.start', defaultStartDate);
+    }
+    if (defaultEndDate) {
+      this.set('range.end', defaultEndDate);
     }
   },
 
