@@ -13,8 +13,8 @@ export default Component.extend({
   didInsertElement() {
     var minDate = this.get('minDate');
     var maxDate = this.get('maxDate');
-    var defaultStartDate = this.get('start.defaultDate');
-    var defaultEndDate = this.get('end.defaultDate');
+    var defaultStartDate = this.get('defaultStartDate');
+    var defaultEndDate = this.get('defaultEndDate');
 
     if (defaultStartDate < minDate) {
       defaultStartDate = minDate;
@@ -39,7 +39,6 @@ export default Component.extend({
       range.end = defaultEndDate;
       this.onSelectDateRange(range);
     }
-
   },
 
   dateDisplayFormat: computed('dateFormat', function() {

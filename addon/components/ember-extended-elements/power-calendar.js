@@ -11,7 +11,6 @@ export default Component.extend({
     },
 
     onTriggerKeydown(datepicker, e) {
-      console.log('onTriggerKeydown');
       if (e.keyCode === 13) {
         this.send('setDate', this.get('selectedDate'));
         e.preventDefault();

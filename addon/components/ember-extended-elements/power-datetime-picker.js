@@ -18,7 +18,6 @@ export default Component.extend({
   },
 
   didInsertElement: function() {
-    console.log(this.get('defaultDate'));
     if (this.get('defaultDate')) {
       this.set('selectedDate', this.get('defaultDate'));
     }
