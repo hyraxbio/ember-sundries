@@ -30,13 +30,16 @@ export default Component.extend({
       throw Error('You have added a date range component where the earliest allowed date is after the latest allowed date. As such, users will not be able to select any dates.');
     }
 
-    this.set('range', {});
+    var range = {};
     if (defaultStartDate) {
-      this.set('range.start', defaultStartDate);
+      range.start = defaultStartDate;
+      this.onSelectDateRange(range);
     }
     if (defaultEndDate) {
-      this.set('range.end', defaultEndDate);
+      range.end = defaultEndDate;
+      this.onSelectDateRange(range);
     }
+
   },
 
   dateDisplayFormat: computed('dateFormat', function() {
@@ -46,16 +49,9 @@ export default Component.extend({
   dataTestType: "power-datetime-picker",
   actions: {
     rangeSelected(range) {
-      this.set('range', range);
       range.start = updateTime(range.start, this.get('startTime'));
       range.end = updateTime(range.end, this.get('endTime'));
-      var value;
-      if (!range.start || !range.end) {
-        value = null;
-      } else {
-        value = range;
-      }
-      this.onSelectDateRange(value);
+      this.onSelectDateRange(range);
     }
   }
 });

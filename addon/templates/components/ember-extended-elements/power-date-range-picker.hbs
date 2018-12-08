@@ -1,12 +1,12 @@
 {{#basic-dropdown as |dropdown|}}
   {{#dropdown.trigger class="user-greeting"}}
       <button class="btn-content">
-        {{#if range}}
-          {{#if range.start}}
-            From {{moment-format range.start dateDisplayFormat}}
+        {{#if value}}
+          {{#if value.start}}
+            From {{moment-format value.start dateDisplayFormat}}
           {{/if}}
-          {{#if range.end}}
-            to {{moment-format range.end dateDisplayFormat}}
+          {{#if value.end}}
+            to {{moment-format value.end dateDisplayFormat}}
           {{/if}}
         {{else}}
           {{#if dateButtonText}}
@@ -20,7 +20,7 @@
   {{#dropdown.content}}
     {{#power-calendar-range
       center=center
-      selected=range
+      selected=value
       minRange=minRange
       maxRange=maxRange
       startTime=startTime
