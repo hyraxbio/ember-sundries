@@ -1,5 +1,5 @@
 {{#basic-dropdown as |dropdown|}}
-  {{#dropdown.trigger class="user-greeting"}}
+  {{#dropdown.trigger}}
       <button class="btn-content">
         {{#if value}}
           {{#if value.start}}
@@ -27,7 +27,15 @@
       endTime=endTime
       onCenterChange=(action (mut center) value="date")
       onSelect=(action "rangeSelected" value="date") as |calendar|}}
-      {{calendar.nav}}
+      <nav class="ember-power-calendar-nav">
+        <button type="button" class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter -12 'month'}}>«</button>
+        <button type="button" class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter -1 'month'}}>‹</button>
+        <div class="ember-power-calendar-nav-title">
+          {{moment-format calendar.center 'MMMM YYYY'}}
+        </div>
+        <button class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter 1 'month'}}>›</button>
+        <button class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter 12 'month'}}>»</button>
+      </nav>
       {{calendar.days minDate=minDate maxDate=maxDate}}
     {{/power-calendar-range}}
   {{/dropdown.content}}

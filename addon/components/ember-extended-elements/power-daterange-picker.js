@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../../templates/components/ember-extended-elements/power-date-range-picker';
+import layout from '../../templates/components/ember-extended-elements/power-daterange-picker';
 import updateTime from '../../utils/update-time';
 import { computed } from '@ember/object';
 import { observer } from '@ember/object';
