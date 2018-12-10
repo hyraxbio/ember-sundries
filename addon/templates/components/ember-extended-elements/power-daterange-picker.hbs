@@ -3,10 +3,10 @@
     <button class="{{triggerClasses}}" type="button">
       {{#if value}}
         {{#if value.start}}
-          From {{moment-format value.start dateDisplayFormat}}
+          {{moment-format value.start dateDisplayFormat}}
         {{/if}}
         {{#if value.end}}
-          to {{moment-format value.end dateDisplayFormat}}
+          {{moment-format value.end dateDisplayFormat}}
         {{/if}}
       {{else}}
         {{#if dateButtonText}}

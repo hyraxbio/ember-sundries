@@ -31,11 +31,8 @@ export default Component.extend({
     }
 
     var range = {};
-    if (defaultStartDate) {
+    if (defaultStartDate || defaultEndDate) {
       range.start = defaultStartDate;
-      this.onSelectDateRange(range);
-    }
-    if (defaultEndDate) {
       range.end = defaultEndDate;
       this.onSelectDateRange(range);
     }
@@ -51,6 +48,18 @@ export default Component.extend({
       range.start = updateTime(range.start, this.get('startTime'));
       range.end = updateTime(range.end, this.get('endTime'));
       this.onSelectDateRange(range);
+    },
+
+    onOpen() {
+      if (this.onOpen) {
+        this.onOpen();
+      }
+    },
+
+    onClose() {
+      if (this.onClose) {
+        this.onClose();
+      }
     }
   }
 });
