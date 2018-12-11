@@ -42,6 +42,10 @@ export default Component.extend({
     return this.get('dateFormat') || 'DD-MM-YYYY';
   }),
 
+  noDatesSelected: computed('value', function() {
+    return !this.get('value.start') && !this.get('value.end');
+  })
+
   dataTestType: "power-datetime-picker",
   actions: {
     rangeSelected(range) {

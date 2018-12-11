@@ -1,19 +1,18 @@
 {{#basic-dropdown as |dropdown|}}
   {{#dropdown.trigger}}
-    <button class="{{triggerClasses}}" type="button">
-      {{#if value}}
+      <div class="input">
         {{#if value.start}}
           {{moment-format value.start dateDisplayFormat}}
         {{/if}}
         {{#if value.end}}
-          {{moment-format value.end dateDisplayFormat}}
+          &nbsp;&nbsp;-&nbsp;&nbsp; {{moment-format value.end dateDisplayFormat}}
         {{/if}}
+      </div>
+    <button class="{{triggerClasses}}" type="button">
+      {{#if noDatesSelected}}
+        Select
       {{else}}
-        {{#if dateButtonText}}
-          {{dateButtonText}}
-        {{else}}
-          Select range
-        {{/if}}
+        Update
       {{/if}}
     </button>
   {{/dropdown.trigger}}
