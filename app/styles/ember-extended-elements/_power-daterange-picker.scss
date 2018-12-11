@@ -1,0 +1,13 @@
+.ember-power-daterange-picker {
+  .ember-basic-dropdown-trigger {
+    display: flex;
+    div.input {
+      display: inline-flex;
+      margin-right: 8px;
+      min-width: 202px;
+    }
+    button {
+      flex-grow: 1;
+    }
+  }
+}
