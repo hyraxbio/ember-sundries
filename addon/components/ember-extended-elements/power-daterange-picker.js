@@ -9,6 +9,7 @@ export default Component.extend({
   layout,
   classNames: ['ember-power-daterange-picker'],
   attributeBindings: ['dataTestType:data-test-type', 'data-test-id'],
+  dataTestType: "power-daterange-picker",
 
   didInsertElement() {
     var minDate = this.get('minDate');
@@ -44,9 +45,8 @@ export default Component.extend({
 
   noDatesSelected: computed('value', function() {
     return !this.get('value.start') && !this.get('value.end');
-  })
+  }),
 
-  dataTestType: "power-datetime-picker",
   actions: {
     rangeSelected(range) {
       range.start = updateTime(range.start, this.get('startTime'));

@@ -7,16 +7,3 @@ div.pop-up-box {
   border-radius: $pop-up-box-border-radius;
   margin: 10px 0;
 }
-
-div.pop-up-box.closed {
-	display: none;
-}
-
-div.pop-up-box.open {
-	display: block;
-}
-
-div.pop-up-box div.close-button {
-	float: right;
-	margin: -10px -10px  0 0;
-}
