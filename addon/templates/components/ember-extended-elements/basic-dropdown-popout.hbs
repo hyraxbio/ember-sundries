@@ -1,4 +1,4 @@
-{{#basic-dropdown verticalPosition=verticalPosition horizontalPosition=horizontalPosition renderInPlace=renderInPlace initiallyOpened=initiallyOpened as |dropdown|}}
+{{#basic-dropdown verticalPosition=verticalPosition horizontalPosition=horizontalPosition renderInPlace=renderInPlace initiallyOpened=initiallyOpened onOpen=(action onOpen) onClose=(action onCLose) as |dropdown|}}
   {{#dropdown.trigger class=triggerClasses}}
     {{yield "trigger"}}
   {{/dropdown.trigger}}

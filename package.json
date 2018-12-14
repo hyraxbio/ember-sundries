@@ -25,7 +25,8 @@
     "ember-radio-button": "^1.2.3",
     "ember-power-calendar": "^0.9.1",
     "ember-power-datepicker": "^0.5.2",
-    "ember-power-select": "^2.0.9"
+    "ember-power-select": "^2.0.9",
+    "ember-perfect-scrollbar": "0.0.4"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
