@@ -4,7 +4,7 @@ import layout from '../../templates/components/ember-extended-elements/file-sele
 export default Component.extend({
   layout,
   type: 'div',
-  classNames: ['input-file-wrapper', 'button'],
+  classNames: ['input-file-wrapper'],
   classNameBindings: ['classes'],
 
   actions: {
