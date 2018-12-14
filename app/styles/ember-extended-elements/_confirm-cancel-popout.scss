@@ -1,3 +1,9 @@
 div.confirm-cancel-content {
-
+  .option-buttons {
+    display: flex;
+    .confirm {
+      flex-grow: 1;
+      margin-right: $spacer-md;
+    }
+  }
 }

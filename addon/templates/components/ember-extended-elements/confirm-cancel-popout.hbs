@@ -1,19 +1,18 @@
 {{#basic-dropdown as |dropdown|}}
   {{#dropdown.trigger}}
-	  <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}} {{'spinner-container'}}">{{component mainButtonIcon}}{{mainButtonText}}
+    <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}} {{'spinner-container'}}">{{component mainButtonIcon}}{{mainButtonText}}
       {{svg-repo/icons/icon-cog class=(concat (if requestInFlight 'on') 'on spinner button-right')}}
     </button>
   {{/dropdown.trigger}}
   {{#dropdown.content}}
-  	<div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-content confirm-cancel-content'}} border-{{colorScheme}}">
-      <div class="close-button" {{action 'closePopoutBox' dropdown}} value="Close">{{svg-repo/icons/icon-cross}}</div>
-  		{{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
-			{{yield}}
-			<div class="option-buttons">
-			    <button class="confirm btn btn-{{colorScheme}}" {{action 'confirm' dropdown}}>Confirm</button>
-			    <button class="cancel btn btn-outline-gray-medium" onclick={{action "closePopoutBox" dropdown}}>Cancel</button>
-			    <div class="clr"></div>
-			</div>
-		</div>
+    <div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-content confirm-cancel-content'}} border-{{colorScheme}}">
+      {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
+      {{yield}}
+      <div class="option-buttons">
+          <button class="confirm btn btn-{{colorScheme}}" {{action 'confirm' dropdown}}>Confirm</button>
+          <button class="cancel btn btn-outline-gray-medium" onclick={{action "closePopoutBox" dropdown}}>Cancel</button>
+          <div class="clr"></div>
+      </div>
+    </div>
   {{/dropdown.content}}
 {{/basic-dropdown}}
