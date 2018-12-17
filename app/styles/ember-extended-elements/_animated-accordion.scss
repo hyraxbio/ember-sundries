@@ -1,55 +1,58 @@
-div.accordion-item {
+.accordion-item {
   border: 0px solid #ccc;
   margin-bottom: 15px;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.04);
   background: #fff;
+  &.open,
+  &:hover {
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.04);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+   .accordion-item-header {
+    padding: 15px 60px 15px 15px;
+    cursor: pointer;
+    position: relative;
+  }
+
+   .accordion-item-header svg {
+    width: 26px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    fill: $animated-accordion-header-icon-fill;
+  }
+
+   .accordion-item-header:hover svg {
+    fill: $animated-accordion-header-icon-hover-fill;
+  }
+
+   .accordion-item-header h4 {
+    margin-bottom: 0;
+    font-size: $animated-accordion-header-font-size;
+    text-transform: none;
+  }
+
+  &.open .accordion-item-content {
+    display: block;
+  }
+
+   .accordion-item-content {
+    overflow: hidden;
+    display: none;
+  }
+
+  .accordion-item-content-inner {
+    padding: 0 15px 15px 15px;
+    background: #fff;
+  }
 }
 
-div.accordion-item.open,
-div.accordion-item:hover {
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.04);
-}
-
-div.accordion-item:last-child {
-  margin-bottom: 0;
-}
-
-div.accordion-item div.accordion-item-header {
-  padding: 15px 60px 15px 15px;
-  cursor: pointer;
-  position: relative;
-}
-
-div.accordion-item div.accordion-item-header svg {
-  width: 26px;
-  position: absolute;
-  right: 20px;
-  top: 25px;
-  fill: $animated-accordion-header-icon-fill;
-}
-
-div.accordion-item div.accordion-item-header:hover svg {
-  fill: $animated-accordion-header-icon-hover-fill;
-}
-
-div.accordion-item div.accordion-item-header h4 {
-  margin-bottom: 0;
-  font-size: $animated-accordion-header-font-size;
-  text-transform: none;
-}
-
-div.accordion-item.open div.accordion-item-content {
-  display: block;
-}
-
-div.accordion-item div.accordion-item-content {
-  overflow: hidden;
-  display: none;
-}
-
-div.accordion-item div.accordion-item-content-inner {
-  padding: 0 15px 15px 15px;
-  background: #fff;
+.body-content .accordion-item-header h4 {
+  font-size: #{$animated-accordion-header-font-size/$body-content-text-font-size}em;
 }
