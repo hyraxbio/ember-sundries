@@ -1,0 +1,9 @@
+export default function sanitiseClassname(className) {
+  var reg = /^\d+$/;
+  var className = className.replace(/[^0-9a-zA-Z_-]/g, '').toLowerCase();
+  var firstChar = className.split('')[0]; 
+  if (reg.test(firstChar)) {
+    className = `n-${className}`
+  }
+  return className;
+}
