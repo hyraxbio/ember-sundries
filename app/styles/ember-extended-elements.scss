@@ -34,4 +34,7 @@ $radio-button-checkbox-vertical-offset: 0 !default;
   @import "ember-extended-elements/_power-datetime-picker";
   @import "ember-extended-elements/_ember-basic-dropdown";
   @import "ember-extended-elements/_power-daterange-picker";
+  @import "ember-extended-elements/filtered-data-table/_data-table-filter-controls";
+  @import "ember-extended-elements/filtered-data-table/_data-table-pagination-controls";
+  @import "ember-extended-elements/filtered-data-table/_data-table";
 }

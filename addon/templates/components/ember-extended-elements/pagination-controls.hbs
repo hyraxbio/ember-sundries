@@ -1,0 +1,20 @@
+<div class='page-navigation'>
+  {{#if paginationObject.prev}}
+    <div onclick={{action setProperty "page" paginationObject.first.number}} class="incrementing-arrow-double left-right margin-right-md" title='First'>{{svg-repo/icons/icon-arrow-left-double}}</div>
+    <div onclick={{action setProperty "page" paginationObject.prev.number}} class="incrementing-arrow left-right right margin-right-md" title='Previous'>{{svg-repo/icons/icon-arrow-left}}</div>
+  {{/if}}
+    <div class="page-number-input">Page
+    {{input value=(readonly paginationObject.self.number) change=(action (action setProperty "page") value="target.value")}}
+  of {{paginationObject.last.number}}</div>
+  {{#if paginationObject.next}}
+    <div onclick={{action setProperty "page" paginationObject.next.number}} class="incrementing-arrow left-right margin-left-md" title='Next'>{{svg-repo/icons/icon-arrow-right}}</div>
+    <div onclick={{action setProperty "page" paginationObject.last.number}} class="incrementing-arrow-double left-right margin-left-md" title='Last'>{{svg-repo/icons/icon-arrow-right-double}}</div>
+  {{/if}}
+</div>
+<div class='page-size'>
+  <div class="arrows">
+    <button onclick={{action setProperty "size" modelMetaData.page_size_increment}} class="incrementing-arrow up-down up btn-content" title='Next'>{{svg-repo/icons/icon-arrow-up}}</button>
+    <button onclick={{action setProperty "size" modelMetaData.page_size_decrement}} class="incrementing-arrow up-down down btn-content" title='Last'>{{svg-repo/icons/icon-arrow-down}}</button>
+  </div>
+    <span class="page-size">{{modelMetaData.page_size}}</span> items per page
+</div>
