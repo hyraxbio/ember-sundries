@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../../../templates/components/hyrax-ember-assets/paginated-table/pagination-controls';
+import layout from '../../templates/components/ember-extended-elements/pagination-controls';
 import { computed } from '@ember/object';
 import $ from 'jquery';
 
