@@ -1,7 +1,7 @@
 {{#basic-dropdown as |dropdown|}}
   {{#dropdown.trigger}}
-    <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}} {{'spinner-container'}}">{{component mainButtonIcon}}{{mainButtonText}}
-      {{svg-repo/icons/icon-cog class=(concat (if requestInFlight 'on') 'on spinner button-right')}}
+    <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}">{{component mainButtonIcon}}{{mainButtonText}}
+      {{svg-repo/icons/icon-cog class=(concat (if requestInFlight 'on') ' spinner button-right')}}
     </button>
   {{/dropdown.trigger}}
   {{#dropdown.content}}
