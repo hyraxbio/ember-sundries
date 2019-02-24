@@ -17,12 +17,15 @@
     </button>
   {{/dropdown.trigger}}
   {{#dropdown.content}}
+  Test
+  {{minRange}}
+  {{maxRange}}
     <div class={{calendarContainerClasses}}>
       {{#power-calendar-range
         center=center
         selected=value
-        minRange=minRange
-        maxRange=maxRange
+        minDate=minDate
+        maxDate=maxDate
         startTime=startTime
         endTime=endTime
         onCenterChange=(action (mut center) value="date")
