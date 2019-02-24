@@ -3,6 +3,7 @@ import EmberObject from '@ember/object';
 
 export default Controller.extend({
   init() {
+    this._super(...arguments);
     this.formField = EmberObject.create({
       fieldLabel: "Test",
       fieldId: "test",

@@ -4,3 +4,7 @@ $gray-dark: #333;
 $body-content-text-font-size: 1.4em;
 $spacer-md: 8px;
 @import "ember-extended-elements";
+
+input {
+  border: 1px solid #ccc;
+}

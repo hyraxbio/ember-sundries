@@ -2,20 +2,20 @@
 @import "ember-power-calendar";
 @import "ember-power-select";
 
-$power-datetime-picker-time-select-background-color: $primary !default;
+$power-datetime-picker-time-select-background-color: gray !default;
 $power-datetime-picker-time-select-border-radius: 3px !default;
 $power-datetime-picker-time-select-trigger-color: #fff !default;
 $power-datetime-picker-time-select-disabled-background-color: gray !default;
 
 $animated-accordion-header-font-size: 2em !default;
-$animated-accordion-header-icon-hover-fill: $primary !default;
+$animated-accordion-header-icon-hover-fill: gray !default;
 $animated-accordion-header-icon-fill: gray !default;
 
 $pop-up-box-border-radius: 3px !default;
 
-$draggable-dropzone-border-color: $gray-light !default;
-$draggable-dropzone-activated-color: $gray-light !default;
-$draggable-dropzone-activated-border-color: $gray-dark !default;
+$draggable-dropzone-border-color: gray!default;
+$draggable-dropzone-activated-color: gray!default;
+$draggable-dropzone-activated-border-color: gray !default;
 
 $radio-button-checkbox-vertical-offset: 0 !default;
 
