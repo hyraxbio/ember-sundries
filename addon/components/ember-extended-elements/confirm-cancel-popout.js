@@ -7,6 +7,12 @@ export default Component.extend({
   classNames: ['confirm-cancel-container'],
   classNameBindings: ['containerClasses', 'colorScheme'],
 
+  didInsertElement() {
+    if (this.get('positionStatic')) {
+      this.set('renderInPlace', true);
+    }
+  },
+
   actions: {
     closePopoutBox: function(dropdown) {
       dropdown.actions.close();

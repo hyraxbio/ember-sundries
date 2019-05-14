@@ -1,10 +1,10 @@
-{{#basic-dropdown as |dropdown|}}
+{{#basic-dropdown renderInPlace=renderInPlace onOpen=onOpen onClose=onClose as |dropdown|}}
   {{#dropdown.trigger}}
     <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}">{{component mainButtonIcon}}{{mainButtonText}}
       {{svg-repo/icons/icon-cog class=(concat (if requestInFlight 'on') ' spinner button-right')}}
     </button>
   {{/dropdown.trigger}}
-  {{#dropdown.content}}
+  {{#dropdown.content class=(if positionStatic "position-static")}}
     <div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-content confirm-cancel-content'}} border-{{colorScheme}}">
       {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
       {{yield}}

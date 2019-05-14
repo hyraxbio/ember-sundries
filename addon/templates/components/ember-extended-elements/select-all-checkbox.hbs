@@ -1,8 +1,3 @@
 {{#if relatedCollection}}
-  <div class="input-radio-checkbox">
-    <div class="radio-checkbox-dummy" onclick={{action "sendChangedAction"}}>
-      {{svg/radio-button-checkbox-graphics}}
-    </div>
-  </div>
-  {{#if label}}<label>{{label}}</label>{{/if}}
+  {{ember-extended-elements/labelled-checkbox changedAction=(action "sendChangedAction")}}
 {{/if}}
