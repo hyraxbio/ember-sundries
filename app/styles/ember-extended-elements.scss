@@ -29,6 +29,7 @@ $svg-data-uri-icon-tick: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.
 
 .ember-application {
   @import "ember-extended-elements/_labelled-checkbox";
+  @import "ember-extended-elements/_labelled-radio-button";
   @import "ember-extended-elements/_file-select";
   @import "ember-extended-elements/_file-drop";
   @import "ember-extended-elements/_in-page-alert";
