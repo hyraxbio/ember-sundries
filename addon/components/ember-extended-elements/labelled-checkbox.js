@@ -6,7 +6,8 @@ export default Component.extend({
   tagName: "div",
   classNames: ["labelled-checkbox"],
   classNameBindings: ["disabled:disabled"],
-
+  attributeBindings: ['dataTestId:data-test-id'],
+  
   actions: {
     checkboxClicked: function(value) {
       if (this.changedAction) {

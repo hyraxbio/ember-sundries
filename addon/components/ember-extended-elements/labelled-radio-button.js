@@ -5,5 +5,6 @@ export default Component.extend({
   layout,
   tagName: "div",
   classNames: ["labelled-radio-button"],
-  classNameBindings: ["disabled:disabled"]
+  classNameBindings: ["disabled:disabled"],
+  attributeBindings: ['dataTestId:data-test-id']
 });

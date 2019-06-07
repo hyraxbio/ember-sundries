@@ -1,5 +1,6 @@
 <div class='accordion-item-header' {{action 'toggleAccordion'}}>
   <h4>{{title}}</h4>
+  {{component headerComponent props=props}}
   {{component expandCollapseIcon}}
 </div>
 {{#if open}}
