@@ -1,6 +1,6 @@
 {{#basic-dropdown renderInPlace=renderInPlace onOpen=onOpen onClose=onClose as |dropdown|}}
   {{#dropdown.trigger}}
-    <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}">{{component mainButtonIcon}}{{mainButtonText}}
+    <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}" data-test-class="trigger">{{component mainButtonIcon}}{{mainButtonText}}
       {{svg-repo/icons/icon-cog class=(concat (if requestInFlight 'on') ' spinner button-right')}}
     </button>
   {{/dropdown.trigger}}
@@ -9,9 +9,8 @@
       {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
       {{yield}}
       <div class="option-buttons">
-          <button class="confirm btn btn-{{colorScheme}}" {{action 'confirm' dropdown}}>Confirm</button>
-          <button class="cancel btn btn-outline-gray-medium" onclick={{action "closePopoutBox" dropdown}}>Cancel</button>
-          <div class="clr"></div>
+        <button class="confirm btn btn-{{colorScheme}}" {{action 'confirm' dropdown}} data-test-class="confirm">Confirm</button>
+        <button class="cancel btn btn-outline-gray-medium" onclick={{action "closePopoutBox" dropdown}} data-test-class="cancel">Cancel</button>
       </div>
     </div>
   {{/dropdown.content}}
