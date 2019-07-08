@@ -10,11 +10,17 @@ export default Component.extend({
   objectsArray: computed('object', function () {
     var levelPadding = this.get('levelPadding') || 16;
     var separator = this.get('separator') || ':';
-    // Stringify and parse object to avoid browser crash when an embr model (class) is passed.
-    var objectString = JSON.stringify(this.get('object'));
-    var object = JSON.parse(objectString);
+    var object = this.get('object')
+    // If an Ember model is passed, get the JSON from i9t before proceeding, to avoid craching the browser..
+   
+    // console.log(object instanceof DS.Model);
+    // console.log(object);
+    // // return;
     var array = [];
     var createObject = function (object, keyPrefix) {
+      if (object instanceof DS.Model) {
+        object = object.toJSON({includeId: true});
+      }
       for (var key in object) {
         var newObjectKey = keyPrefix ? `${keyPrefix}.${key}` : key;
         var level = newObjectKey.split('.').length;
@@ -27,12 +33,18 @@ export default Component.extend({
           style: escapedStyle,
           separator: separator
         };
+          
         if (typeof object[key] !== 'object') {
           newObject.value = object[key] || 'null';
           array.push(newObject);
         } else {
+          if (!object[key]) {
+            newObject.value = 'null';
+          } else {
+            createObject(object[key], newObjectKey);
+          }
           array.push(newObject);
-          createObject(object[key], newObjectKey);
+         
         }
       }
     };
