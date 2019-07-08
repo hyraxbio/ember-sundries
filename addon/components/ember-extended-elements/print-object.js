@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-extended-elements/print-object';
 import { computed } from '@ember/object';
+import DS from 'ember-data';
 
 export default Component.extend({
   layout,
@@ -9,7 +10,9 @@ export default Component.extend({
   objectsArray: computed('object', function () {
     var levelPadding = this.get('levelPadding') || 16;
     var separator = this.get('separator') || ':';
-    var object = this.get('object');
+    // Stringify and parse object to avoid browser crash when an embr model (class) is passed.
+    var objectString = JSON.stringify(this.get('object'));
+    var object = JSON.parse(objectString);
     var array = [];
     var createObject = function (object, keyPrefix) {
       for (var key in object) {
@@ -21,11 +24,11 @@ export default Component.extend({
           key: key,
           keyPath: newObjectKey,
           level: level,
-          style: escapedStyle
+          style: escapedStyle,
+          separator: separator
         };
         if (typeof object[key] !== 'object') {
-          newObject.value = object[key];
-          newObject.separator = separator;
+          newObject.value = object[key] || 'null';
           array.push(newObject);
         } else {
           array.push(newObject);
