@@ -8,13 +8,13 @@
           &nbsp;&nbsp;-&nbsp;&nbsp; {{moment-format value.end dateDisplayFormat}}
         {{/if}}
       </div>
-    <button class="{{triggerClasses}}" type="button">
+    {{!-- <button class="{{triggerClasses}}" type="button">
       {{#if noDatesSelected}}
         Select
       {{else}}
         Update
       {{/if}}
-    </button>
+    </button> --}}
   {{/dropdown.trigger}}
   {{#dropdown.content}}
     <div class={{calendarContainerClasses}}>

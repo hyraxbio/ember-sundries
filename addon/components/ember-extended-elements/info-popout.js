@@ -3,6 +3,19 @@ import layout from '../../templates/components/ember-extended-elements/info-popo
 
 export default Component.extend({
   layout,
-  classNames: ['info-popout'],
-  classNameBindings: ['classes'],
+  tagName: '',
+
+  actions: {
+    prevent() {
+      return false;
+    },
+
+    open(dropdown) {
+      dropdown.actions.open();
+    },
+
+    closeLater(dropdown) {
+      dropdown.actions.close();
+    }
+  }
 });

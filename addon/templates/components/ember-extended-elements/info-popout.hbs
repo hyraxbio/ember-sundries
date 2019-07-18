@@ -1,6 +1,21 @@
-{{#custom-elements/css-popout-toggler popoutBoxName=popoutBoxName class='info-toggler'}}
-	{{svg-repo/icons/icon-info}}
-{{/custom-elements/css-popout-toggler}}
-{{#custom-elements/css-popout-box popoutBoxName=popoutBoxName}}
-	{{yield}}
-{{/custom-elements/css-popout-box}}
+{{#basic-dropdown renderInPlace=renderInPlace onOpen=onOpen onClose=onClose as |dropdown|}}
+  {{#dropdown.trigger 
+		class='info-popout-trigger'
+		onMouseDown=(action "prevent")
+		onMouseEnter=(action "open")
+		onMouseLeave=(action "closeLater")
+	}}
+    <button class="btn-content {{if dropdown.isOpen 'active'}}" data-test-class="trigger">
+       {{svg-repo/icons/icon-info}}
+    </button>
+  {{/dropdown.trigger}}
+  {{#dropdown.content 
+		class=(if positionStatic "position-static")
+		onMouseEnter=(action "open")
+    onMouseLeave=(action "closeLater")
+	}}
+    <div class="{{popoutBoxClass}} pop-up-box box-arrow body-content border">
+      {{yield}}
+		</div>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

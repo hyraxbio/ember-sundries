@@ -10,12 +10,8 @@ export default Component.extend({
   objectsArray: computed('object', function () {
     var levelPadding = this.get('levelPadding') || 16;
     var separator = this.get('separator') || ':';
-    var object = this.get('object')
-    // If an Ember model is passed, get the JSON from i9t before proceeding, to avoid craching the browser..
-   
-    // console.log(object instanceof DS.Model);
-    // console.log(object);
-    // // return;
+    var object = this.get('object');
+    // If an Ember model is passed, get the JSON from it before proceeding, to avoid craching the browser..
     var array = [];
     var createObject = function (object, keyPrefix) {
       if (object instanceof DS.Model) {

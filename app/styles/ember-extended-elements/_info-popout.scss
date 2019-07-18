@@ -1,0 +1,16 @@
+.info-popout-trigger {
+  .btn-content {
+    border-radius: 50%;
+    border: 2px solid $gray-medium;
+    width: $spacer-xl;
+    height: $spacer-xl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  svg {
+    fill: $gray-medium;
+    margin: 0;
+  }
+}
