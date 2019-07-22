@@ -23,12 +23,13 @@ export default Controller.extend({
   center: new Date('2016-05-17'),
   minDate: moment("2018-11-05").toDate(),
 
+  names: ['Stefan', 'Miguel', 'Tomster', 'Pluto'],
+
   actions: {
     onUserInteraction(value) {
       this.set('formField.value', value);
       console.log(value);
     },
-
-
+    foo() { }
   }
 });

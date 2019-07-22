@@ -1,4 +1,4 @@
-{{ember-extended-elements/power-daterange-picker
+{{!-- {{ember-extended-elements/power-daterange-picker
   formField=formField
   value=formField.value
   dateButtonComponent=formField.dateButtonComponent
@@ -12,4 +12,10 @@
   startTime=formField.startTime
   endTime=formField.endTime
   onSelectDateRange=(action 'onUserInteraction')
-}}
+}} --}}
+
+Test
+
+{{#power-select options=names onchange=(action "foo") as |name|}}
+  {{name}}
+{{/power-select}}
