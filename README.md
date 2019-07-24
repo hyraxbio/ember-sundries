@@ -12,7 +12,7 @@ ember install ember-extended-fields
 
 ## Required addons
 
-There are some supporting addons which may or may not =need to be installed, depending on which components you want to use.
+There are some supporting addons which may or may not need to be installed, depending on which components you want to use.
 
 **ember-extended-elements/ember-perfect-scrollbar-container**
  
