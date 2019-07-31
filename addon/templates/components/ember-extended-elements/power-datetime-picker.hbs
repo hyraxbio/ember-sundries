@@ -1,18 +1,13 @@
 {{#power-datepicker
   selected=selectedDate onSelect=(action "setDate" value="date") closeOnSelect=false onCenterChange=(action (mut center) value="date") center=center as |dp|}}
   {{#dp.trigger tabindex="-1" onKeyDown=(action "onTriggerKeydown") }}
-    <button type="button" class="date-button" data-test-type="power-datepicker-date-trigger" readonly onfocus={{action "onTriggerFocus" dp}}>
-      {{svg/icon-calendar}}
+      {{svg-repo/icons/icon-calendar}}
       {{#if value}}
-        {{moment-format value dateDisplayFormat}}
+        <input type="text" data-test-type="power-datepicker-date-trigger" readonly onfocus={{action "onTriggerFocus" dp}} value={{readonly (moment-format value dateDisplayFormat) placeholder="Select Date"}} />
       {{else}}
-        {{#if dateButtonComponent}}
-          {{component dateButtonComponent}}
-        {{else}}
-          {{or dateButtonText "Select Date"}}
-        {{/if}}
+        <input readonly placeholder="Select Date" />
       {{/if}}
-    </button>
+      {{component dateSelectComponent}}
   {{/dp.trigger}}
   {{#dp.content class="ember-power-calendar" }}
     <nav class="ember-power-calendar-nav">
@@ -27,10 +22,9 @@
     {{dp.days minDate=minDate maxDate=maxDate}}
   {{/dp.content}}
 {{/power-datepicker}}
-{{#if timeSelect}}
-  <div data-test-type="time-selector" class="time-select {{unless value "disabled"}}">
+{{#if (and showTimeSelector value)}}
+  <div data-test-type="time-selector" class="time-select {{timeSelectorTriggerClasses}} {{unless value "disabled"}}">
     {{svg/icon-clock}}
-    {{#if value}}
       {{#power-select
         triggerClass="time-select-trigger hour"
         dropdownClass="form-field-time-select"
@@ -39,7 +33,7 @@
         selected=(moment-format value "HH")
         placeholder="hh"
         searchEnabled=false
-        onchange=(action "setTime" "selectedHour")
+        onchange=(action "setTime" "hour")
         onclose=onclose
         triggerId=(concat (if name (concat name "-" )) "hours")
         as |option|
@@ -51,24 +45,36 @@
         triggerClass="time-select-trigger minute"
         dropdownClass="form-field-time-select"
         matchTriggerWidth=false
-        options=minutes
+        options=minutesSeconds
         selected=(moment-format value "mm")
         placeholder="mm"
         searchEnabled=false
-        onchange=(action "setTime" "selectedMinute")
+        onchange=(action "setTime" "minute")
         onclose=onclose
         triggerId=(concat (if name (concat name "-" )) "minutes")
         as |option|
         }}
         {{option}}
       {{/power-select}}
-    {{else}}
-      <button class="time-select-placeholder disabled" disabled>{{or timeButtonText "Select Time"}}</button>
-    {{/if}}
+      <div class="time-divider">:</div>
+      {{#power-select
+        triggerClass="time-select-trigger second"
+        dropdownClass="form-field-time-select"
+        matchTriggerWidth=false
+        options=minutesSeconds
+        selected=(moment-format value "ss")
+        placeholder="mm"
+        searchEnabled=false
+        onchange=(action "setTime" "second")
+        onclose=onclose
+        triggerId=(concat (if name (concat name "-" )) "seconds")
+        as |option|
+        }}
+        {{option}}
+      {{/power-select}}
   </div>
+   {{component timeSelectComponent}}
 {{/if}}
 {{#if value}}
   <div class="clear-date-time-button" data-test-id="datetime-picker-clear-datetime" onclick={{action "clearDateTime"}}>×</div>
 {{/if}}
-
-time

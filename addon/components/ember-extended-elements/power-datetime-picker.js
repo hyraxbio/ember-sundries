@@ -1,8 +1,6 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-extended-elements/power-datetime-picker';
-import { computed } from '@ember/object';
-import { observer } from '@ember/object';
-import { once } from '@ember/runloop';
+import { computed } from '@ember/object'; 
 
 export default Component.extend({
   layout,
@@ -14,7 +12,7 @@ export default Component.extend({
   init: function() {
     this._super(...arguments);
     this.hours = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
-    this.minutes = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59'];
+    this.minutesSeconds = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59'];
   },
 
   didInsertElement: function() {
@@ -31,19 +29,20 @@ export default Component.extend({
     }
   },
 
-  updateDateTime: observer('selectedDate', 'selectedHour', 'selectedMinute', function() {
-    once(this, function() {
-      var selectedDate = this.get('selectedDate');
-      if (!selectedDate) { return; }
-      var day = moment(selectedDate).date();
-      var month = moment(selectedDate).month();
-      var year = moment(selectedDate).year();
-      var hour = this.get('selectedHour') || 0;
-      var minute = this.get('selectedMinute') || 0;
-      var date = moment().year(year).month(month).date(day).hour(hour).minute(minute).second(0).toDate();
-      this.onSelectDateTime(date);
-    });
-  }),
+  // updateDateTime: observer('selectedDate', 'selectedHour', 'selectedMinute', function() {
+  //   console.log('updateDateTime');
+  //   once(this, function() {
+  //     var selectedDate = this.get('selectedDate');
+  //     if (!selectedDate) { return; }
+  //     var day = moment(selectedDate).date();
+  //     var month = moment(selectedDate).month();
+  //     var year = moment(selectedDate).year();
+  //     var hour = this.get('selectedHour') || 0;
+  //     var minute = this.get('selectedMinute') || 0;
+  //     var date = moment().year(year).month(month).date(day).hour(hour).minute(minute).second(0).toDate();
+  //     this.onSelectDateTime(date);
+  //   });
+  // }),
 
   navButtons: computed('center', function() {
     var allowNavigationOutOfRange = this.get('allowNavigationOutOfRange');
@@ -65,11 +64,28 @@ export default Component.extend({
     },
 
     setDate: function(selectedDate) {
-      this.set('selectedDate', selectedDate);
+      var currentDateTime = this.get('value');
+      var currentHour = moment(currentDateTime).hour();
+      var currentMinute = moment(currentDateTime).minute();
+      var currentSecond = moment(currentDateTime).second();
+      var newDateTime;
+      if (currentDateTime) {
+        newDateTime = moment(selectedDate).hour(currentHour).minute(currentMinute).second(currentSecond).toDate();
+      }
+      this.onSelectDateTime(newDateTime);
     },
 
     setTime: function(unit, value) {
-      this.set(unit, value);
+      var currentDateTime = this.get('value');
+      var newDateTime;
+      if (unit === 'hour') {
+        newDateTime = moment(currentDateTime).hour(value);
+      } else if (unit === 'minute') {
+        newDateTime = moment(currentDateTime).minute(value);
+      } else if (unit === 'second') {
+        newDateTime = moment(currentDateTime).second(value);
+      }
+      this.onSelectDateTime(newDateTime);
     },
 
     onTriggerFocus: function(datepicker) {
