@@ -1,16 +1,28 @@
 .info-popout-trigger {
   .btn-content {
     border-radius: 50%;
-    border: 2px solid $gray-medium;
-    width: $spacer-xl;
-    height: $spacer-xl;
+    background: $info-popout-icon-background;
+    width: 18px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   svg {
-    fill: $gray-medium;
+    fill: $info-popout-icon-fill;
     margin: 0;
+    height: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .info-popout-trigger {
+    position: relative;
+    top: -12px;
+    .btn-content {
+      // position: absolute;
+      
+    }
   }
 }

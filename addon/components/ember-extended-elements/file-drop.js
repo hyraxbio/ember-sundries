@@ -22,6 +22,7 @@ export default Component.extend({
     var files;
     this.set('dragClass', 'deactivated');
     files = event.dataTransfer.files;
+    if (this.get('disabled')) { return; }
     this.fileProcessingAction(files, this.get('allowedFileTypesList'));
   },
 });

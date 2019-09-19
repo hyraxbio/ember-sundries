@@ -29,21 +29,6 @@ export default Component.extend({
     }
   },
 
-  // updateDateTime: observer('selectedDate', 'selectedHour', 'selectedMinute', function() {
-  //   console.log('updateDateTime');
-  //   once(this, function() {
-  //     var selectedDate = this.get('selectedDate');
-  //     if (!selectedDate) { return; }
-  //     var day = moment(selectedDate).date();
-  //     var month = moment(selectedDate).month();
-  //     var year = moment(selectedDate).year();
-  //     var hour = this.get('selectedHour') || 0;
-  //     var minute = this.get('selectedMinute') || 0;
-  //     var date = moment().year(year).month(month).date(day).hour(hour).minute(minute).second(0).toDate();
-  //     this.onSelectDateTime(date);
-  //   });
-  // }),
-
   navButtons: computed('center', function() {
     var allowNavigationOutOfRange = this.get('allowNavigationOutOfRange');
     return {

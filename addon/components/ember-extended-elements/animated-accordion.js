@@ -6,7 +6,7 @@ export default Component.extend({
   layout,
   tagName: 'div',
   classNames: ['accordion-item'],
-  classNameBindings: ['classes', 'open:open'],
+  classNameBindings: ['open:open'],
 
   expandCollapseIcon: computed("open", function() {
     return this.get("open") ? "svg-repo/icons/icon-arrow-up" : "svg-repo/icons/icon-arrow-down";

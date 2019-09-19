@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-elements/utils/sanitise-classname';
+export { default } from 'ember-extended-fields/utils/sanitise-classname';

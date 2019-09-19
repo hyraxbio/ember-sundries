@@ -7,7 +7,6 @@ export default Component.extend({
   classNames: ['confirm-cancel-container'],
   classNameBindings: ['containerClasses', 'colorScheme'],
   attributeBindings: ['dataTestClass:data-test-class', 'dataTestId:data-test-id'],
-
   dataTestClass: 'confirm-cancel-dialogue',
 
   didInsertElement() {

@@ -20,6 +20,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "ember-array-helper": "^5.0.0",
     "ember-cli-babel": "^6.18.0",
     "ember-cli-htmlbars": "^2.0.1"
   },

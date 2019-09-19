@@ -1,6 +1,6 @@
-<div class='accordion-item-header' {{action 'toggleAccordion'}}>
+<div class={{concat "accordion-item-header" " " accordionHeaderClass}} {{action 'toggleAccordion'}} data-test-class="accordion-header">
   <h4>{{title}}</h4>
-  {{component headerComponent props=props}}
+  {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
   {{component expandCollapseIcon}}
 </div>
 {{#if open}}

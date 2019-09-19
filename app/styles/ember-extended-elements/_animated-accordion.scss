@@ -1,13 +1,13 @@
 .accordion-item {
   border: 0px solid #ccc;
-  margin-bottom: 15px;
+  margin: 1px 0 $animated-accordion-item-margin-bottom 0; // 1px top to ensure the box shadow shows.
   border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   background: #fff;
   &.open,
   &:hover {
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   }
 
   &:last-child {
