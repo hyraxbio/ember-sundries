@@ -1,3 +1,8 @@
+.accordion-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+
 .accordion-item {
   border: 0px solid #ccc;
   margin: 1px 0 $animated-accordion-item-margin-bottom 0; // 1px top to ensure the box shadow shows.
@@ -5,6 +10,8 @@
   overflow: hidden;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   background: #fff;
+  display: inline-flex;
+  flex-direction: column;
   &.open,
   &:hover {
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
@@ -15,7 +22,7 @@
   }
 
    .accordion-item-header {
-    padding: 15px 60px 15px 15px;
+    padding: $spacer-lg 48px $spacer-lg $spacer-lg;
     cursor: pointer;
     position: relative;
   }
@@ -38,17 +45,18 @@
     text-transform: none;
   }
 
-  &.open .accordion-item-content {
-    display: block;
-  }
 
    .accordion-item-content {
     overflow: hidden;
-    display: none;
+    height: 0;
+  }
+
+  &.open .accordion-item-content {
+    height: auto;
   }
 
   .accordion-item-content-inner {
-    padding: 0 15px 15px 15px;
+    padding: 0 $spacer-lg $spacer-lg;
     background: #fff;
   }
 }
