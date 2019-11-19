@@ -22,25 +22,22 @@ $svg-data-uri-icon-bar: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.o
 
 $svg-data-uri-icon-tick: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 28"  class="single-colour tick"><path fill="%23fff" d="M13 28c-0.7 0-1.3-0.2-1.9-0.7l-10-8c-1.3-1-1.5-2.9-0.5-4.2 1-1.3 2.9-1.5 4.2-0.5l7.9 6.3L32.9 0.9c1.2-1.2 3.1-1.2 4.2 0 1.2 1.2 1.2 3.1 0 4.2l-22 22C14.5 27.7 13.8 28 13 28z"/></svg>') !default;
 
-
-
-.ember-application {
-  @import "ember-extended-elements/_labelled-checkbox";
-  @import "ember-extended-elements/_labelled-radio-button";
-  @import "ember-extended-elements/_file-select";
-  @import "ember-extended-elements/_file-drop";
-  @import "ember-extended-elements/_in-page-alert";
-  @import "ember-extended-elements/_info-popout";
-  @import "ember-extended-elements/_css-popout-box";
-  @import "ember-extended-elements/_animated-accordion";
-  @import "ember-extended-elements/_confirm-cancel-popout";
-  @import "ember-extended-elements/_power-datetime-picker";
-  @import "ember-extended-elements/_ember-basic-dropdown";
-  @import "ember-extended-elements/_power-daterange-picker";
-  @import "ember-extended-elements/_select-all-checkbox";
-  @import "ember-extended-elements/_print-object";
-  @import "ember-extended-elements/_moment-date-time";
+@import "ember-extended-elements/_labelled-checkbox";
+@import "ember-extended-elements/_labelled-radio-button";
+@import "ember-extended-elements/_file-select";
+@import "ember-extended-elements/_file-drop";
+@import "ember-extended-elements/_in-page-alert";
+@import "ember-extended-elements/_info-popout";
+@import "ember-extended-elements/_css-popout-box";
+@import "ember-extended-elements/_animated-accordion";
+@import "ember-extended-elements/_confirm-cancel-popout";
+@import "ember-extended-elements/_power-datetime-picker";
+@import "ember-extended-elements/_ember-basic-dropdown";
+@import "ember-extended-elements/_power-daterange-picker";
+@import "ember-extended-elements/_select-all-checkbox";
+@import "ember-extended-elements/_print-object";
+@import "ember-extended-elements/_moment-date-time";
   // @import "ember-extended-elements/filtered-data-table/_data-table-filter-controls";
   // @import "ember-extended-elements/filtered-data-table/_data-table-pagination-controls";
   // @import "ember-extended-elements/filtered-data-table/_data-table";
-}
+

@@ -13,6 +13,9 @@ div.input-file-wrapper input {
 div.input-file-wrapper input:hover {
   cursor: pointer;
 }
+div.input-file-wrapper.disabled input:hover {
+  cursor: not-allowed;
+}
 
 p.file-chosen,
 .body-content p.file-chosen {

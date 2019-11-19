@@ -3,9 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px dotted $draggable-dropzone-border-color;
+  border: 2px dotted $draggable-dropzone-border-color;
   border-radius: 5px;
-  margin-bottom: 15px;
   background: #fff;
 }
 
@@ -13,4 +12,11 @@
   border-color: $draggable-dropzone-activated-border-color;
   color: $draggable-dropzone-activated-color;
   background-color: #f0f0f0;
+}
+
+.draggable-dropzone.disabled {
+  opacity: 0.5;
+  &:hover {
+    cursor: not-allowed;
+  }
 }

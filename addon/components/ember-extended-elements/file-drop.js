@@ -4,8 +4,9 @@ import layout from '../../templates/components/ember-extended-elements/file-drop
 export default Component.extend({
   layout,
   classNames: ['draggable-dropzone'],
-  classNameBindings: ['dragClass', 'classes'],
+  classNameBindings: ['dragClass', 'disabled:disabled'],
   dragClass: 'deactivated',
+  attributeBindings: ['data-test-class', 'data-test-id'],
 
   dragLeave: function(event) {
     event.preventDefault();
@@ -22,7 +23,12 @@ export default Component.extend({
     var files;
     this.set('dragClass', 'deactivated');
     files = event.dataTransfer.files;
-    if (this.get('disabled')) { return; }
+    if (this.get('disabled')) { 
+      if (this.get('fileDroppedWhenDisabledAction')) {
+        this.fileDroppedWhenDisabledAction();
+      }
+      return; 
+    }
     this.fileProcessingAction(files, this.get('allowedFileTypesList'));
   },
 });

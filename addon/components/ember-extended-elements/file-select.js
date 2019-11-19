@@ -5,7 +5,8 @@ export default Component.extend({
   layout,
   type: 'div',
   classNames: ['input-file-wrapper'],
-  classNameBindings: ['classes'],
+  classNameBindings: ['disabled:disabled'],
+  attributeBindings: ['data-test-class', 'data-test-id'],
 
   actions: {
     sendFiles: function(files) {
