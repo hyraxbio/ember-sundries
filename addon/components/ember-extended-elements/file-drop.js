@@ -7,7 +7,7 @@ export default Component.extend({
   classNameBindings: ['dragClass', 'disabled:disabled'],
   dragClass: 'deactivated',
   attributeBindings: ['data-test-class', 'data-test-id'],
-
+  
   dragLeave: function(event) {
     event.preventDefault();
     return this.set('dragClass', 'deactivated');
