@@ -3,9 +3,10 @@
   {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
   {{component expandCollapseIcon}}
 </div>
-
-<div class="accordion-item-content">
-  <div class="accordion-item-content-inner">
-    {{yield}}
+{{#if (or toggleWithCss open)}}
+  <div class="accordion-item-content">
+    <div class="accordion-item-content-inner">
+      {{yield}}
+    </div>
   </div>
-</div>
+{{/if}}
