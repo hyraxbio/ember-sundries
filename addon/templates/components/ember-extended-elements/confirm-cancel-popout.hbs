@@ -5,7 +5,7 @@
     </button>
   {{/dropdown.trigger}}
   {{#dropdown.content class=(if positionStatic "position-static")}}
-    <div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-content confirm-cancel-content'}} border-{{colorScheme}}" data-test-id="{{dataTestId}}-confirm-cancel-content">
+    <div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-text confirm-cancel-content'}} border-{{colorScheme}}" data-test-id="{{dataTestId}}-confirm-cancel-content">
       {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
       {{yield}}
       <div class="option-buttons">
