@@ -26,7 +26,7 @@ export default Component.extend({
 
   actions: {
     toggleAccordion: function() {
-      this.toggleProperty("open");
+      this.toggleProperty('open');
     },
   }
 });
