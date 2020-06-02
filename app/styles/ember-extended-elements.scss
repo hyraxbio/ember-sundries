@@ -3,7 +3,6 @@ $info-popout-icon-fill: #fff !default;
 
 
 
-$power-datetime-picker-time-select-disabled-background-color: gray !default;
 
 $animated-accordion-header-font-size: 2em !default;
 $animated-accordion-header-icon-hover-fill: gray !default;
@@ -31,7 +30,7 @@ $svg-data-uri-icon-tick: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.
 @import "ember-extended-elements/_css-popout-box";
 @import "ember-extended-elements/_animated-accordion";
 @import "ember-extended-elements/_confirm-cancel-popout";
-@import "ember-extended-elements/_power-datetime-picker";
+// @import "ember-extended-elements/_power-datetime-picker";
 @import "ember-extended-elements/_ember-basic-dropdown";
 @import "ember-extended-elements/_power-daterange-picker";
 @import "ember-extended-elements/_select-all-checkbox";

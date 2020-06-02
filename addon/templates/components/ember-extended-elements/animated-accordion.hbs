@@ -1,5 +1,5 @@
 <div class={{concat "accordion-item-header" " " accordionHeaderClass " " emberExtendedElements.accordionItemHeaderDefaultClasses}} {{action 'toggleAccordion'}} data-test-class="accordion-header">
-  <h4>{{title}}</h4>
+  {{parsedTitle}}
   {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
   {{component expandCollapseIcon}}
 </div>

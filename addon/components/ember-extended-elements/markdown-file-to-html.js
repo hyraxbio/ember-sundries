@@ -3,8 +3,7 @@ import layout from '../../templates/components/ember-extended-elements/markdown-
 
 export default Component.extend({
   layout,
-  attributeBindings: ['dataTestComponent:data-test-component'],
-  dataTestComponent: 'markdown-content',
+  'data-test-component': 'markdown-content',
   
   didInsertElement() {
     fetch(this.get('filePath')).then(response => {

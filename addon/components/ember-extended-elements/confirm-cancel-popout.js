@@ -6,8 +6,7 @@ export default Component.extend({
   tagName: 'div',
   classNames: ['confirm-cancel-container'],
   classNameBindings: ['containerClasses', 'colorScheme'],
-  attributeBindings: ['dataTestClass:data-test-class', 'dataTestId:data-test-id'],
-  dataTestClass: 'confirm-cancel-dialogue',
+  'data-test-class': 'confirm-cancel-dialogue',
 
   didInsertElement() {
     if (this.get('positionStatic')) {
