@@ -11,6 +11,8 @@ export default Component.extend({
     var levelPadding = this.get('levelPadding') || 16;
     var separator = this.get('separator') || ':';
     var object = this.get('object');
+    console.log(object);
+
     // If an Ember model is passed, get the JSON from it before proceeding, to avoid craching the browser..
     var array = [];
     var createObject = function (object, keyPrefix) {

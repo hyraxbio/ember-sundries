@@ -1,6 +1,6 @@
 import { isEmpty } from '@ember/utils';
 import layout from '../../templates/components/ember-extended-elements/input-type-file';
-import $ from 'jquery';
+import jQuery from 'jquery';
 import TextField from '@ember/component/text-field';
 
 export default TextField.extend({
@@ -11,7 +11,7 @@ export default TextField.extend({
     var input = e.target;
     if (!isEmpty(input.files)) {
       this.send('sendFiles', input.files);
-      $(".file-select-button")[0].reset();
+      jQuery(".file-select-button")[0].reset();
     }
   },
 
