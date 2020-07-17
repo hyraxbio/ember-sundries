@@ -21,7 +21,7 @@ export default Component.extend({
 
   parsedTitle: computed('headerLevel', 'title', function() {
     var headerLevel = this.get('headerLevel') || 2;
-    return  htmlSafe(`<h${headerLevel}>${this.get('title')}</h${headerLevel}>`);
+    return  htmlSafe(`<h${headerLevel} class="margin-0">${this.get('title')}</h${headerLevel}>`);
   }),
   
   expandCollapseIcon: computed("open", function() {
