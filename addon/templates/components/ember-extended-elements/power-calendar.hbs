@@ -7,4 +7,4 @@
   <button class="{{unless navButtons.nextMonth "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" calendar 1 "month"}} data-test-id="power-calendar-nav-next-month" disabled={{not navButtons.nextMonth}}>›</button>
   <button class="{{unless navButtons.nextYear "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" calendar 12 "month"}} data-test-id="power-calendar-nav-next-year" disabled={{not navButtons.nextYear}}>»</button>
 </nav>
-{{calendar.days minDate=minDate maxDate=maxDate}}
+<calendar.days @minDate={{minDate}} @maxDate={{maxDate}} />

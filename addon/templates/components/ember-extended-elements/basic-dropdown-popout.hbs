@@ -1,11 +1,11 @@
-{{#basic-dropdown verticalPosition=verticalPosition horizontalPosition=horizontalPosition renderInPlace=renderInPlace initiallyOpened=initiallyOpened onOpen=(action onOpen) onClose=(action onCLose) as |dropdown|}}
-  {{#dropdown.trigger class=triggerClasses}}
+<BasicDropdown @verticalPosition={{verticalPosition}} @horizontalPosition={{horizontalPosition}} @renderInPlace={{renderInPlace}} @initiallyOpened={{initiallyOpened}} @onOpen={{action onOpen}} @onClose={{action onCLose}} as | Dropdown |>
+  <Dropdown.Trigger class={{triggerClasses}}>
     {{yield "trigger"}}
-  {{/dropdown.trigger}}
-  {{#dropdown.content class=(concat contentClasses " " positionClass)}}
+  </Dropdown.Trigger>
+  <Dropdown.Content class={{concat contentClasses " " positionClass}}>
     <div class="pop-up-box box-arrow">
       {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
       {{yield "content"}}
     </div>
-  {{/dropdown.content}}
-{{/basic-dropdown}}
+  </Dropdown.Content>
+</BasicDropdown>

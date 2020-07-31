@@ -1,14 +1,14 @@
 {{#power-datepicker
   selected=selectedDate onSelect=(action "setDate" value="date") closeOnSelect=false onCenterChange=(action (mut center) value="date") center=center renderInPlace=true as |dp|}}
-  {{#dp.trigger tabindex="-1" onKeyDown=(action "onTriggerKeydown") }}
+  <dp.trigger @tabindex="-1" @onKeyDown={{action "onTriggerKeydown"}}>
       {{#if value}}
         <input type="text" data-test-type="power-datepicker-date-trigger" readonly onfocus={{action "onTriggerFocus" dp}} value={{readonly (moment-format value dateDisplayFormat) placeholder="Select Date"}} />
       {{else}}
         <input readonly placeholder="Select Date" />
       {{/if}}
       {{component dateSelectComponent}}
-  {{/dp.trigger}}
-  {{#dp.content class="ember-power-calendar" }}
+  </dp.trigger>
+  <dp.content @class="ember-power-calendar">
   {{renderInPlace}}
     <nav class="ember-power-calendar-nav">
       <button type="button" class="{{unless navButtons.previousYear "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp -12 "month"}} data-test-id="power-calendar-nav-previous-year" disabled={{not navButtons.previousYear}}>«</button>
@@ -19,59 +19,23 @@
       <button class="{{unless navButtons.nextMonth "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp 1 "month"}} data-test-id="power-calendar-nav-next-month" disabled={{not navButtons.nextMonth}}>›</button>
       <button class="{{unless navButtons.nextYear "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp 12 "month"}} data-test-id="power-calendar-nav-next-year" disabled={{not navButtons.nextYear}}>»</button>
     </nav>
-    {{dp.days minDate=minDate maxDate=maxDate}}
-  {{/dp.content}}
+    <dp.days @minDate={{minDate}} @maxDate={{maxDate}} />
+  </dp.content>
 {{/power-datepicker}}
 {{#if (and showTimeSelector value)}}
   <div data-test-type="time-selector" class="time-select {{timeSelectorTriggerClasses}} {{unless value "disabled"}}">
     {{svg/icon-clock}}
-      {{#power-select
-        triggerClass="time-select-trigger hour"
-        dropdownClass="form-field-time-select"
-        matchTriggerWidth=false
-        options=hours
-        selected=(moment-format value "HH")
-        placeholder="hh"
-        searchEnabled=false
-        onchange=(action "setTime" "hour")
-        onclose=onclose
-        triggerId=(concat (if name (concat name "-" )) "hours")
-        as |option|
-        }}
+      <PowerSelect @triggerClass="time-select-trigger hour" @dropdownClass="form-field-time-select" @matchTriggerWidth={{false}} @options={{hours}} @selected={{moment-format value "HH"}} @placeholder="hh" @searchEnabled={{false}} @onchange={{action "setTime" "hour"}} @onclose={{onclose}} @triggerId={{concat (if name (concat name "-")) "hours"}} as |option|>
         {{option}}
-      {{/power-select}}
+      </PowerSelect>
       <div class="time-divider">:</div>
-      {{#power-select
-        triggerClass="time-select-trigger minute"
-        dropdownClass="form-field-time-select"
-        matchTriggerWidth=false
-        options=minutesSeconds
-        selected=(moment-format value "mm")
-        placeholder="mm"
-        searchEnabled=false
-        onchange=(action "setTime" "minute")
-        onclose=onclose
-        triggerId=(concat (if name (concat name "-" )) "minutes")
-        as |option|
-        }}
+      <PowerSelect @triggerClass="time-select-trigger minute" @dropdownClass="form-field-time-select" @matchTriggerWidth={{false}} @options={{minutesSeconds}} @selected={{moment-format value "mm"}} @placeholder="mm" @searchEnabled={{false}} @onchange={{action "setTime" "minute"}} @onclose={{onclose}} @triggerId={{concat (if name (concat name "-")) "minutes"}} as |option|>
         {{option}}
-      {{/power-select}}
+      </PowerSelect>
       <div class="time-divider">:</div>
-      {{#power-select
-        triggerClass="time-select-trigger second"
-        dropdownClass="form-field-time-select"
-        matchTriggerWidth=false
-        options=minutesSeconds
-        selected=(moment-format value "ss")
-        placeholder="mm"
-        searchEnabled=false
-        onchange=(action "setTime" "second")
-        onclose=onclose
-        triggerId=(concat (if name (concat name "-" )) "seconds")
-        as |option|
-        }}
+      <PowerSelect @triggerClass="time-select-trigger second" @dropdownClass="form-field-time-select" @matchTriggerWidth={{false}} @options={{minutesSeconds}} @selected={{moment-format value "ss"}} @placeholder="mm" @searchEnabled={{false}} @onchange={{action "setTime" "second"}} @onclose={{onclose}} @triggerId={{concat (if name (concat name "-")) "seconds"}} as |option|>
         {{option}}
-      {{/power-select}}
+      </PowerSelect>
   </div>
    {{component timeSelectComponent}}
 {{/if}}

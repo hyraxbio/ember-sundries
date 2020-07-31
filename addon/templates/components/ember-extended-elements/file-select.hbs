@@ -1,8 +1,4 @@
 {{buttonText}}
 <form class="file-select-button">
-{{ember-extended-elements/input-type-file
-  sendFiles=(action "sendFiles")
-  multiple=multiple
-  disabled=disabled
-}}
+<EmberExtendedElements::InputTypeFile @sendFiles={{action "sendFiles"}} @multiple={{multiple}} @disabled={{disabled}} />
 </form>

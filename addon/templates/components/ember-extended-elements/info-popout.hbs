@@ -1,21 +1,12 @@
-{{#basic-dropdown renderInPlace=renderInPlace onOpen=onOpen onClose=onClose as |dropdown|}}
-  {{#dropdown.trigger 
-		class='info-popout-trigger'
-		onMouseDown=(action "prevent")
-		onMouseEnter=(action "open")
-		onMouseLeave=(action "closeLater")
-	}}
+<BasicDropdown @renderInPlace={{renderInPlace}} @onOpen={{onOpen}} @onClose={{onClose}} as | Dropdown |>
+  <Dropdown.Trigger class="info-popout-trigger" @onMouseDown={{action "prevent"}} @onMouseEnter={{action "open"}} @onMouseLeave={{action "closeLater"}}>
     <button class="btn-content {{if dropdown.isOpen 'active'}}" data-test-class="trigger">
-       {{svg-repo/icons/icon-info}}
+       <SvgRepo::Icons::IconInfo />
     </button>
-  {{/dropdown.trigger}}
-  {{#dropdown.content 
-		class=(if positionStatic "position-static")
-		onMouseEnter=(action "open")
-    onMouseLeave=(action "closeLater")
-	}}
+  </Dropdown.Trigger>
+  <Dropdown.Content class={{if positionStatic "position-static"}} @onMouseEnter={{action "open"}} @onMouseLeave={{action "closeLater"}}>
     <div class="{{popoutBoxClass}} pop-up-box box-arrow body-text border">
       {{yield}}
 		</div>
-  {{/dropdown.content}}
-{{/basic-dropdown}}
+  </Dropdown.Content>
+</BasicDropdown>

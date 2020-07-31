@@ -1,18 +1,2 @@
-{{ember-extended-elements/file-select
-  buttonText=buttonText
-  allowedFileTypesList=allowedFileTypesList
-  multiple=multiple
-  fileProcessingAction=fileProcessingAction
-  class=fileSelectButtonClass
-  disabled=disabled
-  data-test-class="file-select-button"
-}}
-{{ember-extended-elements/file-drop
-  allowedFileTypesList=allowedFileTypesList
-  fileProcessingAction=fileProcessingAction
-  fileDropTextPrompt=fileDropTextPrompt
-  fileDropTextPromptClass=fileDropTextPromptClass
-  disabled=disabled
-  fileDroppedWhenDisabledAction=fileDroppedWhenDisabledAction
-  data-test-class="file-drop-zone"
-}}
+<EmberExtendedElements::FileSelect @buttonText={{buttonText}} @allowedFileTypesList={{allowedFileTypesList}} @multiple={{multiple}} @fileProcessingAction={{fileProcessingAction}} @class={{fileSelectButtonClass}} @disabled={{disabled}} @data-test-class="file-select-button" />
+<EmberExtendedElements::FileDrop @allowedFileTypesList={{allowedFileTypesList}} @fileProcessingAction={{fileProcessingAction}} @fileDropTextPrompt={{fileDropTextPrompt}} @fileDropTextPromptClass={{fileDropTextPromptClass}} @disabled={{disabled}} @fileDroppedWhenDisabledAction={{fileDroppedWhenDisabledAction}} @data-test-class="file-drop-zone" />

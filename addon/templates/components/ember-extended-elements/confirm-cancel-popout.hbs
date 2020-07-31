@@ -1,10 +1,10 @@
-{{#basic-dropdown renderInPlace=renderInPlace onOpen=onOpen onClose=onClose as |dropdown|}}
-  {{#dropdown.trigger}}
+<BasicDropdown @renderInPlace={{renderInPlace}} @onOpen={{onOpen}} @onClose={{onClose}} as | Dropdown |>
+  <Dropdown.Trigger>
     <button class="btn btn-{{colorScheme}} {{if dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}" data-test-class="trigger">{{component mainButtonIcon}}{{mainButtonText}}
-      {{svg-repo/icons/icon-cog class=(concat (if requestInFlight 'on') ' spinner button-right')}}
+      <SvgRepo::Icons::IconCog @class={{concat (if requestInFlight "on") " spinner button-right"}} />
     </button>
-  {{/dropdown.trigger}}
-  {{#dropdown.content class=(if positionStatic "position-static")}}
+  </Dropdown.Trigger>
+  <Dropdown.Content class={{if positionStatic "position-static"}}>
     <div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-text confirm-cancel-content'}} border-{{colorScheme}}" data-test-id="{{data-test-id}}-confirm-cancel-content">
       {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
       {{yield}}
@@ -13,5 +13,5 @@
         <button class="cancel btn btn-outline-gray-medium" onclick={{action "closePopoutBox" dropdown}} data-test-class="cancel">Cancel</button>
       </div>
     </div>
-  {{/dropdown.content}}
-{{/basic-dropdown}}
+  </Dropdown.Content>
+</BasicDropdown>
