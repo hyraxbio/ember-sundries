@@ -6,8 +6,9 @@ export default Component.extend({
   classNames: ['draggable-dropzone'],
   classNameBindings: ['dragClass', 'disabled:disabled'],
   dragClass: 'deactivated',
-  attributeBindings: ['data-test-class', 'data-test-id'],
-  
+  attributeBindings: ['dataTestClass:data-test-class'],
+  dataTestClass: 'file-drop-zone',
+
   dragLeave: function(event) {
     event.preventDefault();
     return this.set('dragClass', 'deactivated');
