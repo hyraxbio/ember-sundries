@@ -36,7 +36,4 @@ $svg-data-uri-icon-tick: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.
 @import "ember-extended-elements/_select-all-checkbox";
 @import "ember-extended-elements/_print-object";
 @import "ember-extended-elements/_moment-date-time";
-  // @import "ember-extended-elements/filtered-data-table/_data-table-filter-controls";
-  // @import "ember-extended-elements/filtered-data-table/_data-table-pagination-controls";
-  // @import "ember-extended-elements/filtered-data-table/_data-table";
-
+@import "ember-extended-elements/_ember-simplebar";

@@ -1,16 +1,16 @@
 {{#if @disabled}}
-  {{yield (hash Content=(component "blank-template"))}}
+  {{yield (hash Content=(component "blank-template" tagName=""))}}
 {{else}}
   <div class="simplebar-wrapper">
     <div class="simplebar-height-auto-observer-wrapper">
       <div class="simplebar-height-auto-observer" />
     </div>
-    {{yield (hash Dummy=(component "blank-template" class="opacity-0 testing"))}}
+    {{yield (hash Dummy=(component "blank-template" class="ember-simplebar-dummy"))}}
     <div class="simplebar-mask">
       <div class="simplebar-offset">
         <div class="simplebar-content-wrapper">
           <div class="simplebar-content">
-            {{yield (hash Content=(component "blank-template"))}}
+            {{yield (hash Content=(component "blank-template" tagName=""))}}
           </div>
         </div>
       </div>
