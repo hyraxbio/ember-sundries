@@ -1,0 +1,11 @@
+.ember-simplebar-dummy {
+  opacity: 0;
+  overflow: hidden;
+  height: 0;
+}
+
+.ember-simplebar {
+  &.vertical-bar-left > .simplebar-vertical {
+    left: 0;
+  }
+}
