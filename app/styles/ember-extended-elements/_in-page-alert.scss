@@ -2,10 +2,11 @@
   font-weight: 700;
   max-width: 560px;
   text-align: left;
-  svg.text-wrap-icon {
-    margin-top: -2px;
+  svg.in-page-alert-icon {
+    float: left;
+    margin: -2px 2px;
     width: 18px;
-    height: 18px;
+    height: 16px;
   }
   h1, h2, h3, h4 {
     text-transform: uppercase;
