@@ -11,14 +11,6 @@ export default Component.extend({
   classNames: ['accordion-item'],
   classNameBindings: ['open:open', 'emberExtendedElements.accordionItemDefaultClasses', 'openDefaultClasses', 'closedDefaultClasses'],
 
-  // didInsertElement() {
-  //   var headerLevel = this.get('headerLevel' || 2);
-  //   this.set('headerTags', {
-  //     opening: `<h${headerLevel}>`,
-  //     closing: `</h${headerLevel}>`
-  //   });
-  // },
-
   parsedTitle: computed('headerLevel', 'title', function() {
     var headerLevel = this.get('headerLevel') || 2;
     return  htmlSafe(`<h${headerLevel} class="margin-0">${this.get('title')}</h${headerLevel}>`);

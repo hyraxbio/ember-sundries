@@ -1,6 +1,6 @@
 {
   "name": "ember-extended-fields",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
