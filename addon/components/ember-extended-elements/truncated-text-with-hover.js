@@ -6,6 +6,7 @@ export default Component.extend({
   layout,
   maxChars: 3,
   afterTruncatedText: '...',
+  tagName: '',
 
   truncated: computed('text', 'maxChars', function() {
     if (this.get('text').split('').length > this.get('maxChars')) {
