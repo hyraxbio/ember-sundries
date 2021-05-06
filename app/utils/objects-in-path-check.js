@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/objects-in-path-check';
+export { default } from 'ember-sundries/utils/objects-in-path-check';

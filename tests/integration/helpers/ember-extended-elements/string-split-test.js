@@ -3,14 +3,14 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Helper | ember-extended-elements/string-split', function(hooks) {
+module('Integration | Helper | ember-sundries/string-split', function(hooks) {
   setupRenderingTest(hooks);
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
     this.set('inputValue', '1234');
 
-    await render(hbs`{{ember-extended-elements/string-split inputValue}}`);
+    await render(hbs`{{ember-sundries/string-split inputValue}}`);
 
     assert.equal(this.element.textContent.trim(), '1234');
   });

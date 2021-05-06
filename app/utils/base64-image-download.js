@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/base64-image-download';
+export { default } from 'ember-sundries/utils/base64-image-download';

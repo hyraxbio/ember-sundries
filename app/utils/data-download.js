@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/data-download';
+export { default } from 'ember-sundries/utils/data-download';

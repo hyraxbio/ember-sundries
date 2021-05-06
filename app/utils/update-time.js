@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/update-time';
+export { default } from 'ember-sundries/utils/update-time';

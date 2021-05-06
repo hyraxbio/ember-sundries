@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | ember-extended-elements/filters-container', function(hooks) {
+module('Integration | Component | ember-sundries/filters-container', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{ember-extended-elements/filters-container}}`);
+    await render(hbs`{{ember-sundries/filters-container}}`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      {{#ember-extended-elements/filters-container}}
+      {{#ember-sundries/filters-container}}
         template block text
-      {{/ember-extended-elements/filters-container}}
+      {{/ember-sundries/filters-container}}
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

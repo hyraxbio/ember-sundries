@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/group-by';
+export { default } from 'ember-sundries/utils/group-by';

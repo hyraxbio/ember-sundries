@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/is-empty-object';
+export { default } from 'ember-sundries/utils/is-empty-object';

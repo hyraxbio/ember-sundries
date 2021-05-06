@@ -1,0 +1,12 @@
+<div class={{concat "accordion-item-header" " " accordionHeaderClass " " EmberSundries.accordionItemHeaderDefaultClasses}} {{action 'toggleAccordion'}} data-test-class="accordion-header">
+  {{parsedTitle}}
+  {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
+  {{component expandCollapseIcon}}
+</div>
+{{#if (or toggleWithCss open)}}
+  <div class="accordion-item-content" data-test-class="accordion-content">
+    <div class="accordion-item-content-inner">
+      {{yield}}
+    </div>
+  </div>
+{{/if}}

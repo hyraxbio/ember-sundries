@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-extended-fields'
+  name: 'ember-sundries'
 };

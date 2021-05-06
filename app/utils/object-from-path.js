@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/object-from-path';
+export { default } from 'ember-sundries/utils/object-from-path';

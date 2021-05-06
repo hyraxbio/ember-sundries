@@ -1,0 +1,29 @@
+{{#if hover}}
+  <EmberSundries::BasicDropdownVTwoHover 
+    @renderInPlace={{renderInPlace}} as |Dropdown|>
+    <Dropdown.Trigger class="info-popout-trigger" data-test-class="info-popout-trigger">
+      <button class="btn-content {{if Dropdown.isOpen 'active'}}" data-test-class="trigger">
+        <SvgRepo::Icons::IconInfo />
+      </button>
+    </Dropdown.Trigger>
+    <Dropdown.Content class="info-popout-content {{if positionStatic "position-static"}}" data-test-class="info-popout-content">
+      <div class="{{popoutBoxClass}} pop-up-box box-arrow body-text border">
+        {{yield}}
+      </div>
+    </Dropdown.Content>
+  </EmberSundries::BasicDropdownVTwoHover>
+{{else}}
+  <BasicDropdown 
+    @renderInPlace={{renderInPlace}} as | Dropdown |>
+    <Dropdown.Trigger class="info-popout-trigger" data-test-class="info-popout-trigger">
+      <button class="btn-content {{if Dropdown.isOpen 'active'}}" data-test-class="trigger">
+        <SvgRepo::Icons::IconInfo />
+      </button>
+    </Dropdown.Trigger>
+    <Dropdown.Content class="info-popout-content {{if positionStatic "position-static"}}" data-test-class="info-popout-content">
+      <div class="{{popoutBoxClass}} pop-up-box box-arrow body-text border">
+        {{yield}}
+      </div>
+    </Dropdown.Content>
+  </BasicDropdown>
+{{/if}}

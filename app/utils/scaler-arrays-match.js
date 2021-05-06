@@ -1,1 +1,1 @@
-export { default } from 'ember-extended-fields/utils/scaler-arrays-match';
+export { default } from 'ember-sundries/utils/scaler-arrays-match';

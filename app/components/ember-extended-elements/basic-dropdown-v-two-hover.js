@@ -1,1 +1,0 @@
-export { default } from 'ember-extended-fields/components/ember-extended-elements/basic-dropdown-v-two-hover';
