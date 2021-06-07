@@ -55,7 +55,6 @@ $spacer-lg: 12px;
   .accordion-item-content-inner {
     padding: 0 $spacer-lg $spacer-lg;
     background: #fff;
+    overflow-x: auto;
   }
 }
-
-
