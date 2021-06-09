@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-sundries/print-object';
 import { computed } from '@ember/object';
-import DS from 'ember-data';
 
 export default Component.extend({
   layout,
@@ -10,13 +9,11 @@ export default Component.extend({
   objectsArray: computed('object', function () {
     var levelPadding = this.get('levelPadding') || 16;
     var separator = this.get('separator') || ':';
-    var object = this.get('object');
-    console.log(object);
-
-    // If an Ember model is passed, get the JSON from it before proceeding, to avoid craching the browser..
+    var object = this.get('object') || {};
     var array = [];
     var createObject = function (object, keyPrefix) {
-      if (object instanceof DS.Model) {
+      // If an Ember model is passed, get the JSON from it before proceeding, to avoid crashing the browser..
+      if (object.toJSON) {
         object = object.toJSON({includeId: true});
       }
       for (var key in object) {
