@@ -1,65 +1,44 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-sundries/print-object';
-import { computed } from '@ember/object';
+import isPromise from 'ember-sundries/utils/is-promise';
 
 export default Component.extend({
   layout,
   classNames: ['print-object'],
 
-  objectsArray: computed('object', function () {
-    var levelPadding = this.get('levelPadding') || 16;
-    var separator = this.get('separator') || ':';
-    var object = this.get('object') || {};
-    var array = [];
-    var createObject = function (object, keyPrefix) {
-      // If an Ember model is passed, get the JSON from it before proceeding, to avoid crashing the browser..
+  didReceiveAttrs() {
+    console.log('didReceiveAttrs')
+    this.send('checkPromise');
+  },
+
+  didUpdateAttrs() {
+    this.send('checkPromise');
+  },
+
+  actions: {
+    checkPromise() {
+      const object = this.get('object');
+      if (isPromise(object)) {
+        object.then(res => {
+          console.log(res)
+          this.send('parseObject', res);
+        });
+      } else {
+        this.send('parseObject', object);
+      }
+    },
+    
+    parseObject(object) {
       if (object.toJSON) {
         object = object.toJSON({includeId: true});
       }
-      for (var key in object) {
-        var newObjectKey = keyPrefix ? `${keyPrefix}.${key}` : key;
-        var level = newObjectKey.split('.').length;
-        var style = `padding-left: ${(level)*levelPadding}px`;
-        var escapedStyle = style.htmlSafe();
-        var newObject = {
-          key: key,
-          keyPath: newObjectKey,
-          level: level,
-          style: escapedStyle,
-          separator: separator
-        };
-          
-        if (typeof object[key] !== 'object') {
-          newObject.value = object[key] || 'null';
-          array.push(newObject);
-        } else {
-          if (!object[key]) {
-            newObject.value = 'null';
-          } else {
-            createObject(object[key], newObjectKey);
-          }
-          array.push(newObject);
-         
-        }
-      }
-    };
-    createObject(object);
-    return array.sortBy('keyPath');
-  }),
-
-  filteredArray: computed('objectsArray', 'keysToRemove', function () {
-    var objectsArray = this.get('objectsArray');
-    var keysToRemove = this.get('keysToRemove') || [];
-    keysToRemove = keysToRemove.concat(['_super', '__meta__']);
-    if (keysToRemove) {
-      objectsArray = objectsArray.filter(object => {
-        function isMatch(keyToRemove) {
-          return `.${object.keyPath}.`.indexOf(`.${keyToRemove}.`) > -1;
-        }
-        var conditions = !(keysToRemove.some(isMatch));
-        return conditions;
-      });
+      console.log(object);
+      (this.get('keysToRemove') || []).forEach(key => {
+        console.log(key);
+        delete object[key]
+      })
+      console.log(object)
+      this.set('parsed', JSON.stringify(object, null, 2))
     }
-    return objectsArray.sortBy('keyPath');
-  }),
+  }
 });
