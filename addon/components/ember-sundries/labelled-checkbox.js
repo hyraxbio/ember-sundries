@@ -8,9 +8,10 @@ export default Component.extend({
   classNameBindings: ["disabled:disabled"],
   
   actions: {
-    checkboxClicked: function(value) {
+    checkboxClicked: function(event) {
+      console.log(event);
       if (this.changedAction) {
-        this.changedAction(value);
+        this.changedAction(event.target.value, event);
       }
     }
   }

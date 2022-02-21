@@ -20,7 +20,6 @@ export default Component.extend({
       const object = this.get('object');
       if (isPromise(object)) {
         object.then(res => {
-          console.log(res)
           this.send('parseObject', res);
         });
       } else {
@@ -32,12 +31,9 @@ export default Component.extend({
       if (object.toJSON) {
         object = object.toJSON({includeId: true});
       }
-      console.log(object);
       (this.get('keysToRemove') || []).forEach(key => {
-        console.log(key);
         delete object[key]
       })
-      console.log(object)
       this.set('parsed', JSON.stringify(object, null, 2))
     }
   }
