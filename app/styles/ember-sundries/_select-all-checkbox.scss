@@ -9,7 +9,7 @@
   &.all-selected {
     input[type=checkbox]:after {
       background: #bbb $svg-data-uri-icon-tick  no-repeat center 4px; 
-      background-size: 14px;
+      background-size: 11px;
     }
   }
 }
