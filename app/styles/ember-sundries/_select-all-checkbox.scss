@@ -1,7 +1,7 @@
 .select-all-checkbox {
   &.some-selected {
     input[type=checkbox]:after {
-      background: #bbb $svg-data-uri-icon-bar no-repeat center 4px; 
+      background: #bbb $svg-data-uri-icon-bar no-repeat center 2px; 
       background-size: 14px;
     }
   }
