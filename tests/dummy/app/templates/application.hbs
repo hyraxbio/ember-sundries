@@ -1,5 +1,4 @@
-{{log collection}}
-<EmberSundries::SelectAllCheckbox @relatedCollection={{collection}} @showLabel={{true}} />
+<EmberSundries::SelectAllCheckbox @relatedCollection={{collection}} @showLabel={{true}} @selectNoneText="Unselect all apples" @selectAllText="Select all apples" />
 {{#each collection as | item |}}
   <input type="checkbox" class="flex-align-center padding-right-md" data-test-class="download-file-checkbox" checked={{readonly item.selected}} onclick={{action "toggleSelect" item}} >
   {{item.name}}
