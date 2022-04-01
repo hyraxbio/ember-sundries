@@ -1,21 +1,6 @@
-{{!-- {{ember-sundries/power-daterange-picker
-  formField=formField
-  value=formField.value
-  dateButtonComponent=formField.dateButtonComponent
-  dateButtonText=formField.dateButtonText
-  minDate=formField.minDate
-  maxDate=formField.maxDate
-  name=formField.name
-  dateFormat=formField.dateFormat
-  defaultStartDate=formField.defaultStartDate
-  defaultEndDate=formField.defaultEndDate
-  startTime=formField.startTime
-  endTime=formField.endTime
-  onSelectDateRange=(action 'onUserInteraction')
-}} --}}
-
-Test
-
-{{#power-select options=names onchange=(action "foo") as |name|}}
-  {{name}}
-{{/power-select}}
+{{log collection}}
+<EmberSundries::SelectAllCheckbox @relatedCollection={{collection}} @showLabel={{true}} />
+{{#each collection as | item |}}
+  <input type="checkbox" class="flex-align-center padding-right-md" data-test-class="download-file-checkbox" checked={{readonly item.selected}} onclick={{action "toggleSelect" item}} >
+  {{item.name}}
+{{/each}}

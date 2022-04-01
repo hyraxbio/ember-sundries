@@ -10,3 +10,73 @@ $spacer-xl: 32px;
 input {
   border: 1px solid #ccc;
 }
+
+body {
+  // background: blue;
+}
+
+$radio-button-checkbox-width-height: 20px;
+$input-border-color: #ccc;
+$input-background-color: #fff;
+$radio-checkbox-selected-background-color: #ccc;
+$radio-checkbox-selected-background-position: center top;
+$radio-checkbox-selected-background-size: 14px;
+$input-focus-border-color: #bbb;
+$input-hover-border-color: #bbb;
+
+input[type=radio],
+input[type=checkbox],
+.checkbox,
+.radio {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  width: $radio-button-checkbox-width-height;
+  height: $radio-button-checkbox-width-height;
+  padding: 0 !important;
+  background: transparent !important;
+  border-width: 0 !important;
+  &:after {
+    border: 2px solid $input-border-color;
+    content: "";
+    background-color: $input-background-color;
+    width: $radio-button-checkbox-width-height;
+    height: $radio-button-checkbox-width-height;
+    position: absolute;
+    top: 0;
+    left: 0px;
+   
+  }
+  &:checked:after, &.checked:after {
+    background: $radio-checkbox-selected-background-color $svg-data-uri-icon-tick no-repeat $radio-checkbox-selected-background-position;
+    background-size: $radio-checkbox-selected-background-size;
+  }
+  &:focus:after, &:focus:checked:after {
+    border-color: $input-focus-border-color;
+  }
+  &:hover {
+    border-color: $input-hover-border-color;
+  }
+}
+
+input[type=radio],
+input[type=radio]:before,
+input[type=radio]:after,
+.radio,
+.radio:before,
+.radio:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+input[type=radio]+label {
+  line-height: 150%;
+  margin: 0;
+}
+
+

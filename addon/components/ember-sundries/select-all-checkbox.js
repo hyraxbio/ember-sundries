@@ -21,13 +21,24 @@ export default Component.extend({
     }
   }),
 
+  label: computed('collectionState', function() {
+    if (this.showLabel) {
+      return this.collectionState === 'all-selected' ? this.selectNoneText || 'Select none' : this.selectAllText || 'Select all';
+    }
+  }),
+
   actions: {
-    sendChangedAction: function(value, event) {
-      // The selectValue is what the action will set each item's 'selected' attribute to.
+    // sendChangedAction: function(value, event) {
+    //   // The selectValue is what the action will set each item's 'selected' attribute to.
+    //   var selectAllValue = this.get('collectionState') === 'all-selected' ? false : true;
+    //   if (this.changedAction) {
+    //     this.changedAction('selected', selectAllValue, event);
+    //   }
+    // },
+
+    selectAllClicked(value) {
       var selectAllValue = this.get('collectionState') === 'all-selected' ? false : true;
-      if (this.changedAction) {
-        this.changedAction('selected', selectAllValue, event);
-      }
+      this.relatedCollection.setEach('selected', selectAllValue)
     }
   }
 });
