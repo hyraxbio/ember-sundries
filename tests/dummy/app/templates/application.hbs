@@ -1,5 +1,14 @@
-<EmberSundries::SelectAllCheckbox @relatedCollection={{collection}} @showLabel={{true}} @selectNoneText="Unselect all apples" @selectAllText="Select all apples" />
-{{#each collection as | item |}}
-  <input type="checkbox" class="flex-align-center padding-right-md" data-test-class="download-file-checkbox" checked={{readonly item.selected}} onclick={{action "toggleSelect" item}} >
-  {{item.name}}
-{{/each}}
+{{!-- <div>
+  <EmberSundries::SelectAllCheckbox @relatedCollection={{collection}} @showLabel={{true}} @selectNoneText="Unselect all apples" @selectAllText="Select all apples" />
+</div>
+<div>
+  {{#each collection as | item |}}
+    <div>
+      <input type="checkbox" class="flex-align-center padding-right-md" data-test-class="download-file-checkbox" checked={{readonly item.selected}} onclick={{action "toggleSelect" item}} >
+      {{item.name}}
+    </div>
+  {{/each}}
+</div> --}}
+<div class="test">
+    <EmberSundries::ConfirmCancelPopout @mainButtonText="Reject invitation" @colorScheme="danger"  @align="right" @message="Are you sure you want reject this invitation?" @requestInFlight={{eq activeRequest "rejected"}} @data-test-id="reject-invitation" />
+  </div>

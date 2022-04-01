@@ -15,7 +15,7 @@ body {
   // background: blue;
 }
 
-$radio-button-checkbox-width-height: 20px;
+$radio-button-checkbox-width-height: 14px;
 $input-border-color: #ccc;
 $input-background-color: #fff;
 $radio-checkbox-selected-background-color: #ccc;
@@ -79,4 +79,15 @@ input[type=radio]+label {
   margin: 0;
 }
 
+.ember-application {
+  position: relative;
+}
 
+.ember-basic-dropdown-content {
+  position: absolute;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+}
