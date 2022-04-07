@@ -28,17 +28,15 @@ export default Component.extend({
   }),
 
   actions: {
-    // sendChangedAction: function(value, event) {
-    //   // The selectValue is what the action will set each item's 'selected' attribute to.
-    //   var selectAllValue = this.get('collectionState') === 'all-selected' ? false : true;
-    //   if (this.changedAction) {
-    //     this.changedAction('selected', selectAllValue, event);
-    //   }
-    // },
-
-    selectAllClicked(value) {
+    selectAllClicked(value, event) {
+      if (!this.allowPropagation) {
+        event.stopPropagation();
+      }
       var selectAllValue = this.get('collectionState') === 'all-selected' ? false : true;
-      this.relatedCollection.setEach('selected', selectAllValue)
+      this.relatedCollection.setEach('selected', selectAllValue);
+      if (this.afterSelectAllClicked) {
+        this.afterSelectAllClicked(value, event, this.collectionState)
+      }
     }
   }
 });
