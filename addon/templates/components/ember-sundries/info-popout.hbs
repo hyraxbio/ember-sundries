@@ -2,7 +2,7 @@
   <EmberSundries::BasicDropdownVTwoHover 
     @renderInPlace={{renderInPlace}} as |Dropdown|>
     <Dropdown.Trigger class="info-popout-trigger" data-test-class="info-popout-trigger">
-      <button class="btn-content {{if Dropdown.isOpen 'active'}}" data-test-class="trigger">
+      <button class="btn-content {{triggerClass}} {{if Dropdown.isOpen 'active'}}" data-test-class="trigger">
         <SvgRepo::Icons::IconInfo />
       </button>
     </Dropdown.Trigger>
