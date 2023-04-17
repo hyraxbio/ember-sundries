@@ -4,7 +4,8 @@ import fetch from 'fetch';
 
 export default Component.extend({
   layout,
-  'data-test-component': 'markdown-content',
+  attributeBindings: ['dataTestComponent:data-test-component'],
+  dataTestComponent: 'markdown-content',
   
   didInsertElement() {
     fetch(this.get('filePath')).then(response => {
