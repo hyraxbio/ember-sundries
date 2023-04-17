@@ -1,7 +1,11 @@
 {{#if hover}}
-  <EmberSundries::BasicDropdownVTwoHover 
-    @renderInPlace={{renderInPlace}} as |Dropdown|>
-    <Dropdown.Trigger class="info-popout-trigger" data-test-class="info-popout-trigger">
+  <BasicDropdown @renderInPlace={{renderInPlace}} as |Dropdown|>
+    <Dropdown.Trigger 
+      class="info-popout-trigger" 
+      data-test-class="info-popout-trigger"
+      onMouseDown={{action "prevent"}}
+      onMouseEnter={{action "open" Dropdown}}
+      onMouseLeave={{action "closeLater" Dropdown}}>
       {{#if @triggerComponent}}
         {{component @triggerComponent class=(concat triggerClass  (if Dropdown.isOpen ' active'))}}
       {{else}}
@@ -11,12 +15,16 @@
       {{/if}}
      
     </Dropdown.Trigger>
-    <Dropdown.Content class="info-popout-content {{if positionStatic "position-static"}}" data-test-class="info-popout-content">
+    <Dropdown.Content 
+      class="info-popout-content {{if positionStatic "position-static"}}" 
+      data-test-class="info-popout-content" 
+      onMouseEnter={{action "open" Dropdown}}
+      onMouseLeave={{action "closeLater" Dropdown}}>
       <div class="{{popoutBoxClass}} pop-up-box box-arrow body-text border" style={{popoutBoxStyle}}>
         {{yield}}
       </div>
     </Dropdown.Content>
-  </EmberSundries::BasicDropdownVTwoHover>
+  </BasicDropdown>
 {{else}}
   <BasicDropdown 
     @renderInPlace={{renderInPlace}} as | Dropdown |>
