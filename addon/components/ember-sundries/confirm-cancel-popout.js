@@ -7,9 +7,10 @@ export default Component.extend({
   tagName: 'div',
   classNames: ['confirm-cancel-container'],
   classNameBindings: ['containerClasses', 'colorScheme'],
-  'data-test-class': 'confirm-cancel-dialogue',
-  // attributeBindings: ['dataTest']
-  'data-test-name': computed('mainButtonText', function() {
+  attributeBindings: ['dataTestClass:data-test-class', 'dataTestName:data-test-name'],
+  dataTestClass: 'confirm-cancel-dialogue',
+
+  dataTestName: computed('mainButtonText', function() {
     return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase()
   }),
 

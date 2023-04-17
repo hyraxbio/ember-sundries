@@ -1,0 +1,33 @@
+{{!-- <div>
+  {{#if @disabled}}
+    {{yield (hash Content=(component "blank-template"))}}
+  {{else}}
+    <div class="simplebar-wrapper">
+      <div class="simplebar-height-auto-observer-wrapper">
+        <div class="simplebar-height-auto-observer" />
+      </div>
+      <div class="ember-simplebar-dummy">
+        {{yield (hash Dummy=(component "blank-template" tagName="div" class="ember-simplebar-dummy"))}}
+      </div>
+      <div class="simplebar-mask">
+        <div class="simplebar-offset">
+          <div class="simplebar-content-wrapper">
+            <div class="simplebar-content">
+              {{yield (hash Content=(component "blank-template"))}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="simplebar-placeholder" />
+    </div>
+    <div class="simplebar-track simplebar-horizontal">
+      <div class="simplebar-scrollbar" />
+    </div>
+    <div class="simplebar-track simplebar-vertical">
+      <div class="simplebar-scrollbar" />
+    </div>
+  {{/if}}
+</div>   --}}
+<SimpleBar as |sb|>
+  {{yield (hash Content=(component "blank-template"))}}
+</SimpleBar>

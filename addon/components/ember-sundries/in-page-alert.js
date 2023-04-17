@@ -6,7 +6,8 @@ export default Component.extend({
   layout,
   classNames: ['in-page-alert'],
   classNameBindings: ['type', 'classes', 'textClass'],
-  'data-test-class': 'in-page-alert',
+  attributeBindings: ['dataTestClass:data-test-class'],
+  dataTestClass: 'in-page-alert',
 
   textClass: computed('type', function() {
     return `text-${this.get('type')}`;

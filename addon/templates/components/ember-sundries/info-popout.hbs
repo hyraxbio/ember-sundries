@@ -8,6 +8,10 @@
       onMouseLeave={{action "closeLater" Dropdown}}>
       {{#if @triggerComponent}}
         {{component @triggerComponent class=(concat triggerClass  (if Dropdown.isOpen ' active'))}}
+      {{elseif @triggerText}}
+        <div class={{concat triggerClass  (if Dropdown.isOpen ' active')}}>
+          {{@triggerText}}
+        </div>
       {{else}}
         <button class="btn-content {{triggerClass}} {{if Dropdown.isOpen 'active'}}" data-test-class="trigger">
           <SvgRepo::Icons::IconInfo />

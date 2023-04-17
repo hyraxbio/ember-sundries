@@ -1,17 +1,14 @@
-import SimpleBar from 'ember-simplebar/components/simple-bar';
-import layout from '../../templates/components/ember-sundries/simplebar';
-import { computed } from '@ember/object';
+import SimpleBarComponent from 'ember-simplebar/components/simple-bar';
+import { htmlSafe } from '@ember/template';
 
-export default SimpleBar.extend({
-  layout,
-  attributeBindings: ['style:style'],
+export default class SimpleBar extends SimpleBarComponent {
+  // Ocaten todo how to implement this?
+  // didReceiveAttrs() {
+  //   if (!this.element) { return; }
+  //   this.set('contentWidth', this.element.querySelector('.ember-simplebar-dummy').offsetWidth);
+  // }
 
-  didReceiveAttrs() {
-    if (!this.element) { return; }
-    this.set('contentWidth', this.element.querySelector('.ember-simplebar-dummy').offsetWidth);
-  },
-
-  style: computed('contentWidth', function() {
-    return `width: ${this.contentWidth}px`.htmlSafe();
-  }),
-})
+  get style() {
+    return htmlSafe(`width: ${this.contentWidth}px`);
+  }
+}
