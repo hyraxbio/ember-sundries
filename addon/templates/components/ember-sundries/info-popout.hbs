@@ -8,7 +8,7 @@
       onMouseLeave={{action "closeLater" Dropdown}}>
       {{#if @triggerComponent}}
         {{component @triggerComponent class=(concat triggerClass  (if Dropdown.isOpen ' active'))}}
-      {{elseif @triggerText}}
+      {{else if @triggerText}}
         <div class={{concat triggerClass  (if Dropdown.isOpen ' active')}}>
           {{@triggerText}}
         </div>
