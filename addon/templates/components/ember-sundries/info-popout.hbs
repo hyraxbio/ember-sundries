@@ -4,7 +4,7 @@
     <Dropdown.Trigger class="info-popout-trigger" data-test-class="info-popout-trigger">
       {{#if @triggerComponent}}
         {{component @triggerComponent class=(concat triggerClass  (if Dropdown.isOpen ' active'))}}
-      {{elseif @triggerText}}
+      {{else if @triggerText}}
         <div class={{concat triggerClass  (if Dropdown.isOpen ' active')}}>
           {{@triggerText}}
         </div>
