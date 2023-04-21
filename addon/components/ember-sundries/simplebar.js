@@ -1,14 +1,18 @@
-import SimpleBarComponent from 'ember-simplebar/components/simple-bar';
+import Component from '@glimmer/component';
 import { htmlSafe } from '@ember/template';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
-export default class SimpleBar extends SimpleBarComponent {
-  // Ocaten todo how to implement this?
-  // didReceiveAttrs() {
-  //   if (!this.element) { return; }
-  //   this.set('contentWidth', this.element.querySelector('.ember-simplebar-dummy').offsetWidth);
-  // }
+export default class EmberSundriesSimpleBar extends Component {
+  @tracked contentWidth;
 
   get style() {
     return htmlSafe(`width: ${this.contentWidth}px`);
+  }
+
+  @action 
+  onInsert(element) {
+    if (!element) { return; }
+    this.contentWidth = element.offsetWidth;
   }
 }
