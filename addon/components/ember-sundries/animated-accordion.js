@@ -6,16 +6,14 @@ import { htmlSafe } from '@ember/template';
 
 export default Component.extend({
   layout,
-  tagName: 'div',
-  EmberSundries: service(),
-  classNames: ['accordion-item'],
-  classNameBindings: ['open:open', 'EmberSundries.accordionItemDefaultClasses', 'openDefaultClasses', 'closedDefaultClasses'],
+  tagName: "",
+  emberSundries: service(),
 
   parsedTitle: computed('headerLevel', 'title', function() {
     var headerLevel = this.get('headerLevel') || 2;
     return  htmlSafe(`<h${headerLevel} class="margin-0">${this.get('title')}</h${headerLevel}>`);
   }),
-  
+
   expandCollapseIcon: computed("open", function() {
     return this.get("open") ? "svg-repo/icons/icon-arrow-up" : "svg-repo/icons/icon-arrow-down";
   }),

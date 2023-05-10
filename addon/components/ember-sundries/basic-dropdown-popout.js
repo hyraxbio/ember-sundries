@@ -4,7 +4,7 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   layout,
-  tagName: 'div',
+  tagName: "",
 
   positionClass: computed("positionStatic", function() {
     return this.get("positionStatic") ? "position-static" : "";

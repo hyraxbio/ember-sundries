@@ -3,8 +3,8 @@ import layout from '../../templates/components/ember-sundries/print-object';
 import isPromise from 'ember-sundries/utils/is-promise';
 
 export default Component.extend({
+  tagName: "",
   layout,
-  classNames: ['print-object'],
 
   didReceiveAttrs() {
     console.log('didReceiveAttrs')

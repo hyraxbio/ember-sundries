@@ -4,14 +4,11 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   layout,
-  tagName: 'div',
-  classNames: ['confirm-cancel-container'],
-  classNameBindings: ['containerClasses', 'colorScheme'],
-  attributeBindings: ['dataTestClass:data-test-class', 'dataTestName:data-test-name'],
+  tagName: "",
   dataTestClass: 'confirm-cancel-dialogue',
 
   dataTestName: computed('mainButtonText', function() {
-    return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase()
+    return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase();
   }),
 
   didInsertElement() {

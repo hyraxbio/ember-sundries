@@ -1,12 +1,18 @@
-<div class={{concat "accordion-item-header" " " accordionHeaderClass " " EmberSundries.accordionItemHeaderDefaultClasses}} {{action 'toggleAccordion'}} data-test-class="accordion-header">
-  {{parsedTitle}}
-  {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
-  {{component expandCollapseIcon class="accordion-expand-collapse-icon"}}
-</div>
-{{#if (or toggleWithCss open)}}
-  <div class="accordion-item-content" data-test-class="accordion-content">
-    <div class="accordion-item-content-inner">
-      {{yield}}
-    </div>
+<div class="accordion-item {{this.emberSundries.accordionItemDefaultClasses}} {{this.openDefaultClasses}} {{this.closedDefaultClasses}}
+{{if this.open "open"}}" ...attributes>
+  <div class={{concat "accordion-item-header" " " accordionHeaderClass " " emberSundries.accordionItemHeaderDefaultClasses}} {{action 'toggleAccordion'}} data-test-class="accordion-header">
+    {{#if accordionHeaderComponent}}
+      {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
+    {{else}}
+      {{parsedTitle}}
+    {{/if}}
+    {{component expandCollapseIcon class="accordion-expand-collapse-icon"}}
   </div>
-{{/if}}
+  {{#if (or toggleWithCss open)}}
+    <div class="accordion-item-content" data-test-class="accordion-content">
+      <div class="accordion-item-content-inner">
+        {{yield}}
+      </div>
+    </div>
+  {{/if}}
+</div>

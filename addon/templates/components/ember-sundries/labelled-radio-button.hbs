@@ -1,3 +1,5 @@
-<RadioButton @value={{value}} @groupValue={{groupValue}} @name={{name}} @changed={{changedAction}} @radioId={{concat elementId "-" value}}>
-  {{#if labelComponent}}{{component labelComponent}}{{else if label}}{{label}}{{/if}}
-</RadioButton>
+<div class="labelled-radio-button {{if this.disabled "disabled"}}" ...attributes>
+  <RadioButton @value={{value}} @groupValue={{groupValue}} @name={{name}} @changed={{changedAction}} @radioId={{concat elementId "-" value}}>
+    {{#if labelComponent}}{{component labelComponent}}{{else if label}}{{label}}{{/if}}
+  </RadioButton>
+</div>
