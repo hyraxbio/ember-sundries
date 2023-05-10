@@ -3,10 +3,8 @@ import layout from '../../templates/components/ember-sundries/labelled-checkbox'
 
 export default Component.extend({
   layout,
-  tagName: "div",
-  classNames: ["labelled-checkbox"],
-  classNameBindings: ["disabled:disabled"],
-  
+  tagName: "",
+
   actions: {
     checkboxClicked: function(event) {
       if (this.changedAction) {

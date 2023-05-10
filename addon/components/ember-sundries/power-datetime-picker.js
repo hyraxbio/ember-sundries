@@ -3,9 +3,8 @@ import layout from '../../templates/components/ember-sundries/power-datetime-pic
 import { computed } from '@ember/object'; 
 
 export default Component.extend({
+  tagName: "",
   layout,
-  classNames: ['ember-power-datetime-picker'],
-  attributeBindings: ['dataTestType:data-test-type'],
   dataTestType: 'power-datetime-picker',
 
   init: function() {
@@ -169,7 +168,7 @@ export default Component.extend({
       return false;
     }
     return true;
-  },
+  }
 });
 // TODO
 // Bundle ember truth helpers or remove or statements

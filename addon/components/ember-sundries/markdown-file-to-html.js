@@ -3,8 +3,8 @@ import layout from '../../templates/components/ember-sundries/markdown-file-to-h
 import fetch from 'fetch';
 
 export default Component.extend({
+  tagName: "",
   layout,
-  attributeBindings: ['dataTestComponent:data-test-component'],
   dataTestComponent: 'markdown-content',
   
   didInsertElement() {

@@ -1,2 +1,5 @@
-<SvgRepo::Icons::IconAlert @class={{concat "in-page-alert-icon " fillClass}} />
-{{yield}}
+<div data-test-class={{this.dataTestClass}} class="in-page-alert
+{{@type}} {{this.textClass}} " ...attributes>
+  <SvgRepo::Icons::IconAlert @class={{concat "in-page-alert-icon " this.fillClass}} />
+  {{yield}}
+</div>

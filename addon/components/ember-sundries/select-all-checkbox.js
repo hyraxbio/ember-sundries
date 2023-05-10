@@ -4,9 +4,7 @@ import layout from '../../templates/components/ember-sundries/select-all-checkbo
 
 export default Component.extend({
   layout,
-  tagName: 'div',
-  classNames: ['select-all-checkbox'],
-  classNameBindings: ['disabled:disabled', 'collectionState'],
+  tagName: "",
 
   collectionState: computed('relatedCollection.@each.selected', function() {
     if (!this.get('relatedCollection')) {

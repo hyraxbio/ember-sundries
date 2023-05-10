@@ -1,4 +1,6 @@
-{{buttonText}}
-<form class="file-select-button">
-  <EmberSundries::InputTypeFile @sendFiles={{action "sendFiles"}} @multiple={{multiple}} @disabled={{disabled}} />
-</form>
+<div data-test-class={{this.dataTestClass}} class="input-file-wrapper {{if this.disabled "disabled"}}" ...attributes>
+  {{buttonText}}
+  <form class="file-select-button">
+    <EmberSundries::InputTypeFile @sendFiles={{action "sendFiles"}} @multiple={{multiple}} @disabled={{disabled}} />
+  </form>
+</div>

@@ -3,10 +3,8 @@ import { computed } from '@ember/object';
 import layout from '../../templates/components/ember-sundries/in-page-alert';
 
 export default Component.extend({
+  tagName: "",
   layout,
-  classNames: ['in-page-alert'],
-  classNameBindings: ['type', 'classes', 'textClass'],
-  attributeBindings: ['dataTestClass:data-test-class'],
   dataTestClass: 'in-page-alert',
 
   textClass: computed('type', function() {
@@ -15,5 +13,5 @@ export default Component.extend({
 
   fillClass: computed('type', function() {
     return `fill-${this.get('type')}`;
-  }),
+  })
 });

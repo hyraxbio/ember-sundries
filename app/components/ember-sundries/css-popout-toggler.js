@@ -1,1 +1,0 @@
-export { default } from 'ember-sundries/components/ember-sundries/css-popout-toggler';

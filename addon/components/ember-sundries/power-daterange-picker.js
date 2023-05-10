@@ -4,9 +4,8 @@ import updateTime from '../../utils/update-time';
 import { computed } from '@ember/object';
 
 export default Component.extend({
+  tagName: "",
   layout,
-  classNames: ['ember-power-daterange-picker'],
-  attributeBindings: ['dataTestType:data-test-type'],
   dataTestType: 'power-daterange-picker',
 
   didInsertElement() {
