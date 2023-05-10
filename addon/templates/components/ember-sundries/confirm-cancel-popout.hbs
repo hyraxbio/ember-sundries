@@ -2,7 +2,7 @@
   <BasicDropdown @renderInPlace={{renderInPlace}} @onOpen={{onOpen}} @onClose={{onClose}} @horizontalPosition={{align}} as | Dropdown |>
     <Dropdown.Trigger>
       <button class="btn btn-{{colorScheme}} {{if Dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}" data-test-class="trigger">{{component mainButtonIcon}}{{mainButtonText}}
-        <SvgRepo::Icons::IconCog @class={{concat (if requestInFlight "on") " spinner button-right"}} />
+        <SvgRepo::Icons::IconCog class={{concat (if requestInFlight "on") " spinner button-right"}} />
       </button>
     </Dropdown.Trigger>
     <Dropdown.Content class="{{if positionStatic "position-static"}} align-{{align}}">

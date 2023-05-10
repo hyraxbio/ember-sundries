@@ -1,9 +1,10 @@
 {{#if this.contentWidth}}
-  <SimpleBar style={{this.style}} class={{@class}} as |sb|>
+{{log @wrapperClass}}
+  <SimpleBar style={{this.style}} class={{@wrapperClass}} as |sb|>
     {{yield (hash Content=(component "blank-template"))}}
   </SimpleBar>
 {{else}}
-  <div class="dummy {{@class}}" {{did-insert this.onInsert}}>
+  <div class="dummy {{@wrapperClass}}" {{did-insert this.onInsert}}>
     {{yield (hash Content=(component "blank-template"))}}
   </div>
 {{/if}}

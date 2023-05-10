@@ -9,7 +9,7 @@
         {{/if}}
         {{component dateSelectComponent}}
     </dp.trigger>
-    <dp.content @class="ember-power-calendar">
+    <dp.content class="ember-power-calendar">
     {{renderInPlace}}
       <nav class="ember-power-calendar-nav">
         <button type="button" class="{{unless navButtons.previousYear "disabled"}} ember-power-calendar-nav-control" onclick={{action "navigate" dp -12 "month"}} data-test-id="power-calendar-nav-previous-year" disabled={{not navButtons.previousYear}}>«</button>

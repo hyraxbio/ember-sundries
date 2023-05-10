@@ -7,7 +7,9 @@
       onMouseEnter={{action "open" Dropdown}}
       onMouseLeave={{action "closeLater" Dropdown}}>
       {{#if @triggerComponent}}
-        {{component @triggerComponent class=(concat triggerClass  (if Dropdown.isOpen ' active'))}}
+        {{#let (component @triggerComponent) as |TriggerComponent|}}
+          <TriggerComponent class={{concat triggerClass  (if Dropdown.isOpen ' active')}} />
+        {{/let}}
       {{else if @triggerText}}
         <div class={{concat triggerClass  (if Dropdown.isOpen ' active')}}>
           {{@triggerText}}
@@ -34,7 +36,9 @@
     @renderInPlace={{renderInPlace}} as | Dropdown |>
     <Dropdown.Trigger class="info-popout-trigger" data-test-class="info-popout-trigger">
      {{#if @triggerComponent}}
-        {{component @triggerComponent class=(concat triggerClass  (if Dropdown.isOpen ' active'))}}
+        {{#let (component @triggerComponent) as |TriggerComponent|}}
+          <TriggerComponent class={{concat triggerClass  (if Dropdown.isOpen ' active')}} />
+        {{/let}}
       {{else}}
         <button class="btn-content {{triggerClass}} {{if Dropdown.isOpen 'active'}}" data-test-class="trigger">
           <SvgRepo::Icons::IconInfo />
