@@ -9,7 +9,7 @@ export default Component.extend({
 
   actions: {
     sendFiles: function(files) {
-      this.fileProcessingAction(files, this.get('allowedFileTypesList'));
+      this.fileProcessingAction(files, this.allowedFileTypesList);
     },
   }
 });

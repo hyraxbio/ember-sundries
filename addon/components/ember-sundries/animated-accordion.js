@@ -10,8 +10,8 @@ export default Component.extend({
   emberSundries: service(),
 
   parsedTitle: computed('headerLevel', 'title', function() {
-    var headerLevel = this.get('headerLevel') || 2;
-    return  htmlSafe(`<h${headerLevel} class="margin-0">${this.get('title')}</h${headerLevel}>`);
+    var headerLevel = this.headerLevel || 2;
+    return  htmlSafe(`<h${headerLevel} class="margin-0">${this.title}</h${headerLevel}>`);
   }),
 
   expandCollapseIcon: computed("open", function() {
@@ -19,13 +19,13 @@ export default Component.extend({
   }),
 
   openDefaultClasses: computed('open', 'EmberSundries.accordionItemOpenDefaultClasses', function() {
-    if (!this.get('open')) { return; }
-    return this.get('EmberSundries.accordionItemOpenDefaultClasses');
+    if (!this.open) { return; }
+    return this.emberSundries.accordionItemOpenDefaultClasses;
   }),
 
   closedDefaultClasses: computed('open', 'EmberSundries.accordionItemOpenDefaultClasses', function() {
-    if (this.get('open')) { return; }
-    return this.get('EmberSundries.accordionItemClosedDefaultClasses');
+    if (this.open) { return; }
+    return this.emberSundries.accordionItemClosedDefaultClasses;
   }),
 
   actions: {

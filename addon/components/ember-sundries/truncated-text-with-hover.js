@@ -9,8 +9,8 @@ export default Component.extend({
   tagName: '',
 
   truncated: computed('text', 'maxChars', function() {
-    if (this.get('text').split('').length > this.get('maxChars')) {
-      return this.get('text').split('').slice(0, this.get('maxChars')).join('');
+    if (this.text.split('').length > this.maxChars) {
+      return this.text.split('').slice(0, this.maxChars).join('');
     }
     return null;
   })

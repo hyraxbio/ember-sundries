@@ -8,10 +8,10 @@ export default Component.extend({
   dataTestClass: 'in-page-alert',
 
   textClass: computed('type', function() {
-    return `text-${this.get('type')}`;
+    return `text-${this.type}`;
   }),
 
   fillClass: computed('type', function() {
-    return `fill-${this.get('type')}`;
+    return `fill-${this.type}`;
   })
 });
