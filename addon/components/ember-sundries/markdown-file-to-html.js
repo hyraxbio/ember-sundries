@@ -8,7 +8,7 @@ export default Component.extend({
   dataTestComponent: 'markdown-content',
   
   didInsertElement() {
-    fetch(this.get('filePath')).then(response => {
+    fetch(this.filePath).then(response => {
       response.text().then(result => {
         this.set('markdown', result);
       });

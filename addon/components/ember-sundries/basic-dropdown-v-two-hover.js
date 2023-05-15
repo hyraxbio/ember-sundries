@@ -20,7 +20,7 @@ export default Component.extend({
           this.openTimer = null;
           dropdown.actions.open();
         };
-        let openDelay = this.get('openDelay');
+        let openDelay = this.openDelay;
         if (openDelay) {
           this.openTimer = later(openFn, openDelay);
         } else {
@@ -38,7 +38,7 @@ export default Component.extend({
           this.closeTimer = null;
           dropdown.actions.close();
         };
-        let closeDelay = this.get('closeDelay');
+        let closeDelay = this.closeDelay;
         if (closeDelay) {
           this.closeTimer = later(closeFn, closeDelay);
         } else {

@@ -7,14 +7,14 @@ export default Component.extend({
   tagName: "",
 
   collectionState: computed('relatedCollection.@each.selected', function() {
-    if (!this.get('relatedCollection')) {
+    if (!this.relatedCollection) {
       return;
     }
-    if (!this.get('relatedCollection').isEvery('selected', true) && this.get('relatedCollection').isAny('selected', true)) {
+    if (!this.relatedCollection.isEvery('selected', true) && this.relatedCollection.isAny('selected', true)) {
       return 'some-selected';
-    } else if (this.get('relatedCollection').isEvery('selected', true)) {
+    } else if (this.relatedCollection.isEvery('selected', true)) {
       return 'all-selected';
-    } else if (!this.get('relatedCollection').isAny('selected', true)) {
+    } else if (!this.relatedCollection.isAny('selected', true)) {
       return 'none-selected';
     }
   }),
@@ -30,7 +30,7 @@ export default Component.extend({
       if (!this.allowPropagation) {
         event.stopPropagation();
       }
-      var selectAllValue = this.get('collectionState') === 'all-selected' ? false : true;
+      var selectAllValue = this.collectionState === 'all-selected' ? false : true;
       this.relatedCollection.setEach('selected', selectAllValue);
       if (this.afterSelectAllClicked) {
         this.afterSelectAllClicked(value, event, this.collectionState)

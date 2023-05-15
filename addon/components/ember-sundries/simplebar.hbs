@@ -1,5 +1,4 @@
 {{#if this.contentWidth}}
-{{log @wrapperClass}}
   <SimpleBar style={{this.style}} class={{@wrapperClass}} as |sb|>
     {{yield (hash Content=(component "blank-template"))}}
   </SimpleBar>

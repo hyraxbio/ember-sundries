@@ -12,7 +12,7 @@ export default Component.extend({
   }),
 
   didInsertElement() {
-    if (this.get('positionStatic')) {
+    if (this.positionStatic) {
       this.set('renderInPlace', true);
     }
   },

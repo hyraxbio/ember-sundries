@@ -9,10 +9,10 @@ export default Component.extend({
   dataTestType: 'power-daterange-picker',
 
   didInsertElement() {
-    var minDate = this.get('minDate');
-    var maxDate = this.get('maxDate');
-    var defaultStartDate = this.get('defaultStartDate');
-    var defaultEndDate = this.get('defaultEndDate');
+    var minDate = this.minDate;
+    var maxDate = this.maxDate;
+    var defaultStartDate = this.defaultStartDate;
+    var defaultEndDate = this.defaultEndDate;
 
     if (defaultStartDate < minDate) {
       defaultStartDate = minDate;
@@ -37,17 +37,17 @@ export default Component.extend({
   },
 
   dateDisplayFormat: computed('dateFormat', function() {
-    return this.get('dateFormat') || 'DD-MM-YYYY';
+    return this.dateFormat || 'DD-MM-YYYY';
   }),
 
   noDatesSelected: computed('value', function() {
-    return !this.get('value.start') && !this.get('value.end');
+    return !this.value.start && !this.value.end;
   }),
 
   actions: {
     rangeSelected(range) {
-      range.start = updateTime(range.start, this.get('startTime'));
-      range.end = updateTime(range.end, this.get('endTime'));
+      range.start = updateTime(range.start, this.startTime);
+      range.end = updateTime(range.end, this.endTime);
       this.onSelectDateRange(range);
     },
 

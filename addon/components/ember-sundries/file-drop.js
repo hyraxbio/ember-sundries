@@ -23,13 +23,13 @@ export default Component.extend({
       var files;
       this.set('dragClass', 'deactivated');
       files = event.dataTransfer.files;
-      if (this.get('disabled')) { 
-        if (this.get('fileDroppedWhenDisabledAction')) {
+      if (this.disabled) { 
+        if (this.fileDroppedWhenDisabledAction) {
           this.fileDroppedWhenDisabledAction();
         }
         return; 
       }
-      this.fileProcessingAction(files, this.get('allowedFileTypesList'));
+      this.fileProcessingAction(files, this.allowedFileTypesList);
     }
   }
 });
