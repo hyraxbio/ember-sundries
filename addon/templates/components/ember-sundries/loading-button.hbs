@@ -1,1 +1,8 @@
-<button class="btn {{buttonClass}}" {{action buttonAction}} data-test-id={{dataTestId}}>{{component beforeTextIcon}} {{buttonText}}<SvgRepo::Icons::IconCog class={{concat "spinner button-right" " " (if loading "on")}} /></button>
+<button
+  class="btn {{buttonClass}}"
+  {{action buttonAction}}
+  data-test-id={{dataTestId}}
+>{{component beforeTextIcon}}
+  {{buttonText}}<SvgRepo::Icons::IconCog
+    class={{concat "spinner button-right" " " (if loading "on")}}
+  /></button>

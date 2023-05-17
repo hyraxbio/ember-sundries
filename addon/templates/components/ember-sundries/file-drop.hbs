@@ -1,3 +1,10 @@
-<div ondragleave={{action "onDragLeave"}} ondragover={{action "onDragOver"}} ondrop={{action "onDrop"}} data-test-class={{this.dataTestClass}} class="draggable-dropzone {{this.dragClass}} {{if this.disabled "disabled"}}" ...attributes>
+<div
+  ondragleave={{action "onDragLeave"}}
+  ondragover={{action "onDragOver"}}
+  ondrop={{action "onDrop"}}
+  data-test-class={{this.dataTestClass}}
+  class="draggable-dropzone {{this.dragClass}} {{if this.disabled 'disabled'}}"
+  ...attributes
+>
   <span class="{{fileDropTextPromptClass}}">{{fileDropTextPrompt}}</span>
 </div>

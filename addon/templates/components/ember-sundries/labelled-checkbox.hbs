@@ -1,6 +1,16 @@
-<div class="labelled-checkbox {{if this.disabled "disabled"}}" ...attributes>
+<div class="labelled-checkbox {{if this.disabled 'disabled'}}" ...attributes>
   <label for={{if name (concat elementId "-" name)}} class={{labelClass}}>
-    <input type="checkbox" checked={{readonly value}} onclick={{action "checkboxClicked"}} disabled={{disabled}} id={{if name (concat elementId "-" name)}} name={{name}}>
-    {{#if labelComponent}}{{component labelComponent labelComponentProps=labelComponentProps}}{{else if label}}{{label}}{{/if}}
+    <input
+      type="checkbox"
+      checked={{readonly value}}
+      onclick={{action "checkboxClicked"}}
+      disabled={{disabled}}
+      id={{if name (concat elementId "-" name)}}
+      name={{name}}
+    />
+    {{#if labelComponent}}{{component
+        labelComponent
+        labelComponentProps=labelComponentProps
+      }}{{else if label}}{{label}}{{/if}}
   </label>
 </div>

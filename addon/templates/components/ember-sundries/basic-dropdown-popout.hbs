@@ -1,11 +1,19 @@
 <div ...attributes>
-  <BasicDropdown @verticalPosition={{verticalPosition}} @horizontalPosition={{horizontalPosition}} @renderInPlace={{renderInPlace}} @initiallyOpened={{initiallyOpened}} @onOpen={{action onOpen}} @onClose={{action onCLose}} as | Dropdown |>
+  <BasicDropdown
+    @verticalPosition={{verticalPosition}}
+    @horizontalPosition={{horizontalPosition}}
+    @renderInPlace={{renderInPlace}}
+    @initiallyOpened={{initiallyOpened}}
+    @onOpen={{action onOpen}}
+    @onClose={{action onCLose}}
+    as |Dropdown|
+  >
     <Dropdown.Trigger class={{triggerClasses}}>
       {{yield "trigger"}}
     </Dropdown.Trigger>
     <Dropdown.Content class={{concat contentClasses " " positionClass}}>
       <div class="pop-up-box box-arrow">
-        {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
+        {{#if message}}<p class="alert-text">{{message}}</p>{{/if}}
         {{yield "content"}}
       </div>
     </Dropdown.Content>

@@ -11,16 +11,19 @@
   @onFocus={{onFocus}}
   @calculateInPlacePosition={{calculateInPlacePosition}}
   @disabled={{disabled}}
- as |dd|>
+  as |dd|
+>
   <span
     {{on "mousedown" (action "prevent" dd)}}
     {{on "mouseenter" (action "open" dd)}}
-    {{on "mouseleave" (action "close" dd)}}>
+    {{on "mouseleave" (action "close" dd)}}
+  >
     {{yield (hash Trigger=(component dd.Trigger))}}
   </span>
   <div
     {{on "mouseenter" (action "open" dd)}}
-    {{on "mouseleave" (action "close" dd)}}>
+    {{on "mouseleave" (action "close" dd)}}
+  >
     {{yield (hash Content=(component dd.Content))}}
   </div>
 </BasicDropdown>

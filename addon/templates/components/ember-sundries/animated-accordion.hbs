@@ -1,8 +1,27 @@
-<div class="accordion-item {{this.emberSundries.accordionItemDefaultClasses}} {{this.openDefaultClasses}} {{this.closedDefaultClasses}}
-{{if this.open "open"}}" ...attributes>
-  <div class={{concat "accordion-item-header" " " accordionHeaderClass " " emberSundries.accordionItemHeaderDefaultClasses}} {{action 'toggleAccordion'}} data-test-class="accordion-header">
+<div
+  class="accordion-item
+    {{this.emberSundries.accordionItemDefaultClasses}}
+    {{this.openDefaultClasses}}
+    {{this.closedDefaultClasses}}
+    {{if this.open 'open'}}"
+  ...attributes
+>
+  <div
+    class={{concat
+      "accordion-item-header"
+      " "
+      accordionHeaderClass
+      " "
+      emberSundries.accordionItemHeaderDefaultClasses
+    }}
+    {{action "toggleAccordion"}}
+    data-test-class="accordion-header"
+  >
     {{#if accordionHeaderComponent}}
-      {{component accordionHeaderComponent accordionHeaderProps=accordionHeaderProps}}
+      {{component
+        accordionHeaderComponent
+        accordionHeaderProps=accordionHeaderProps
+      }}
     {{else}}
       {{parsedTitle}}
     {{/if}}
