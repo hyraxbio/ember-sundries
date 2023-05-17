@@ -1,5 +1,14 @@
-<div class="select-all-checkbox {{this.collectionState}} {{if this.disabled "disabled"}}" ...attributes>
+<div
+  class="select-all-checkbox
+    {{this.collectionState}}
+    {{if this.disabled 'disabled'}}"
+  ...attributes
+>
   {{#if relatedCollection}}
-    <EmberSundries::LabelledCheckbox @changedAction={{action "selectAllClicked"}} @value={{readonly (not-eq collectionState "none-selected")}} @label={{label}} />
+    <EmberSundries::LabelledCheckbox
+      @changedAction={{action "selectAllClicked"}}
+      @value={{readonly (not-eq collectionState "none-selected")}}
+      @label={{label}}
+    />
   {{/if}}
 </div>

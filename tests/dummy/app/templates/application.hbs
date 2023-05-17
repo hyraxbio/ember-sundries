@@ -10,5 +10,12 @@
   {{/each}}
 </div> --}}
 <div class="test">
-    <EmberSundries::ConfirmCancelPopout @mainButtonText="Reject invitation" @colorScheme="danger"  @align="right" @message="Are you sure you want reject this invitation?" @requestInFlight={{eq activeRequest "rejected"}} data-test-id="reject-invitation" />
-  </div>
+  <EmberSundries::ConfirmCancelPopout
+    @mainButtonText="Reject invitation"
+    @colorScheme="danger"
+    @align="right"
+    @message="Are you sure you want reject this invitation?"
+    @requestInFlight={{eq activeRequest "rejected"}}
+    data-test-id="reject-invitation"
+  />
+</div>

@@ -6,7 +6,13 @@
       <div class="simplebar-height-auto-observer" />
     </div>
     <div class="ember-simplebar-dummy">
-      {{yield (hash Dummy=(component "blank-template" tagName="div" class="ember-simplebar-dummy"))}}
+      {{yield
+        (hash
+          Dummy=(component
+            "blank-template" tagName="div" class="ember-simplebar-dummy"
+          )
+        )
+      }}
     </div>
     <div class="simplebar-mask">
       <div class="simplebar-offset">

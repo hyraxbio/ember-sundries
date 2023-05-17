@@ -1,10 +1,12 @@
 {{#if truncated}}
   <EmberSundries::basicDropdownVTwoHover as |dd|>
     <dd.Trigger>
-    {{truncated}}{{afterTruncatedText}}
+      {{truncated}}{{afterTruncatedText}}
     </dd.Trigger>
     <dd.Content>
-      <div class="box-arrow bg-white body-text monospaced border rounded padding-lg card-box-shadow">
+      <div
+        class="box-arrow bg-white body-text monospaced border rounded padding-lg card-box-shadow"
+      >
         {{text}}
       </div>
     </dd.Content>

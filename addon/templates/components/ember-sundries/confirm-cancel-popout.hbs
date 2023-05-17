@@ -1,17 +1,51 @@
-<div data-test-class={{this.dataTestClass}} data-test-name={{this.dataTestName}} class="confirm-cancel-container {{@containerClasses}} {{@colorScheme}} " ...attributes>
-  <BasicDropdown @renderInPlace={{renderInPlace}} @onOpen={{onOpen}} @onClose={{onClose}} @horizontalPosition={{align}} as | Dropdown |>
+<div
+  data-test-class={{this.dataTestClass}}
+  data-test-name={{this.dataTestName}}
+  class="confirm-cancel-container {{@containerClasses}} {{@colorScheme}} "
+  ...attributes
+>
+  <BasicDropdown
+    @renderInPlace={{renderInPlace}}
+    @onOpen={{onOpen}}
+    @onClose={{onClose}}
+    @horizontalPosition={{align}}
+    as |Dropdown|
+  >
     <Dropdown.Trigger>
-      <button class="btn btn-{{colorScheme}} {{if Dropdown.isOpen 'active'}} {{if requestInFlight 'request-in-flight'}} {{mainButtonClasses}}" data-test-class="trigger">{{component mainButtonIcon}}{{mainButtonText}}
-        <SvgRepo::Icons::IconCog class={{concat (if requestInFlight "on") " spinner button-right"}} />
+      <button
+        class="btn btn-{{colorScheme}}
+          {{if Dropdown.isOpen 'active'}}
+          {{if requestInFlight 'request-in-flight'}}
+          {{mainButtonClasses}}"
+        data-test-class="trigger"
+      >{{component mainButtonIcon}}{{mainButtonText}}
+        <SvgRepo::Icons::IconCog
+          class={{concat (if requestInFlight "on") " spinner button-right"}}
+        />
       </button>
     </Dropdown.Trigger>
-    <Dropdown.Content class="{{if positionStatic "position-static"}} align-{{align}}">
-      <div class="{{popoutBoxClasses}} {{'pop-up-box box-arrow body-text confirm-cancel-content'}} border-{{colorScheme}}" data-test-id="{{data-test-id}}-confirm-cancel-content">
-        {{#if message}}<p class='alert-text'>{{message}}</p>{{/if}}
+    <Dropdown.Content
+      class="{{if positionStatic 'position-static'}} align-{{align}}"
+    >
+      <div
+        class="{{popoutBoxClasses}}
+          {{'pop-up-box box-arrow body-text confirm-cancel-content'}}
+          border-{{colorScheme}}"
+        data-test-id="{{data-test-id}}-confirm-cancel-content"
+      >
+        {{#if message}}<p class="alert-text">{{message}}</p>{{/if}}
         {{yield}}
         <div class="option-buttons">
-          <button class="confirm btn btn-{{colorScheme}}" {{action 'confirm' Dropdown}} data-test-class="confirm">Confirm</button>
-          <button class="cancel btn btn-outline-gray-medium" onclick={{action "closePopoutBox" Dropdown}} data-test-class="cancel">Cancel</button>
+          <button
+            class="confirm btn btn-{{colorScheme}}"
+            {{action "confirm" Dropdown}}
+            data-test-class="confirm"
+          >Confirm</button>
+          <button
+            class="cancel btn btn-outline-gray-medium"
+            onclick={{action "closePopoutBox" Dropdown}}
+            data-test-class="cancel"
+          >Cancel</button>
         </div>
       </div>
     </Dropdown.Content>
