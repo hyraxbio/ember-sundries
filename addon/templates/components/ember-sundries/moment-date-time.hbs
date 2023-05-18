@@ -1,8 +1,8 @@
-{{#if datetime}}
+{{#if @datetime}}
   <span class="moment-date-time mdt-date">
-    {{moment-format datetime "YYYY-MM-DD"}}
+    {{moment-format @datetime "YYYY-MM-DD"}}
   </span>
   <span class="moment-date-time mdt-time">
-    {{moment-format datetime "HH:mm"}}
+    {{moment-format @datetime "HH:mm"}}
   </span>
 {{/if}}

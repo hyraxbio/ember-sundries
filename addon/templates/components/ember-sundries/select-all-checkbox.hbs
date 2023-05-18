@@ -4,11 +4,11 @@
     {{if this.disabled 'disabled'}}"
   ...attributes
 >
-  {{#if relatedCollection}}
+  {{#if @relatedCollection}}
     <EmberSundries::LabelledCheckbox
       @changedAction={{action "selectAllClicked"}}
-      @value={{readonly (not-eq collectionState "none-selected")}}
-      @label={{label}}
+      @value={{readonly (not-eq this.collectionState "none-selected")}}
+      @label={{this.label}}
     />
   {{/if}}
 </div>

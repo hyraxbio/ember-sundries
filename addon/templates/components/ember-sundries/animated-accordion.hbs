@@ -10,26 +10,26 @@
     class={{concat
       "accordion-item-header"
       " "
-      accordionHeaderClass
+      @accordionHeaderClass
       " "
-      emberSundries.accordionItemHeaderDefaultClasses
+      this.emberSundries.accordionItemHeaderDefaultClasses
     }}
     {{action "toggleAccordion"}}
     data-test-class="accordion-header"
   >
-    {{#if accordionHeaderComponent}}
+    {{#if @accordionHeaderComponent}}
       {{component
-        accordionHeaderComponent
-        accordionHeaderProps=accordionHeaderProps
+        @accordionHeaderComponent
+        accordionHeaderProps=@accordionHeaderProps
       }}
     {{else}}
-      {{parsedTitle}}
+      {{this.parsedTitle}}
     {{/if}}
-    {{#let (component expandCollapseIcon) as |ExpandCollapseIcon|}}
+    {{#let (component this.expandCollapseIcon) as |ExpandCollapseIcon|}}
       <ExpandCollapseIcon class="accordion-expand-collapse-icon" />
     {{/let}}
   </div>
-  {{#if (or toggleWithCss open)}}
+  {{#if (or @toggleWithCss this.open)}}
     <div class="accordion-item-content" data-test-class="accordion-content">
       <div class="accordion-item-content-inner">
         {{yield}}
