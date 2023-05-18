@@ -1,6 +1,6 @@
-{{#if hover}}
+{{#if @hover}}
   <EmberSundries::BasicDropdownVTwoHover
-    @renderInPlace={{renderInPlace}}
+    @renderInPlace={{@renderInPlace}}
     as |Dropdown|
   >
     <Dropdown.Trigger
@@ -10,16 +10,17 @@
       {{#if @triggerComponent}}
         {{#let (component @triggerComponent) as |TriggerComponent|}}
           <TriggerComponent
-            class={{concat triggerClass (if Dropdown.isOpen " active")}}
+            class={{concat @triggerClass (if Dropdown.isOpen " active")}}
           />
         {{/let}}
       {{else if @triggerText}}
-        <div class={{concat triggerClass (if Dropdown.isOpen " active")}}>
+        <div class={{concat @triggerClass (if Dropdown.isOpen " active")}}>
           {{@triggerText}}
         </div>
       {{else}}
         <button
-          class="btn-content {{triggerClass}} {{if Dropdown.isOpen 'active'}}"
+          type="button"
+          class="btn-content {{@triggerClass}} {{if Dropdown.isOpen 'active'}}"
           data-test-class="trigger"
         >
           <SvgRepo::Icons::IconInfo />
@@ -28,19 +29,19 @@
 
     </Dropdown.Trigger>
     <Dropdown.Content
-      class="info-popout-content {{if positionStatic 'position-static'}}"
+      class="info-popout-content {{if @positionStatic 'position-static'}}"
       data-test-class="info-popout-content"
     >
       <div
-        class="{{popoutBoxClass}} pop-up-box box-arrow body-text border"
-        style={{popoutBoxStyle}}
+        class="{{@popoutBoxClass}} pop-up-box box-arrow body-text border"
+        style={{@popoutBoxStyle}}
       >
         {{yield}}
       </div>
     </Dropdown.Content>
   </EmberSundries::BasicDropdownVTwoHover>
 {{else}}
-  <BasicDropdown @renderInPlace={{renderInPlace}} as |Dropdown|>
+  <BasicDropdown @renderInPlace={{@renderInPlace}} as |Dropdown|>
     <Dropdown.Trigger
       class="info-popout-trigger"
       data-test-class="info-popout-trigger"
@@ -48,12 +49,12 @@
       {{#if @triggerComponent}}
         {{#let (component @triggerComponent) as |TriggerComponent|}}
           <TriggerComponent
-            class={{concat triggerClass (if Dropdown.isOpen " active")}}
+            class={{concat @triggerClass (if Dropdown.isOpen " active")}}
           />
         {{/let}}
       {{else}}
         <button
-          class="btn-content {{triggerClass}} {{if Dropdown.isOpen 'active'}}"
+          class="btn-content {{@triggerClass}} {{if Dropdown.isOpen 'active'}}"
           data-test-class="trigger"
         >
           <SvgRepo::Icons::IconInfo />
@@ -61,12 +62,12 @@
       {{/if}}
     </Dropdown.Trigger>
     <Dropdown.Content
-      class="info-popout-content {{if positionStatic 'position-static'}}"
+      class="info-popout-content {{if @positionStatic 'position-static'}}"
       data-test-class="info-popout-content"
     >
       <div
-        class="{{popoutBoxClass}} pop-up-box box-arrow body-text border"
-        style={{popoutBoxStyle}}
+        class="{{@popoutBoxClass}} pop-up-box box-arrow body-text border"
+        style={{@popoutBoxStyle}}
       >
         {{yield}}
       </div>

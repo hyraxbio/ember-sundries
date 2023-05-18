@@ -3,14 +3,14 @@
   ...attributes
 >
   <RadioButton
-    @value={{value}}
-    @groupValue={{groupValue}}
-    @name={{name}}
-    @changed={{changedAction}}
-    @radioId={{concat elementId "-" value}}
+    @value={{@value}}
+    @groupValue={{@groupValue}}
+    @name={{@name}}
+    @changed={{@changedAction}}
+    @radioId={{concat @elementId "-" @value}}
   >
-    {{#if labelComponent}}{{component labelComponent}}{{else if
-      label
-    }}{{label}}{{/if}}
+    {{#if @labelComponent}}{{component @labelComponent}}{{else if
+      @label
+    }}{{@label}}{{/if}}
   </RadioButton>
 </div>
