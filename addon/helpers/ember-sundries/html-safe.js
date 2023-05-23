@@ -1,8 +1,8 @@
 import { helper } from '@ember/component/helper';
-
-export function htmlSafe(params) {
+import { htmlSafe } from '@ember/template';
+export function htmlSafeHelper(params) {
   if (!params[0]) { return; }
-  return params[0].htmlSafe();
+  return htmlSafe(params[0]);
 }
 
-export default helper(htmlSafe);
+export default helper(htmlSafeHelper);
