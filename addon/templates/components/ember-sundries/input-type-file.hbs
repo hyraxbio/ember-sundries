@@ -1,1 +1,6 @@
-{{yield}}
+<input
+  type="file"
+  disabled={{@disabled}}
+  multiple={{@multiple}}
+  {{on "change" (action "wasChanged")}}
+/>
