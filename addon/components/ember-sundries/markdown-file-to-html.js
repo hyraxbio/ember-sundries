@@ -3,15 +3,17 @@ import layout from '../../templates/components/ember-sundries/markdown-file-to-h
 import fetch from 'fetch';
 
 export default Component.extend({
-  tagName: "",
+  tagName: '',
   layout,
   dataTestComponent: 'markdown-content',
-  
-  didInsertElement() {
-    fetch(this.filePath).then(response => {
-      response.text().then(result => {
-        this.set('markdown', result);
+
+  actions: {
+    didInsert() {
+      fetch(this.filePath).then((response) => {
+        response.text().then((result) => {
+          this.set('markdown', result);
+        });
       });
-    });
-  }
+    },
+  },
 });

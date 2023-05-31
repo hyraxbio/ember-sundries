@@ -1,1 +1,4 @@
-export { default, EmberSundriesIsLastInEach } from 'ember-sundries/helpers/ember-sundries/is-last-in-each';
+export {
+  default,
+  EmberSundriesIsLastInEach,
+} from 'ember-sundries/helpers/ember-sundries/is-last-in-each';

@@ -1,1 +1,4 @@
-export { default, EmberSundriesForceDecimals } from 'ember-sundries/helpers/ember-sundries/force-decimals';
+export {
+  default,
+  EmberSundriesForceDecimals,
+} from 'ember-sundries/helpers/ember-sundries/force-decimals';
