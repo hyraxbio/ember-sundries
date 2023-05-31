@@ -1,1 +1,4 @@
-export { default, EmberSundriesAdd } from 'ember-sundries/helpers/ember-sundries/add';
+export {
+  default,
+  EmberSundriesAdd,
+} from 'ember-sundries/helpers/ember-sundries/add';

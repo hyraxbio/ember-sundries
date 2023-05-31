@@ -3,7 +3,7 @@
   data-test-name={{this.dataTestName}}
   class="confirm-cancel-container {{@containerClasses}} {{@colorScheme}} "
   data-test-id={{@dataTestId}}
-  ...attributes
+   {{did-insert (action "didInsert")}} ...attributes
 >
   <BasicDropdown
     @renderInPlace={{this.renderInPlace}}

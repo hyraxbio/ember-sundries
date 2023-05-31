@@ -1,1 +1,4 @@
-export { default, emberSundriesStringReplace } from 'ember-sundries/helpers/ember-sundries/string-replace';
+export {
+  default,
+  emberSundriesStringReplace,
+} from 'ember-sundries/helpers/ember-sundries/string-replace';

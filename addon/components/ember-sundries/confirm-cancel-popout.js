@@ -11,13 +11,13 @@ export default Component.extend({
     return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase();
   }),
 
-  didInsertElement() {
-    if (this.positionStatic) {
-      this.set('renderInPlace', true);
-    }
-  },
-
   actions: {
+    didInsert() {
+      if (this.positionStatic) {
+        this.set('renderInPlace', true);
+      }
+    },
+
     closePopoutBox: function(dropdown) {
       dropdown.actions.close();
     },
