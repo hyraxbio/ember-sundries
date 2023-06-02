@@ -3,7 +3,7 @@
     <input
       type="checkbox"
       checked={{readonly @value}}
-      onclick={{action "checkboxClicked"}}
+      {{on "click" (action "checkboxClicked")}}
       disabled={{@disabled}}
       id={{if @name (concat @elementId "-" @name)}}
       name={{@name}}
