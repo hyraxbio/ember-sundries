@@ -6,7 +6,7 @@
 >
   {{#if @relatedCollection}}
     <EmberSundries::LabelledCheckbox
-      @changedAction={{action "selectAllClicked"}}
+      @changedAction={{fn (action "selectAllClicked")}}
       @value={{readonly (not-eq this.collectionState "none-selected")}}
       @label={{this.label}}
     />

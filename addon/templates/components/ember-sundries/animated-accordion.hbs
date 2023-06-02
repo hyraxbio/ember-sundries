@@ -14,7 +14,7 @@
       " "
       this.emberSundries.accordionItemHeaderDefaultClasses
     }}
-    {{action "toggleAccordion"}}
+    {{on "click" (action "toggleAccordion")}}
     data-test-class="accordion-header"
   >
     {{#if @accordionHeaderComponent}}

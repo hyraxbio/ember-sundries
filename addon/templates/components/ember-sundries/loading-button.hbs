@@ -1,6 +1,6 @@
 <button
   class="btn {{@buttonClass}}"
-  {{action @buttonAction}}
+  {{on "click" @buttonAction}}
   data-test-id={{@dataTestId}}
 >{{component @beforeTextIcon}}
   {{@buttonText}}<SvgRepo::Icons::IconCog
