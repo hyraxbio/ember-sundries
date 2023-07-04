@@ -15,15 +15,15 @@ export default Component.extend({
   }),
 
   expandCollapseIcon: computed("open", function() {
-    return this.get("open") ? "svg-repo/icons/icon-arrow-up" : "svg-repo/icons/icon-arrow-down";
+    return this.open ? "svg-repo/icons/icon-arrow-up" : "svg-repo/icons/icon-arrow-down";
   }),
 
-  openDefaultClasses: computed('open', 'EmberSundries.accordionItemOpenDefaultClasses', function() {
+  openDefaultClasses: computed('EmberSundries.accordionItemOpenDefaultClasses', 'emberSundries.accordionItemOpenDefaultClasses', 'open', function() {
     if (!this.open) { return; }
     return this.emberSundries.accordionItemOpenDefaultClasses;
   }),
 
-  closedDefaultClasses: computed('open', 'EmberSundries.accordionItemOpenDefaultClasses', function() {
+  closedDefaultClasses: computed('EmberSundries.accordionItemOpenDefaultClasses', 'emberSundries.accordionItemClosedDefaultClasses', 'open', function() {
     if (this.open) { return; }
     return this.emberSundries.accordionItemClosedDefaultClasses;
   }),

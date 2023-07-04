@@ -1,0 +1,13 @@
+{{#if @message}}<p class="alert-text">{{@message}}</p>{{/if}}
+{{yield}}
+<div class="option-buttons">
+  <button
+    class="confirm btn btn-{{@colorScheme}}"
+    {{on "click" (fn (action @confirmAction) @modalName)}}
+    data-test-class="modal-confirm-buton"
+  >Confirm</button>
+  <button
+    class="cancel btn btn-outline-gray-medium"
+    data-test-class="modal-cancel-button"
+  >Cancel</button>
+</div>
