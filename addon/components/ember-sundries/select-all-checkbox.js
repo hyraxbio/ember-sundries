@@ -19,7 +19,7 @@ export default Component.extend({
     }
   }),
 
-  label: computed('collectionState', function() {
+  label: computed('collectionState', 'selectAllText', 'selectNoneText', 'showLabel', function() {
     if (this.showLabel) {
       return this.collectionState === 'all-selected' ? this.selectNoneText || 'Select none' : this.selectAllText || 'Select all';
     }

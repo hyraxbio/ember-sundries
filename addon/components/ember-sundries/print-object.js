@@ -7,11 +7,13 @@ export default Component.extend({
   layout,
 
   didReceiveAttrs() {
+this._super();
     console.log('didReceiveAttrs')
     this.send('checkPromise');
   },
 
   didUpdateAttrs() {
+this._super();
     this.send('checkPromise');
   },
 
