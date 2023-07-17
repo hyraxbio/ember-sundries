@@ -25,6 +25,6 @@ export default Component.extend({
         this.closeTimer = null;
         dropdown.actions.close();
       }, 200);
-    }
-  }
+    },
+  },
 });
