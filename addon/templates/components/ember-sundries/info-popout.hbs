@@ -1,6 +1,7 @@
 {{#if @hover}}
   <EmberSundries::BasicDropdownVTwoHover
     @renderInPlace={{@renderInPlace}}
+    @calculatePosition={{this.calculatePosition}}
     as |Dropdown|
   >
     <Dropdown.Trigger

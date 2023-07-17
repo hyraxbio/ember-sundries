@@ -16,6 +16,6 @@ export default Component.extend({
 
     closeLater(dropdown) {
       dropdown.actions.close();
-    }
-  }
+    },
+  },
 });
