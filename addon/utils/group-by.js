@@ -2,7 +2,7 @@ import { isPresent } from '@ember/utils';
 
 export default function groupBy(collection, property) {
   let groups = [];
-  collection.forEach(function(item) {
+  collection.forEach(function (item) {
     let value = item[property];
     let group = groups.findBy('value', value);
 
@@ -15,4 +15,3 @@ export default function groupBy(collection, property) {
   });
   return groups;
 }
-

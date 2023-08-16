@@ -4,10 +4,10 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   layout,
-  tagName: "",
+  tagName: '',
   dataTestClass: 'confirm-cancel-dialogue',
 
-  dataTestName: computed('mainButtonText', function() {
+  dataTestName: computed('mainButtonText', function () {
     return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase();
   }),
 
@@ -18,15 +18,15 @@ export default Component.extend({
       }
     },
 
-    closePopoutBox: function(dropdown) {
+    closePopoutBox: function (dropdown) {
       dropdown.actions.close();
     },
 
-    confirm: function(dropdown) {
+    confirm: function (dropdown) {
       if (this.confirmAction() === 'confirmActionFail') {
         return;
       }
       this.send('closePopoutBox', dropdown);
     },
-  }
+  },
 });

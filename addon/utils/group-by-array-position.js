@@ -2,7 +2,7 @@ import { isPresent } from '@ember/utils';
 
 export default function groupByArrayPosition(collection, position) {
   let groups = [];
-  collection.forEach(function(item) {
+  collection.forEach(function (item) {
     // console.log(item);
     let value = item[position];
     let group = groups.findBy('value', value);
@@ -16,4 +16,3 @@ export default function groupByArrayPosition(collection, position) {
   });
   return groups;
 }
-

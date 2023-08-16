@@ -1,8 +1,8 @@
 export default function dataDownload(data, filename) {
-  var a = document.createElement("a");
+  var a = document.createElement('a');
   document.body.appendChild(a);
-  a.style = "display: none";
-  var blob = new Blob([data], {type: "octet/stream"});
+  a.style = 'display: none';
+  var blob = new Blob([data], { type: 'octet/stream' });
   var url = window.URL.createObjectURL(blob);
   a.href = url;
   a.download = filename;

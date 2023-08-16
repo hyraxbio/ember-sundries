@@ -3,5 +3,5 @@ import layout from '../../templates/components/ember-sundries/moment-date-time';
 
 export default Component.extend({
   layout,
-  tagName: ''
+  tagName: '',
 });

@@ -10,9 +10,11 @@ export default class EmberSundriesSimpleBar extends Component {
     return htmlSafe(`width: ${this.contentWidth}px`);
   }
 
-  @action 
+  @action
   onInsert(element) {
-    if (!element) { return; }
+    if (!element) {
+      return;
+    }
     this.contentWidth = element.offsetWidth;
   }
 }

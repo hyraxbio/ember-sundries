@@ -3,5 +3,5 @@ import layout from '../../templates/components/ember-sundries/labelled-radio-but
 
 export default Component.extend({
   layout,
-  tagName: ""
+  tagName: '',
 });

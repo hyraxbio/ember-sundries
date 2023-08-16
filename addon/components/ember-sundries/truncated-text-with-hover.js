@@ -8,10 +8,10 @@ export default Component.extend({
   afterTruncatedText: '...',
   tagName: '',
 
-  truncated: computed('text', 'maxChars', function() {
+  truncated: computed('text', 'maxChars', function () {
     if (this.text.split('').length > this.maxChars) {
       return this.text.split('').slice(0, this.maxChars).join('');
     }
     return null;
-  })
+  }),
 });

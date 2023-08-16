@@ -5,6 +5,6 @@ export default function objectsInPathCheck(obj, path) {
     obj[key] = obj[key] || {};
     return obj[key];
   }
-  keys.reduce(addlevel, obj); 
+  keys.reduce(addlevel, obj);
   return obj;
 }

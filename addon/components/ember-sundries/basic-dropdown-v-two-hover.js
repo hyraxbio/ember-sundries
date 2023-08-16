@@ -49,6 +49,6 @@ export default Component.extend({
 
     prevent() {
       return false;
-    }
-  }
+    },
+  },
 });

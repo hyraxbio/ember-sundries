@@ -3,17 +3,17 @@ import layout from '../../templates/components/ember-sundries/print-object';
 import isPromise from 'ember-sundries/utils/is-promise';
 
 export default Component.extend({
-  tagName: "",
+  tagName: '',
   layout,
 
   didReceiveAttrs() {
-this._super();
-    console.log('didReceiveAttrs')
+    this._super();
+    console.log('didReceiveAttrs');
     this.send('checkPromise');
   },
 
   didUpdateAttrs() {
-this._super();
+    this._super();
     this.send('checkPromise');
   },
 
@@ -21,22 +21,22 @@ this._super();
     checkPromise() {
       const object = this.object;
       if (isPromise(object)) {
-        object.then(res => {
+        object.then((res) => {
           this.send('parseObject', res);
         });
       } else {
         this.send('parseObject', object);
       }
     },
-    
+
     parseObject(object) {
       if (object.toJSON) {
-        object = object.toJSON({includeId: true});
+        object = object.toJSON({ includeId: true });
       }
-      (this.keysToRemove || []).forEach(key => {
-        delete object[key]
-      })
-      this.set('parsed', JSON.stringify(object, null, 2))
-    }
-  }
+      (this.keysToRemove || []).forEach((key) => {
+        delete object[key];
+      });
+      this.set('parsed', JSON.stringify(object, null, 2));
+    },
+  },
 });
