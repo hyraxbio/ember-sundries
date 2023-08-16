@@ -6,31 +6,49 @@ import { htmlSafe } from '@ember/template';
 
 export default Component.extend({
   layout,
-  tagName: "",
+  tagName: '',
   emberSundries: service(),
 
-  parsedTitle: computed('headerLevel', 'title', function() {
+  parsedTitle: computed('headerLevel', 'title', function () {
     var headerLevel = this.headerLevel || 2;
-    return  htmlSafe(`<h${headerLevel} class="margin-0">${this.title}</h${headerLevel}>`);
+    return htmlSafe(
+      `<h${headerLevel} class="margin-0">${this.title}</h${headerLevel}>`
+    );
   }),
 
-  expandCollapseIcon: computed("open", function() {
-    return this.open ? "svg-repo/icons/icon-arrow-up" : "svg-repo/icons/icon-arrow-down";
+  expandCollapseIcon: computed('open', function () {
+    return this.open
+      ? 'svg-repo/icons/icon-arrow-up'
+      : 'svg-repo/icons/icon-arrow-down';
   }),
 
-  openDefaultClasses: computed('EmberSundries.accordionItemOpenDefaultClasses', 'emberSundries.accordionItemOpenDefaultClasses', 'open', function() {
-    if (!this.open) { return; }
-    return this.emberSundries.accordionItemOpenDefaultClasses;
-  }),
+  openDefaultClasses: computed(
+    'EmberSundries.accordionItemOpenDefaultClasses',
+    'emberSundries.accordionItemOpenDefaultClasses',
+    'open',
+    function () {
+      if (!this.open) {
+        return;
+      }
+      return this.emberSundries.accordionItemOpenDefaultClasses;
+    }
+  ),
 
-  closedDefaultClasses: computed('EmberSundries.accordionItemOpenDefaultClasses', 'emberSundries.accordionItemClosedDefaultClasses', 'open', function() {
-    if (this.open) { return; }
-    return this.emberSundries.accordionItemClosedDefaultClasses;
-  }),
+  closedDefaultClasses: computed(
+    'EmberSundries.accordionItemOpenDefaultClasses',
+    'emberSundries.accordionItemClosedDefaultClasses',
+    'open',
+    function () {
+      if (this.open) {
+        return;
+      }
+      return this.emberSundries.accordionItemClosedDefaultClasses;
+    }
+  ),
 
   actions: {
-    toggleAccordion: function() {
+    toggleAccordion: function () {
       this.toggleProperty('open');
     },
-  }
+  },
 });

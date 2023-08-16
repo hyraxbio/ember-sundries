@@ -5,7 +5,7 @@ $gray-dark: #333;
 $body-text-font-size: 1.4em;
 $spacer-md: 8px;
 $spacer-xl: 32px;
-@import "ember-sundries";
+@import 'ember-sundries';
 
 input {
   border: 1px solid #ccc;
@@ -24,8 +24,8 @@ $radio-checkbox-selected-background-size: 14px;
 $input-focus-border-color: #bbb;
 $input-hover-border-color: #bbb;
 
-input[type=radio],
-input[type=checkbox],
+input[type='radio'],
+input[type='checkbox'],
 .checkbox,
 .radio {
   display: inline-block;
@@ -42,20 +42,23 @@ input[type=checkbox],
   border-width: 0 !important;
   &:after {
     border: 2px solid $input-border-color;
-    content: "";
+    content: '';
     background-color: $input-background-color;
     width: $radio-button-checkbox-width-height;
     height: $radio-button-checkbox-width-height;
     position: absolute;
     top: 0;
     left: 0px;
-   
   }
-  &:checked:after, &.checked:after {
-    background: $radio-checkbox-selected-background-color $svg-data-uri-icon-tick no-repeat $radio-checkbox-selected-background-position;
+  &:checked:after,
+  &.checked:after {
+    background: $radio-checkbox-selected-background-color
+      $svg-data-uri-icon-tick no-repeat
+      $radio-checkbox-selected-background-position;
     background-size: $radio-checkbox-selected-background-size;
   }
-  &:focus:after, &:focus:checked:after {
+  &:focus:after,
+  &:focus:checked:after {
     border-color: $input-focus-border-color;
   }
   &:hover {
@@ -63,9 +66,9 @@ input[type=checkbox],
   }
 }
 
-input[type=radio],
-input[type=radio]:before,
-input[type=radio]:after,
+input[type='radio'],
+input[type='radio']:before,
+input[type='radio']:after,
 .radio,
 .radio:before,
 .radio:after {
@@ -74,7 +77,7 @@ input[type=radio]:after,
   border-radius: 50%;
 }
 
-input[type=radio]+label {
+input[type='radio'] + label {
   line-height: 150%;
   margin: 0;
 }

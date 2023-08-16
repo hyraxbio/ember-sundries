@@ -18,16 +18,21 @@ $spacer-lg: 12px;
     margin-bottom: 0;
   }
 
-   .accordion-item-header {
-    padding: $spacer-lg 48px+$spacer-lg $spacer-lg $spacer-lg;
+  .accordion-item-header {
+    padding: $spacer-lg 48px + $spacer-lg $spacer-lg $spacer-lg;
     cursor: pointer;
     position: relative;
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
     }
   }
 
-   .accordion-item-header svg.accordion-expand-collapse-icon {
+  .accordion-item-header svg.accordion-expand-collapse-icon {
     width: 26px;
     position: absolute;
     right: 20px;
@@ -35,15 +40,15 @@ $spacer-lg: 12px;
     fill: $animated-accordion-header-icon-fill;
   }
 
-   .accordion-item-header:hover svg {
+  .accordion-item-header:hover svg {
     fill: $animated-accordion-header-icon-hover-fill;
   }
 
-   .accordion-item-header h4 {
+  .accordion-item-header h4 {
     margin-bottom: 0;
   }
 
-   .accordion-item-content {
+  .accordion-item-content {
     overflow: hidden;
     height: 0;
   }

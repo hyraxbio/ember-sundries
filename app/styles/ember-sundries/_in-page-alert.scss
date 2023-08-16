@@ -8,7 +8,10 @@
     width: 18px;
     height: 16px;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     text-transform: uppercase;
     color: inherit;
     margin-bottom: 0.5em;
@@ -17,12 +20,14 @@
     margin-top: 0;
   }
 
-  a, .fake-link {
+  a,
+  .fake-link {
     color: inherit;
     text-decoration: underline;
   }
 
-  a:hover, .fake-link:hover {
+  a:hover,
+  .fake-link:hover {
     color: #222;
   }
 }
