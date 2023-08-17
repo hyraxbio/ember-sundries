@@ -6,7 +6,7 @@
   {{@buttonText}}
   <form class="file-select-button">
     <EmberSundries::InputTypeFile
-      @sendFiles={{fn (action "sendFiles")}}
+      @sendFiles={{action "sendFiles"}}
       @multiple={{@multiple}}
       @disabled={{@disabled}}
     />

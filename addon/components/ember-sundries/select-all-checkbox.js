@@ -1,12 +1,13 @@
+import { layout as templateLayout, tagName } from '@ember-decorators/component';
+import { action, computed } from '@ember/object';
 import Component from '@ember/component';
-import { computed } from '@ember/object';
 import layout from '../../templates/components/ember-sundries/select-all-checkbox';
 
-export default Component.extend({
-  layout,
-  tagName: '',
-
-  collectionState: computed('relatedCollection.@each.selected', function () {
+@templateLayout(layout)
+@tagName('')
+export default class SelectAllCheckbox extends Component {
+  @computed('relatedCollection.@each.selected')
+  get collectionState() {
     if (!this.relatedCollection) {
       return;
     }
@@ -20,33 +21,26 @@ export default Component.extend({
     } else if (!this.relatedCollection.isAny('selected', true)) {
       return 'none-selected';
     }
-  }),
+  }
 
-  label: computed(
-    'collectionState',
-    'selectAllText',
-    'selectNoneText',
-    'showLabel',
-    function () {
-      if (this.showLabel) {
-        return this.collectionState === 'all-selected'
-          ? this.selectNoneText || 'Select none'
-          : this.selectAllText || 'Select all';
-      }
+  @computed('collectionState', 'selectAllText', 'selectNoneText', 'showLabel')
+  get label() {
+    if (this.showLabel) {
+      return this.collectionState === 'all-selected'
+        ? this.selectNoneText || 'Select none'
+        : this.selectAllText || 'Select all';
     }
-  ),
+  }
 
-  actions: {
-    selectAllClicked(value, event) {
-      if (!this.allowPropagation) {
-        event.stopPropagation();
-      }
-      var selectAllValue =
-        this.collectionState === 'all-selected' ? false : true;
-      this.relatedCollection.setEach('selected', selectAllValue);
-      if (this.afterSelectAllClicked) {
-        this.afterSelectAllClicked(value, event, this.collectionState);
-      }
-    },
-  },
-});
+  @action
+  selectAllClicked(value, event) {
+    if (!this.allowPropagation) {
+      event.stopPropagation();
+    }
+    var selectAllValue = this.collectionState === 'all-selected' ? false : true;
+    this.relatedCollection.setEach('selected', selectAllValue);
+    if (this.afterSelectAllClicked) {
+      this.afterSelectAllClicked(value, event, this.collectionState);
+    }
+  }
+}

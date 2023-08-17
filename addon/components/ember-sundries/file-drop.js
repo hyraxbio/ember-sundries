@@ -1,35 +1,38 @@
+import { action } from '@ember/object';
+import { layout as templateLayout, tagName } from '@ember-decorators/component';
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-sundries/file-drop';
 
-export default Component.extend({
-  tagName: '',
-  layout,
-  dragClass: 'deactivated',
-  dataTestClass: 'file-drop-zone',
+@tagName('')
+@templateLayout(layout)
+export default class FileDrop extends Component {
+  dragClass = 'deactivated';
+  dataTestClass = 'file-drop-zone';
 
-  actions: {
-    onDragLeave: function (event) {
-      event.preventDefault();
-      return this.set('dragClass', 'deactivated');
-    },
+  @action
+  onDragLeave(event) {
+    event.preventDefault();
+    return this.set('dragClass', 'deactivated');
+  }
 
-    onDragOver: function (event) {
-      event.preventDefault();
-      return this.set('dragClass', 'activated');
-    },
+  @action
+  onDragOver(event) {
+    event.preventDefault();
+    return this.set('dragClass', 'activated');
+  }
 
-    onDrop: function (event) {
-      event.preventDefault();
-      var files;
-      this.set('dragClass', 'deactivated');
-      files = event.dataTransfer.files;
-      if (this.disabled) {
-        if (this.fileDroppedWhenDisabledAction) {
-          this.fileDroppedWhenDisabledAction();
-        }
-        return;
+  @action
+  onDrop(event) {
+    event.preventDefault();
+    var files;
+    this.set('dragClass', 'deactivated');
+    files = event.dataTransfer.files;
+    if (this.disabled) {
+      if (this.fileDroppedWhenDisabledAction) {
+        this.fileDroppedWhenDisabledAction();
       }
-      this.fileProcessingAction(files, this.allowedFileTypesList);
-    },
-  },
-});
+      return;
+    }
+    this.fileProcessingAction(files, this.allowedFileTypesList);
+  }
+}

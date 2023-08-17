@@ -1,54 +1,61 @@
+import { action } from '@ember/object';
+import { layout as templateLayout, tagName } from '@ember-decorators/component';
+import { oneWay } from '@ember/object/computed';
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-sundries/basic-dropdown-v-two-hover';
 import { cancel, later } from '@ember/runloop';
-import { oneWay } from '@ember/object/computed';
 
-export default Component.extend({
-  layout,
-  tagName: '',
-  delay: 300,
-  openDelay: oneWay('delay'),
-  closeDelay: oneWay('delay'),
+@templateLayout(layout)
+@tagName('')
+export default class BasicDropdownVTwoHover extends Component {
+  delay = 300;
 
-  actions: {
-    open(dropdown) {
-      if (this.closeTimer) {
-        cancel(this.closeTimer);
-        this.closeTimer = null;
-      } else {
-        let openFn = () => {
-          this.openTimer = null;
-          dropdown.actions.open();
-        };
-        let openDelay = this.openDelay;
-        if (openDelay) {
-          this.openTimer = later(openFn, openDelay);
-        } else {
-          openFn();
-        }
-      }
-    },
+  @oneWay('delay')
+  openDelay;
 
-    close(dropdown) {
-      if (this.openTimer) {
-        cancel(this.openTimer);
+  @oneWay('delay')
+  closeDelay;
+
+  @action
+  open(dropdown) {
+    if (this.closeTimer) {
+      cancel(this.closeTimer);
+      this.closeTimer = null;
+    } else {
+      let openFn = () => {
         this.openTimer = null;
+        dropdown.actions.open();
+      };
+      let openDelay = this.openDelay;
+      if (openDelay) {
+        this.openTimer = later(openFn, openDelay);
       } else {
-        let closeFn = () => {
-          this.closeTimer = null;
-          dropdown.actions.close();
-        };
-        let closeDelay = this.closeDelay;
-        if (closeDelay) {
-          this.closeTimer = later(closeFn, closeDelay);
-        } else {
-          closeFn();
-        }
+        openFn();
       }
-    },
+    }
+  }
 
-    prevent() {
-      return false;
-    },
-  },
-});
+  @action
+  close(dropdown) {
+    if (this.openTimer) {
+      cancel(this.openTimer);
+      this.openTimer = null;
+    } else {
+      let closeFn = () => {
+        this.closeTimer = null;
+        dropdown.actions.close();
+      };
+      let closeDelay = this.closeDelay;
+      if (closeDelay) {
+        this.closeTimer = later(closeFn, closeDelay);
+      } else {
+        closeFn();
+      }
+    }
+  }
+
+  @action
+  prevent() {
+    return false;
+  }
+}

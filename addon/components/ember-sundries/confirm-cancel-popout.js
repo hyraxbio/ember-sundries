@@ -1,32 +1,35 @@
+import { layout as templateLayout, tagName } from '@ember-decorators/component';
+import { action, computed } from '@ember/object';
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-sundries/confirm-cancel-popout';
-import { computed } from '@ember/object';
 
-export default Component.extend({
-  layout,
-  tagName: '',
-  dataTestClass: 'confirm-cancel-dialogue',
+@templateLayout(layout)
+@tagName('')
+export default class ConfirmCancelPopout extends Component {
+  dataTestClass = 'confirm-cancel-dialogue';
 
-  dataTestName: computed('mainButtonText', function () {
+  @computed('mainButtonText')
+  get dataTestName() {
     return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase();
-  }),
+  }
 
-  actions: {
-    didInsert() {
-      if (this.positionStatic) {
-        this.set('renderInPlace', true);
-      }
-    },
+  @action
+  didInsert() {
+    if (this.positionStatic) {
+      this.set('renderInPlace', true);
+    }
+  }
 
-    closePopoutBox: function (dropdown) {
-      dropdown.actions.close();
-    },
+  @action
+  closePopoutBox(dropdown) {
+    dropdown.actions.close();
+  }
 
-    confirm: function (dropdown) {
-      if (this.confirmAction() === 'confirmActionFail') {
-        return;
-      }
-      this.send('closePopoutBox', dropdown);
-    },
-  },
-});
+  @action
+  confirm(dropdown) {
+    if (this.confirmAction() === 'confirmActionFail') {
+      return;
+    }
+    this.send('closePopoutBox', dropdown);
+  }
+}

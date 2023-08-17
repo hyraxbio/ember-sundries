@@ -1,0 +1,226 @@
+2023-08-16T14:14:59.119Z INFO: [addon/helpers/ember-sundries/interpolated-property.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.334Z ERROR: [addon/utils/custom-inflector.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.185Z INFO: [addon/helpers/ember-sundries/is-in-array.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.214Z INFO: [addon/helpers/ember-sundries/is-last-in-each.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.235Z INFO: [addon/helpers/ember-sundries/round-number.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.265Z INFO: [addon/helpers/ember-sundries/safe-name.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.288Z INFO: [addon/helpers/ember-sundries/simple-addition.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.320Z INFO: [addon/helpers/ember-sundries/string-contains.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.343Z INFO: [addon/helpers/ember-sundries/string-replace.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.342Z INFO: [addon/utils/custom-inflector.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.367Z ERROR: [addon/utils/base64-image-download.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.379Z INFO: [addon/utils/base64-image-download.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.418Z ERROR: [addon/utils/data-download.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.422Z INFO: [addon/utils/data-download.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.447Z ERROR: [addon/utils/group-by-array-position.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.456Z INFO: [addon/utils/group-by-array-position.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.484Z ERROR: [addon/utils/group-by.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.491Z INFO: [addon/utils/group-by.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.513Z ERROR: [addon/utils/is-empty-object.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.516Z INFO: [addon/utils/is-empty-object.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.535Z ERROR: [addon/utils/is-object.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.541Z INFO: [addon/utils/is-object.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.646Z INFO: [addon/helpers/ember-sundries/string-split.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.679Z INFO: [addon/helpers/ember-sundries/to-json.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.704Z ERROR: [addon/components/ember-sundries/input-type-file.js]
+	ValidationError: Validation errors for class 'InputTypeFile':
+		[actions]: Transform not supported - value is of type object. For more details: eslint-plugin-ember/avoid-leaking-state-in-ember-objects
+2023-08-16T14:14:59.878Z ERROR: [addon/components/ember-sundries/simplebar.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.941Z ERROR: [addon/utils/is-promise.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:14:59.745Z ERROR: [addon/components/ember-sundries/labelled-checkbox.js]
+	ValidationError: Validation errors for class 'LabelledCheckbox':
+		[actions]: Transform not supported - value is of type object. For more details: eslint-plugin-ember/avoid-leaking-state-in-ember-objects
+2023-08-16T14:14:59.889Z INFO: [addon/components/ember-sundries/simplebar.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.962Z INFO: [addon/helpers/ember-sundries/add.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.987Z INFO: [addon/helpers/ember-sundries/array-join.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.017Z INFO: [addon/helpers/ember-sundries/decimal-to-percentage.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.033Z INFO: [addon/helpers/ember-sundries/force-decimals.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.050Z INFO: [addon/helpers/ember-sundries/html-safe.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.119Z ERROR: [addon/components/ember-sundries/confirm-cancel-popout.js]
+	ValidationError: Validation errors for class 'ConfirmCancelPopout':
+		[actions]: Transform not supported - value is of type object. For more details: eslint-plugin-ember/avoid-leaking-state-in-ember-objects
+2023-08-16T14:14:59.956Z INFO: [addon/utils/is-promise.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:14:59.994Z ERROR: [addon/utils/object-from-path.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:15:00.007Z INFO: [addon/utils/object-from-path.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.035Z ERROR: [addon/utils/objects-in-path-check.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:15:00.038Z INFO: [addon/utils/objects-in-path-check.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.109Z ERROR: [addon/utils/psbc.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:15:00.125Z INFO: [addon/utils/psbc.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.153Z ERROR: [addon/utils/safe-name.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:15:00.158Z INFO: [addon/utils/safe-name.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.186Z ERROR: [addon/utils/scaler-arrays-match.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:15:00.187Z INFO: [addon/utils/scaler-arrays-match.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.201Z ERROR: [addon/utils/update-time.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:15:00.203Z INFO: [addon/utils/update-time.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:15:00.232Z ERROR: [addon/components/ember-sundries/animated-accordion.js]
+	ValidationError: Validation errors for class 'AnimatedAccordion':
+		[actions]: Transform not supported - value is of type object. For more details: eslint-plugin-ember/avoid-leaking-state-in-ember-objects
+2023-08-16T14:15:00.168Z ERROR: [addon/components/ember-sundries/file-drop.js]
+	ValidationError: Validation errors for class 'FileDrop':
+		[actions]: Transform not supported - value is of type object. For more details: eslint-plugin-ember/avoid-leaking-state-in-ember-objects
+2023-08-16T14:15:00.200Z ERROR: [addon/components/ember-sundries/file-select.js]
+	ValidationError: Validation errors for class 'FileSelect':
+		[actions]: Transform not supported - value is of type object. For more details: eslint-plugin-ember/avoid-leaking-state-in-ember-objects
+2023-08-16T14:16:11.853Z ERROR: [addon/utils/object-from-path.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:11.993Z INFO: [addon/helpers/ember-sundries/interpolated-property.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.159Z INFO: [addon/helpers/ember-sundries/string-split.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.197Z INFO: [addon/helpers/ember-sundries/to-json.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.080Z INFO: [addon/helpers/ember-sundries/is-in-array.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.111Z INFO: [addon/helpers/ember-sundries/is-last-in-each.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.145Z INFO: [addon/helpers/ember-sundries/round-number.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.169Z INFO: [addon/helpers/ember-sundries/safe-name.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.191Z INFO: [addon/helpers/ember-sundries/simple-addition.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.210Z INFO: [addon/helpers/ember-sundries/string-contains.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.232Z INFO: [addon/helpers/ember-sundries/string-replace.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.304Z INFO: [addon/components/ember-sundries/basic-dropdown-v-two-hover.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.339Z INFO: [addon/components/ember-sundries/select-all-checkbox.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:11.870Z INFO: [addon/utils/object-from-path.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:11.912Z ERROR: [addon/utils/is-promise.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:11.923Z INFO: [addon/utils/is-promise.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:11.986Z ERROR: [addon/utils/objects-in-path-check.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:11.989Z INFO: [addon/utils/objects-in-path-check.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.061Z ERROR: [addon/utils/psbc.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.096Z INFO: [addon/utils/psbc.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.150Z ERROR: [addon/utils/safe-name.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.159Z INFO: [addon/utils/safe-name.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.224Z ERROR: [addon/utils/scaler-arrays-match.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.229Z INFO: [addon/utils/scaler-arrays-match.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.258Z ERROR: [addon/utils/update-time.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.262Z INFO: [addon/utils/update-time.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.632Z INFO: [addon/services/ember-sundries.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.402Z ERROR: [addon/components/ember-sundries/simplebar.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.413Z INFO: [addon/components/ember-sundries/simplebar.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.514Z INFO: [addon/components/ember-sundries/truncated-text-with-hover.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.557Z INFO: [addon/helpers/ember-sundries/add.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.581Z INFO: [addon/helpers/ember-sundries/array-join.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.605Z INFO: [addon/helpers/ember-sundries/decimal-to-percentage.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.631Z INFO: [addon/helpers/ember-sundries/force-decimals.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.652Z INFO: [addon/helpers/ember-sundries/html-safe.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.686Z INFO: [addon/components/ember-sundries/labelled-radio-button.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.565Z INFO: [addon/components/ember-sundries/confirm-cancel-modal.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.626Z INFO: [addon/components/ember-sundries/file-select-or-drop.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.682Z INFO: [addon/components/ember-sundries/in-page-alert.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.772Z INFO: [addon/components/ember-sundries/info-popout.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.661Z ERROR: [addon/utils/base64-image-download.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.669Z INFO: [addon/utils/base64-image-download.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.698Z ERROR: [addon/utils/custom-inflector.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.703Z INFO: [addon/utils/custom-inflector.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.727Z ERROR: [addon/utils/data-download.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.736Z INFO: [addon/utils/data-download.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.778Z ERROR: [addon/utils/group-by-array-position.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.785Z INFO: [addon/utils/group-by-array-position.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.817Z ERROR: [addon/utils/group-by.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.825Z INFO: [addon/utils/group-by.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.847Z ERROR: [addon/utils/is-empty-object.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.850Z INFO: [addon/utils/is-empty-object.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.866Z ERROR: [addon/utils/is-object.js]
+	RuntimeDataError: Could not find runtime data
+2023-08-16T14:16:12.869Z INFO: [addon/utils/is-object.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.722Z INFO: [addon/components/ember-sundries/loading-button.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.780Z INFO: [addon/components/ember-sundries/markdown-file-to-html.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.809Z INFO: [addon/components/ember-sundries/modal-dialog-wrapper.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.834Z INFO: [addon/components/ember-sundries/moment-date-time.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
+2023-08-16T14:16:12.891Z INFO: [addon/components/ember-sundries/print-object.js]
+	UNMODIFIED: Did not find any 'EmberObject.extend()' expressions
