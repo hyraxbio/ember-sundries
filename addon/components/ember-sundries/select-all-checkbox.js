@@ -1,12 +1,16 @@
 import { layout as templateLayout, tagName } from '@ember-decorators/component';
-import { action, computed } from '@ember/object';
+import { action } from '@ember/object';
 import Component from '@ember/component';
 import layout from '../../templates/components/ember-sundries/select-all-checkbox';
-
+import { tracked } from '@glimmer/tracking';
 @templateLayout(layout)
 @tagName('')
 export default class SelectAllCheckbox extends Component {
-  @computed('relatedCollection.@each.selected')
+  @tracked relatedCollection;
+  @tracked selectAllText;
+  @tracked selectNoneText;
+  @tracked showLabel;
+
   get collectionState() {
     if (!this.relatedCollection) {
       return;
@@ -23,7 +27,6 @@ export default class SelectAllCheckbox extends Component {
     }
   }
 
-  @computed('collectionState', 'selectAllText', 'selectNoneText', 'showLabel')
   get label() {
     if (this.showLabel) {
       return this.collectionState === 'all-selected'
@@ -38,7 +41,9 @@ export default class SelectAllCheckbox extends Component {
       event.stopPropagation();
     }
     var selectAllValue = this.collectionState === 'all-selected' ? false : true;
-    this.relatedCollection.setEach('selected', selectAllValue);
+    this.relatedCollection.forEach((item) => {
+      item.selected = selectAllValue;
+    });
     if (this.afterSelectAllClicked) {
       this.afterSelectAllClicked(value, event, this.collectionState);
     }

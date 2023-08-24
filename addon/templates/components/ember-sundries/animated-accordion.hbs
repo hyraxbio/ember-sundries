@@ -16,7 +16,7 @@
     }}
     {{on "click" (action "toggleAccordion")}}
     data-test-class="accordion-header"
-  >
+  >{{this.baz}}
     {{#if @accordionHeaderComponent}}
       {{component
         @accordionHeaderComponent

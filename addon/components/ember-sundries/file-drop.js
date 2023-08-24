@@ -12,20 +12,20 @@ export default class FileDrop extends Component {
   @action
   onDragLeave(event) {
     event.preventDefault();
-    return this.set('dragClass', 'deactivated');
+    return (this.dragClass = 'deactivated');
   }
 
   @action
   onDragOver(event) {
     event.preventDefault();
-    return this.set('dragClass', 'activated');
+    return (this.dragClass = 'activated');
   }
 
   @action
   onDrop(event) {
     event.preventDefault();
     var files;
-    this.set('dragClass', 'deactivated');
+    this.dragClass = 'deactivated';
     files = event.dataTransfer.files;
     if (this.disabled) {
       if (this.fileDroppedWhenDisabledAction) {

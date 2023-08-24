@@ -10,6 +10,6 @@ export default class ConfirmCancelModal extends Component {
     const activeModalProp = this.activeModal
       ? 'activeModal'
       : 'modalDialogs.activeModal'; /// Use the prop passed in or fallback to the activeModal prop on tthe modalDialogs service
-    this.set(activeModalProp, false);
+    this[activeModalProp] = false;
   }
 }

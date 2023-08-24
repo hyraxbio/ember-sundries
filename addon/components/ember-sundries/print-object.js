@@ -38,6 +38,6 @@ export default class PrintObject extends Component {
     (this.keysToRemove || []).forEach((key) => {
       delete object[key];
     });
-    this.set('parsed', JSON.stringify(object, null, 2));
+    this.parsed = JSON.stringify(object, null, 2);
   }
 }

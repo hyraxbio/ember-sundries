@@ -5,6 +5,7 @@
   ...attributes
 >
   {{#if @relatedCollection}}
+    {{this.test}}
     <EmberSundries::LabelledCheckbox
       @changedAction={{fn (action "selectAllClicked")}}
       @value={{readonly (not-eq this.collectionState "none-selected")}}

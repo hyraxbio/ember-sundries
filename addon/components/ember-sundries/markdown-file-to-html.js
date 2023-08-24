@@ -13,7 +13,7 @@ export default class MarkdownFileToHtml extends Component {
   didInsert() {
     fetch(this.filePath).then((response) => {
       response.text().then((result) => {
-        this.set('markdown', result);
+        this.markdown = result;
       });
     });
   }
