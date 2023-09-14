@@ -1,11 +1,7 @@
 import { action } from '@ember/object';
-import { layout as templateLayout, tagName } from '@ember-decorators/component';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/info-popout';
+import Component from '@glimmer/component';
 import { later, cancel } from '@ember/runloop';
 
-@templateLayout(layout)
-@tagName('')
 export default class InfoPopout extends Component {
   @action
   prevent() {

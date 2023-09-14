@@ -1,11 +1,7 @@
-import { layout as templateLayout, tagName } from '@ember-decorators/component';
 import { action } from '@ember/object';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/confirm-cancel-popout';
+import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-@templateLayout(layout)
-@tagName('')
 export default class ConfirmCancelPopout extends Component {
   dataTestClass = 'confirm-cancel-dialogue';
 
@@ -32,6 +28,6 @@ export default class ConfirmCancelPopout extends Component {
     if (this.confirmAction() === 'confirmActionFail') {
       return;
     }
-    this.send('closePopoutBox', dropdown);
+    this.closePopoutBox(dropdown); // this.send
   }
 }

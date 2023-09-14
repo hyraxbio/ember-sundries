@@ -1,10 +1,6 @@
-import { layout as templateLayout, tagName } from '@ember-decorators/component';
 import { action } from '@ember/object';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/select-all-checkbox';
+import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-@templateLayout(layout)
-@tagName('')
 export default class SelectAllCheckbox extends Component {
   @tracked relatedCollection;
   @tracked selectAllText;

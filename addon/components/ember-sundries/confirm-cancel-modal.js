@@ -1,9 +1,7 @@
 import { action } from '@ember/object';
 import { layout as templateLayout } from '@ember-decorators/component';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/confirm-cancel-modal';
+import Component from '@glimmer/component';
 
-@templateLayout(layout)
 export default class ConfirmCancelModal extends Component {
   @action
   closeModal() {

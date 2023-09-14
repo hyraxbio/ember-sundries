@@ -1,12 +1,8 @@
 import { action } from '@ember/object';
-import { layout as templateLayout, tagName } from '@ember-decorators/component';
 import { oneWay } from '@ember/object/computed';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/basic-dropdown-v-two-hover';
+import Component from '@glimmer/component';
 import { cancel, later } from '@ember/runloop';
 
-@templateLayout(layout)
-@tagName('')
 export default class BasicDropdownVTwoHover extends Component {
   delay = 300;
 

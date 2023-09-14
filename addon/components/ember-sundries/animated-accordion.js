@@ -1,13 +1,9 @@
 import { tracked } from '@glimmer/tracking';
-import { layout as templateLayout, tagName } from '@ember-decorators/component';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/animated-accordion';
+import Component from '@glimmer/component';
 import { htmlSafe } from '@ember/template';
 
-@templateLayout(layout)
-@tagName('')
 export default class AnimatedAccordion extends Component {
   @service
   emberSundries;

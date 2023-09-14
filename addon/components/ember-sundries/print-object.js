@@ -1,21 +1,16 @@
 import { action } from '@ember/object';
-import { layout as templateLayout, tagName } from '@ember-decorators/component';
-import Component from '@ember/component';
-import layout from '../../templates/components/ember-sundries/print-object';
+import Component from '@glimmer/component';
 import isPromise from 'ember-sundries/utils/is-promise';
 
-@tagName('')
-@templateLayout(layout)
 export default class PrintObject extends Component {
   didReceiveAttrs() {
     super.didReceiveAttrs();
-    console.log('didReceiveAttrs');
-    this.send('checkPromise');
+    this.checkPromise(); // this.send
   }
 
   didUpdateAttrs() {
     super.didUpdateAttrs();
-    this.send('checkPromise');
+    this.checkPromise(); // this.send
   }
 
   @action
@@ -23,10 +18,10 @@ export default class PrintObject extends Component {
     const object = this.object;
     if (isPromise(object)) {
       object.then((res) => {
-        this.send('parseObject', res);
+        this.parseObject(res); // this.send
       });
     } else {
-      this.send('parseObject', object);
+      this.parseObject(object); // this.send
     }
   }
 
