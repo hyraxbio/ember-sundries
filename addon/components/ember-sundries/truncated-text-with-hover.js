@@ -6,8 +6,8 @@ export default class TruncatedTextWithHover extends Component {
   @tracked maxChars = 3;
 
   get truncated() {
-    if (this.text.split('').length > this.maxChars) {
-      return this.text.split('').slice(0, this.maxChars).join('');
+    if (this.args.text.split('').length > this.args.maxChars) {
+      return this.args.text.split('').slice(0, this.args.maxChars).join('');
     }
     return null;
   }

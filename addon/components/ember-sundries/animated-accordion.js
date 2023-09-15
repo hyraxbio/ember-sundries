@@ -7,14 +7,14 @@ import { htmlSafe } from '@ember/template';
 export default class AnimatedAccordion extends Component {
   @service
   emberSundries;
-  @tracked open = null;
   @tracked headerLevel;
   @tracked title;
+  @tracked open;
 
   get parsedTitle() {
-    var headerLevel = this.headerLevel || 2;
+    var headerLevel = this.args.headerLevel || 2;
     return htmlSafe(
-      `<h${headerLevel} class="margin-0">${this.title}</h${headerLevel}>`
+      `<h${headerLevel} class="margin-0">${this.args.title}</h${headerLevel}>`
     );
   }
 
@@ -39,7 +39,20 @@ export default class AnimatedAccordion extends Component {
   }
 
   @action
-  toggleAccordion() {
+  toggle() {
     this.open = !this.open;
+  }
+
+  @action
+  close() {
+    this.open = false;
+  }
+
+  @action
+  didInsert() {
+    this.open = this.args.startOpen || false;
+    if (this.args.afterInsertAccordion) {
+      this.args.afterInsertAccordion(this);
+    }
   }
 }

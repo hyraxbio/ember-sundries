@@ -3,7 +3,7 @@
   ondragover={{fn (action "onDragOver")}}
   ondrop={{fn (action "onDrop")}}
   data-test-class={{this.dataTestClass}}
-  class="draggable-dropzone {{this.dragClass}} {{if this.disabled 'disabled'}}"
+  class="draggable-dropzone {{this.dragClass}} {{if @disabled 'disabled'}}"
   ...attributes
 >
   <span class="{{@fileDropTextPromptClass}}">{{@fileDropTextPrompt}}</span>

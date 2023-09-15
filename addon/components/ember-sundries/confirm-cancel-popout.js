@@ -8,13 +8,13 @@ export default class ConfirmCancelPopout extends Component {
   @tracked mainButtonText;
 
   get dataTestName() {
-    return (this.mainButtonText || '').replace(/\s+/g, '-').toLowerCase();
+    return (this.args.mainButtonText || '').replace(/\s+/g, '-').toLowerCase();
   }
 
   @action
   didInsert() {
-    if (this.positionStatic) {
-      this.renderInPlace = true;
+    if (this.args.positionStatic) {
+      this.args.renderInPlace = true;
     }
   }
 
@@ -25,7 +25,7 @@ export default class ConfirmCancelPopout extends Component {
 
   @action
   confirm(dropdown) {
-    if (this.confirmAction() === 'confirmActionFail') {
+    if (this.args.confirmAction() === 'confirmActionFail') {
       return;
     }
     this.closePopoutBox(dropdown); // this.send

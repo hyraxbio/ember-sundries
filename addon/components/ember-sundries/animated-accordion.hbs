@@ -4,6 +4,7 @@
     {{this.openDefaultClasses}}
     {{this.closedDefaultClasses}}
     {{if this.open 'open'}}"
+  {{did-insert this.didInsert}}
   ...attributes
 >
   <div
@@ -14,9 +15,9 @@
       " "
       this.emberSundries.accordionItemHeaderDefaultClasses
     }}
-    {{on "click" (action "toggleAccordion")}}
+    {{on "click" (action "toggle")}}
     data-test-class="accordion-header"
-  >{{this.baz}}
+  >
     {{#if @accordionHeaderComponent}}
       {{component
         @accordionHeaderComponent
