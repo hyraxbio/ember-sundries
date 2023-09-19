@@ -3,9 +3,9 @@
     <Dropdown.Trigger
       class="info-popout-trigger"
       data-test-class="info-popout-trigger"
-      onMouseDown={{action "prevent"}}
-      onMouseEnter={{action "open" Dropdown}}
-      onMouseLeave={{action "closeLater" Dropdown}}
+      onMouseDown={{this.prevent}}
+      onMouseEnter={{fn this.open Dropdown}}
+      onMouseLeave={{fn this.closeLater Dropdown}}
     >
       {{#if @triggerComponent}}
         {{#let (component @triggerComponent) as |TriggerComponent|}}
@@ -30,8 +30,8 @@
     <Dropdown.Content
       class="info-popout-content {{if @positionStatic 'position-static'}}"
       data-test-class="info-popout-content"
-      onMouseEnter={{action "open" Dropdown}}
-      onMouseLeave={{action "closeLater" Dropdown}}
+      onMouseEnter={{fn this.open Dropdown}}
+      onMouseLeave={{fn this.closeLater Dropdown}}
     >
       <div
         class="{{@popoutBoxClass}} pop-up-box box-arrow body-text border"

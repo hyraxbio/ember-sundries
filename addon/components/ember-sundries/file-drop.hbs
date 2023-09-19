@@ -1,7 +1,7 @@
 <div
-  ondragleave={{fn (action "onDragLeave")}}
-  ondragover={{fn (action "onDragOver")}}
-  ondrop={{fn (action "onDrop")}}
+  ondragleave={{this.onDragLeave}}
+  ondragover={{this.onDragOver}}
+  ondrop={{this.onDrop}}
   data-test-class={{this.dataTestClass}}
   class="draggable-dropzone {{this.dragClass}} {{if @disabled 'disabled'}}"
   ...attributes

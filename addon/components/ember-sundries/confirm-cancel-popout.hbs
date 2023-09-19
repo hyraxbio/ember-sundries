@@ -3,7 +3,7 @@
   data-test-name={{this.dataTestName}}
   class="confirm-cancel-container {{@containerClasses}} {{@colorScheme}} "
   data-test-id={{@dataTestId}}
-  {{did-insert (action "didInsert")}}
+  {{did-insert this.didInsert}}
   ...attributes
 >
   <BasicDropdown
@@ -41,12 +41,12 @@
         <div class="option-buttons">
           <button
             class="confirm btn btn-{{@colorScheme}}"
-            {{on "click" (fn (action "confirm") Dropdown)}}
+            {{on "click" (fn this.confirm Dropdown)}}
             data-test-class="confirm"
           >Confirm</button>
           <button
             class="cancel btn btn-outline-gray-medium"
-            {{on "click" (fn (action "closePopoutBox") Dropdown)}}
+            {{on "click" (fn this.closePopoutBox Dropdown)}}
             data-test-class="cancel"
           >Cancel</button>
         </div>

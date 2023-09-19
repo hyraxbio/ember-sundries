@@ -15,15 +15,15 @@
   as |dd|
 >
   <span
-    {{on "mousedown" (action "prevent" dd)}}
-    {{on "mouseenter" (action "open" dd)}}
-    {{on "mouseleave" (action "close" dd)}}
+    {{on "mousedown" (fn this.prevent dd)}}
+    {{on "mouseenter" (fn this.open dd)}}
+    {{on "mouseleave" (fn this.close dd)}}
   >
     {{yield (hash Trigger=(component dd.Trigger))}}
   </span>
   <div
-    {{on "mouseenter" (action "open" dd)}}
-    {{on "mouseleave" (action "close" dd)}}
+    {{on "mouseenter" (fn this.open dd)}}
+    {{on "mouseleave" (fn this.close dd)}}
   >
     {{yield (hash Content=(component dd.Content))}}
   </div>

@@ -2,5 +2,5 @@
   type="file"
   disabled={{@disabled}}
   multiple={{@multiple}}
-  {{on "change" (action "wasChanged")}}
+  {{on "change" this.wasChanged}}
 />

@@ -1,12 +1,12 @@
 {{#if @activeModal}}
   <ModalDialog
-    @onClose={{action (mut @activeModal) false}}
+    @onClose={{fn (mut @activeModal) false}}
     @translucentOverlay="true"
   ><div
       class="flex flex-justify-space-between flex-align-center margin-bottom-lg"
     >
       {{#if @title}}<h3 class="margin-0">{{@title}}</h3>{{/if}}<button
-        onclick={{action (mut @activeModal) false}}
+        onclick={{fn (mut @activeModal) false}}
         class="btn-content"
       ><SvgRepo::Icons::IconCross
           class="fill-gray-medium width-lg"
