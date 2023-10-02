@@ -1,16 +1,17 @@
 import { action } from '@ember/object';
-import { oneWay } from '@ember/object/computed';
 import Component from '@glimmer/component';
 import { cancel, later } from '@ember/runloop';
 
 export default class BasicDropdownVTwoHover extends Component {
-  delay = 300;
+  delay = this.args.delay || 300;
 
-  @oneWay('delay')
-  openDelay;
+  get openDelay() {
+    return this.delay;
+  }
 
-  @oneWay('delay')
-  closeDelay;
+  get closeDela() {
+    return this.delay;
+  }
 
   @action
   open(dropdown) {
@@ -51,7 +52,7 @@ export default class BasicDropdownVTwoHover extends Component {
   }
 
   @action
-  prevent() {
-    return false;
+  prevent(e) {
+    return e.stopImmediatePropagation();
   }
 }

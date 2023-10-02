@@ -15,7 +15,7 @@
   as |dd|
 >
   <span
-    {{on "mousedown" (fn this.prevent dd)}}
+    {{on "mousedown" this.prevent}}
     {{on "mouseenter" (fn this.open dd)}}
     {{on "mouseleave" (fn this.close dd)}}
   >

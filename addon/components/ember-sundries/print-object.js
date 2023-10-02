@@ -1,27 +1,20 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import isPromise from 'ember-sundries/utils/is-promise';
+import { tracked } from '@glimmer/tracking';
 
 export default class PrintObject extends Component {
-  didReceiveAttrs() {
-    super.didReceiveAttrs();
-    this.checkPromise(); // this.send
-  }
-
-  didUpdateAttrs() {
-    super.didUpdateAttrs();
-    this.checkPromise(); // this.send
-  }
+  @tracked parsed;
 
   @action
   checkPromise() {
-    const object = this.object;
+    const object = this.args.object;
     if (isPromise(object)) {
       object.then((res) => {
-        this.parseObject(res); // this.send
+        this.parseObject(res);
       });
     } else {
-      this.parseObject(object); // this.send
+      this.parseObject(object);
     }
   }
 
@@ -30,7 +23,7 @@ export default class PrintObject extends Component {
     if (object.toJSON) {
       object = object.toJSON({ includeId: true });
     }
-    (this.keysToRemove || []).forEach((key) => {
+    (this.args.keysToRemove || []).forEach((key) => {
       delete object[key];
     });
     this.parsed = JSON.stringify(object, null, 2);
