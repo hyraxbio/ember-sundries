@@ -1,0 +1,13 @@
+<div
+  role="button"
+  onclick={{fn (mut this.modalDialogs.activeModal) true}}
+  data-test-class={{@dataTestClassTrigger}}
+>
+  {{yield (hash Trigger=(component "blank-template"))}}
+</div>
+<EmberSundries::ModalDialogWrapper
+  @activeModal={{this.modalDialogs.activeModal}}
+  @title={{@title}}
+>
+  {{yield (hash Content=(component "blank-template"))}}
+</EmberSundries::ModalDialogWrapper>

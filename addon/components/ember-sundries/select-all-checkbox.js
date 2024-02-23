@@ -8,40 +8,40 @@ export default class SelectAllCheckbox extends Component {
   @tracked showLabel;
 
   get collectionState() {
-    if (!this.relatedCollection) {
+    if (!this.args.relatedCollection) {
       return;
     }
     if (
-      !this.relatedCollection.isEvery('selected', true) &&
-      this.relatedCollection.isAny('selected', true)
+      !this.args.relatedCollection.isEvery('selected', true) &&
+      this.args.relatedCollection.isAny('selected', true)
     ) {
       return 'some-selected';
-    } else if (this.relatedCollection.isEvery('selected', true)) {
+    } else if (this.args.relatedCollection.isEvery('selected', true)) {
       return 'all-selected';
-    } else if (!this.relatedCollection.isAny('selected', true)) {
+    } else if (!this.args.relatedCollection.isAny('selected', true)) {
       return 'none-selected';
     }
   }
 
   get label() {
-    if (this.showLabel) {
+    if (this.args.showLabel) {
       return this.collectionState === 'all-selected'
-        ? this.selectNoneText || 'Select none'
-        : this.selectAllText || 'Select all';
+        ? this.args.selectNoneText || 'Select none'
+        : this.args.selectAllText || 'Select all';
     }
   }
 
   @action
   selectAllClicked(value, event) {
-    if (!this.allowPropagation) {
+    if (!this.args.allowPropagation) {
       event.stopPropagation();
     }
     var selectAllValue = this.collectionState === 'all-selected' ? false : true;
-    this.relatedCollection.forEach((item) => {
+    this.args.relatedCollection.forEach((item) => {
       item.selected = selectAllValue;
     });
-    if (this.afterSelectAllClicked) {
-      this.afterSelectAllClicked(value, event, this.collectionState);
+    if (this.args.afterSelectAllClicked) {
+      this.args.afterSelectAllClicked(value, event, this.collectionState);
     }
   }
 }

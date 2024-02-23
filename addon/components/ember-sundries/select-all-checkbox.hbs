@@ -5,11 +5,10 @@
   ...attributes
 >
   {{#if @relatedCollection}}
-    {{this.test}}
     <EmberSundries::LabelledCheckbox
       @changedAction={{this.selectAllClicked}}
       @value={{readonly (not-eq this.collectionState "none-selected")}}
-      @label={{this.label}}
+      @label={{@label}}
     />
   {{/if}}
 </div>

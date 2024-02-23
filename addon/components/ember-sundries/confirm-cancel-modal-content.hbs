@@ -1,0 +1,17 @@
+{{#if @message}}<div
+    class="alert-text body-text margin-bottom-xl"
+    data-test-id="confirm-cancel-modal-message"
+  >{{@message}}</div>{{/if}}
+{{yield}}
+<div class="option-buttons flex flex-justify-end">
+  <button
+    class="cancel btn btn-outline-gray-medium margin-right-lg"
+    data-test-class="modal-cancel-button"
+    onclick={{@closeModal}}
+  >Cancel</button>
+  <button
+    class="confirm btn btn-{{@colorScheme}}"
+    {{on "click" (fn @confirmAction @modalName)}}
+    data-test-class="modal-confirm-button"
+  >Confirm</button>
+</div>

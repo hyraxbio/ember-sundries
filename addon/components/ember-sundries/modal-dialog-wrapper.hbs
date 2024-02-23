@@ -2,15 +2,26 @@
   <ModalDialog
     @onClose={{fn (mut @activeModal) false}}
     @translucentOverlay="true"
+    data-test-class="modal-dialog"
   ><div
       class="flex flex-justify-space-between flex-align-center margin-bottom-lg"
     >
-      {{#if @title}}<h3 class="margin-0">{{@title}}</h3>{{/if}}<button
+      {{#if @title}}<h3
+          class="margin-0"
+          data-test-id="modal-dialog-title"
+        >{{@title}}</h3>
+      {{else if @titleComponent}}
+        {{#let (component @titleComponent.path) as |TitleComponent|}}
+          <TitleComponent @props={{@titleComponent.props}} />
+        {{/let}}
+      {{/if}}
+
+      <button
         onclick={{fn (mut @activeModal) false}}
         class="btn-content"
       ><SvgRepo::Icons::IconCross
           class="fill-gray-medium width-lg"
-          data-test-id="icon-cross"
+          data-test-id="modal-dialog-close-button"
         /></button></div>
     {{yield}}
   </ModalDialog>
