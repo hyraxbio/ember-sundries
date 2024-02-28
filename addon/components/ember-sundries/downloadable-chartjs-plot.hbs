@@ -1,0 +1,24 @@
+<div
+  class="plot-container"
+  data-test-class={{@dataTestClass}}
+  data-test-id={{@dataTestId}}
+  {{did-insert this.didInsert}}
+  ...attributes
+>
+  {{#if this.parsedChartData}}
+    <EmberChart
+      @type={{@type}}
+      @data={{this.parsedChartData.data}}
+      @options={{this.parsedChartData.options}}
+      @plugins={{@chartData.plugins}}
+    />
+  {{/if}}
+</div>
+{{#if this.animationComplete}}
+  <button
+    class="btn btn-outline-gray-medium"
+    data-test-class="download-plot-as-png-button"
+    type="button"
+    {{on "click" this.download}}
+  ><SvgRepo::Icons::IconDownloadDoc />Download as PNG</button>
+{{/if}}
