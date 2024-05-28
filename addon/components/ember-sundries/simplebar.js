@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { htmlSafe } from '@ember/template';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
@@ -7,7 +6,9 @@ export default class EmberSundriesSimpleBar extends Component {
   @tracked contentWidth;
 
   get style() {
-    return htmlSafe(`width: ${this.contentWidth}px`);
+    return {
+      width: `${this.contentWidth}px`,
+    };
   }
 
   @action
@@ -15,6 +16,9 @@ export default class EmberSundriesSimpleBar extends Component {
     if (!element) {
       return;
     }
-    this.contentWidth = element.offsetWidth;
+    setTimeout(() => {
+      // Because sometimes Chromium initially renders inline-flex elements with an extar 40px width.
+      this.contentWidth = element.offsetWidth;
+    }, 1);
   }
 }

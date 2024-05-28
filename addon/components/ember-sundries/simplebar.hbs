@@ -1,9 +1,18 @@
 {{#if this.contentWidth}}
-  <SimpleBar style={{this.style}} class={{@wrapperClass}} as |sb|>
-    {{yield (hash Content=(component "blank-template"))}}
+  <SimpleBar
+    {{style this.style}}
+    class={{@wrapperClass}}
+    @autoHide={{@autoHide}}
+    as |sb|
+  >
+    {{yield}}
   </SimpleBar>
 {{else}}
-  <div class="dummy {{@wrapperClass}}" {{did-insert this.onInsert}}>
-    {{yield (hash Content=(component "blank-template"))}}
+  <div
+    class="dummy {{@wrapperClass}}"
+    {{did-insert this.onInsert}}
+    style="overflow-y: hidden"
+  >
+    {{yield}}
   </div>
 {{/if}}
