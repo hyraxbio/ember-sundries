@@ -1,16 +1,23 @@
 <div class="labelled-checkbox {{if this.disabled 'disabled'}}" ...attributes>
-  <label for={{if @name (concat @elementId "-" @name)}} class={{@labelClass}}>
-    <input
-      type="checkbox"
-      checked={{readonly @value}}
-      {{on "click" this.checkboxClicked}}
-      disabled={{@disabled}}
-      id={{if @name (concat @elementId "-" @name)}}
-      name={{@name}}
-    />
-    {{#if @labelComponent}}{{component
-        @labelComponent
-        labelComponentProps=@labelComponentProps
-      }}{{else if @label}}{{@label}}{{/if}}
-  </label>
+  {{#if this.hasLabel}}
+    <label
+      id="{{this.commonId}}-label"
+      for="{{this.commonId}}-input"
+      class={{@labelClass}}
+    >
+      {{#if @labelComponent}}{{component
+          @labelComponent
+          labelComponentProps=@labelComponentProps
+        }}{{else if @label}}{{@label}}{{/if}}
+    </label>
+  {{/if}}
+  <input
+    type="checkbox"
+    checked={{readonly @value}}
+    {{on "click" this.checkboxClicked}}
+    disabled={{@disabled}}
+    id="{{this.commonId}}-input"
+    name={{@name}}
+    aria-labelledby={{if this.hasLabel (concat this.commonId "-label")}}
+  />
 </div>
