@@ -1,0 +1,18 @@
+<div data-test-on={{if @on true}} ...attributes>
+  {{#if @togglerLabel}}
+    <label
+      id="{{this.uid}}-label"
+      for="{{this.uid}}-button"
+      class={{@togglerLabelClass}}
+    >{{@togglerLabel}}</label>
+  {{/if}}
+  <button
+    class="toggle-button {{if @on 'on'}}"
+    data-test-class="toggle-button"
+    id="{{this.uid}}-button"
+    aria-labelledby="{{this.uid}}-label"
+    {{on "click" (fn @onClick @on)}}
+  >
+    <div class="toggle-button-switch"></div>
+  </button>
+</div>

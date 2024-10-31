@@ -1,0 +1,27 @@
+$toggle-button-height: 24px !default;
+$toggle-button-width: 40px !default;
+$toggle-button-background: #fff !default;
+$toggle-button-padding: 2px !default;
+$toggle-button-switcher-off-background: #aaa !default;
+$toggle-button-switcher-on-background: rgb(86, 180, 86) !default;
+
+.toggle-button {
+  width: $toggle-button-width;
+  height: $toggle-button-height;
+  background: $toggle-button-switcher-off-background;
+  border-radius: $toggle-button-height;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: $toggle-button-padding;
+  .toggle-button-switch {
+    width: #{$toggle-button-height - 2 * $toggle-button-padding};
+    height: #{$toggle-button-height - 2 * $toggle-button-padding};
+    background: $toggle-button-background;
+    border-radius: $toggle-button-height;
+  }
+  &.on {
+    justify-content: flex-end;
+    background: $toggle-button-switcher-on-background;
+  }
+}
