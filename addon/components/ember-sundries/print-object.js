@@ -20,8 +20,8 @@ export default class PrintObject extends Component {
 
   @action
   parseObject(object) {
-    if (object.toJSON) {
-      object = object.toJSON({ includeId: true });
+    if (object.serialize) {
+      object = object.serialize({ includeId: true });
     }
     (this.args.keysToRemove || []).forEach((key) => {
       delete object[key];
